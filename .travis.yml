@@ -48,6 +48,7 @@ script:
 notifications:
   recipients:
     - rhickeyjnr@gmail.com
+    - louise.allen192@gmail.com
   email:
-    on_success: change
-    on_failure: change
+    on_success: always
+    on_failure: always
