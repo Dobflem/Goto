@@ -6,14 +6,13 @@
 using namespace std;
 #include <vector>
 using std::vector;
-//test comment
 
 class Character {
 private:
 	string description;
 	 vector < string > itemsInCharacter;
 public:
-	void addItems(string Item);
+    void addItems(string Item);
 
 
 
