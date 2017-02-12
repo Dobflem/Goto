@@ -12,8 +12,8 @@ CommandWords::CommandWords() {
 		validCommands.push_back("quit");
 		validCommands.push_back("info");
 		validCommands.push_back("map");
-		validCommands.push_back("take");
-		validCommands.push_back("put");
+        //validCommands.push_back("take");
+        //validCommands.push_back("put");
 	}
 }
 
@@ -22,10 +22,10 @@ CommandWords::CommandWords() {
  * Return true if it is, false if it isn't.
  **/
 bool CommandWords::isCommand(string aString) {
-	for (unsigned int i = 0; i < validCommands.size(); i++)
-	{
-		if (validCommands[i].compare(aString) == 0)
+    for (unsigned int i = 0; i < validCommands.size(); i++) {
+        if (validCommands[i].compare(aString) == 0) {
 			return true;
+        }
 	}
 	// if we get here, the string was not found in the commands
 	return false;
@@ -36,8 +36,7 @@ bool CommandWords::isCommand(string aString) {
  */
 void CommandWords::showAll() {
 	//Loops through validCommands and prints each to the screen.
-	for (unsigned int i = 0; i < validCommands.size(); i++)
-	{
+    for (unsigned int i = 0; i < validCommands.size(); i++) {
 		cout << validCommands[i]<< "  ";
 	}
 	cout << endl;

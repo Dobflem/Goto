@@ -6,26 +6,30 @@
 
 QT       += core gui
 
+CONFIG += console
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Zork
 TEMPLATE = app
 
 
-SOURCES  += ZorkUL.cpp \
+SOURCES  += \
             Character.cpp \
             Command.cpp \
             CommandWords.cpp \
             item.cpp \
             Parser.cpp \
-            Room.cpp
+            Timezone.cpp \
+    GoToTime.cpp
 
 
-HEADERS  += ZorkUL.h \
+HEADERS  += \
             Character.h \
             Command.h \
             CommandWords.h \
             item.h \
             Parser.h \
-            Room.h
+            Timezone.h \
+    GoToTime.h
 

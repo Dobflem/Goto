@@ -30,9 +30,9 @@ Command* Parser::getCommand() {
 		}
 	}
 
-	if (words.size() == 1) //was only 1 word entered?
+    if (words.size() == 1) { //was only 1 word entered?
 		word1 = words[0]; //get first word
-	else if (words.size() >= 2) { //were at least 2 words entered?
+    } else if (words.size() >= 2) { //were at least 2 words entered?
 		word1 = words[0]; //get first word
 		word2 = words[1]; //get second word
 	}
