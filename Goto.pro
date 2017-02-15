@@ -10,7 +10,7 @@ CONFIG += console
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Zork
+TARGET = Goto
 TEMPLATE = app
 
 
@@ -21,8 +21,8 @@ SOURCES  += \
             item.cpp \
             Parser.cpp \
             Timezone.cpp \
-    GoToTime.cpp \
-    output.cpp
+            GoToTime.cpp \
+            output.cpp
 
 
 HEADERS  += \
@@ -32,6 +32,6 @@ HEADERS  += \
             item.h \
             Parser.h \
             Timezone.h \
-    GoToTime.h \
-    output.h
+            GoToTime.h \
+            output.h
 
