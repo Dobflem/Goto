@@ -43,8 +43,6 @@ Timezone* Timezone::nextTimezone(string direction) {
 }
 
 void Timezone::addItem(Item *inItem) {
-    //cout <<endl;
-    //cout << "Just added" + inItem->getLongDescription();
     itemsInTimezone.push_back(*inItem);
 }
 
