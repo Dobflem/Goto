@@ -5,12 +5,14 @@
 #include "Parser.h"
 #include "Timezone.h"
 #include "item.h"
+#include "output.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
 class GoToTime {
 private:
+    Output writer;
 	Parser parser;
     Timezone *currentTimezone;
     void createTimezones();
@@ -30,4 +32,4 @@ public:
 	string go(string direction);
 };
 
-#endif /*GoToTime_H_*/
+#endif /*GOTOTIME_H_*/
