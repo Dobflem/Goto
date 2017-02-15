@@ -1,12 +1,21 @@
+// StdIncludes
+#include <stdlib.h>
+#include <stdio.h>
 #include <iostream>
+// QIncludes
+#include <QApplication>
+#include <QString>
 
-using namespace std;
 #include "GoToTime.h"
+#include "mainwindow.h"
+using namespace std;
 
-int main(int argc, char argv[]) {
-    GoToTime temp;
-	temp.play();
-	return 0;
+int main(int argc, char **argv) {
+    QApplication app(argc, argv);
+    MainWindow *m = new MainWindow();
+
+    m->show();
+    return app.exec();
 }
 
 GoToTime::GoToTime() {
@@ -28,7 +37,7 @@ void GoToTime::createTimezones()  {
     tz00s = new Timezone("Noughties");
     tzPresentDay = new Timezone("Present Day");
 
-//                                (N, E, S, W)
+    // (N, E, S, W)
     tzTimePortal->setExits(tz60s, tz20s, tz80s, tz00s);
     tz20s->setExits(tz30s, NULL, tz40s, tzTimePortal);
     tz30s->setExits(tz50s, NULL, tz20s, NULL);

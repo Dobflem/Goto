@@ -22,7 +22,8 @@ SOURCES  += \
             Parser.cpp \
             Timezone.cpp \
             GoToTime.cpp \
-            output.cpp
+            output.cpp \
+    mainwindow.cpp
 
 
 HEADERS  += \
@@ -33,5 +34,9 @@ HEADERS  += \
             Parser.h \
             Timezone.h \
             GoToTime.h \
-            output.h
+            output.h \
+    mainwindow.h
+
+FORMS += \
+    mainwindow.ui
 
