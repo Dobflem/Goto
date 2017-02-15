@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/Dobflem/Zork.svg?branch=master)
+![Build Status](https://travis-ci.org/Dobflem/Goto.svg?branch=master)
 
 # Goto
 Event Driven Programming C++ Project

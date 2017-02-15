@@ -21,7 +21,8 @@ SOURCES  += \
             item.cpp \
             Parser.cpp \
             Timezone.cpp \
-    GoToTime.cpp
+    GoToTime.cpp \
+    output.cpp
 
 
 HEADERS  += \
@@ -31,5 +32,6 @@ HEADERS  += \
             item.h \
             Parser.h \
             Timezone.h \
-    GoToTime.h
+    GoToTime.h \
+    output.h
 

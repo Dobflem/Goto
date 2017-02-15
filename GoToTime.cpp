@@ -63,15 +63,12 @@ void GoToTime::play() {
 		//   with ("return new Command(...)")
 		delete command;
 	}
-	cout << endl;
-	cout << "end" << endl;
+    writer.outputTextToScreen("\n\nGame Over");
 }
 
+// To be deleted once GUI is implemented
 void GoToTime::printWelcome() {
-	cout << "start"<< endl;
-	cout << "info for help"<< endl;
-	cout << endl;
-    cout << currentTimezone->longDescription() << endl;
+    writer.outputTextToScreen("Start:\n(Type 'info' for help)\n\n" + currentTimezone->longDescription());
 }
 
 /**
@@ -81,7 +78,7 @@ void GoToTime::printWelcome() {
  */
 bool GoToTime::processCommand(Command command) {
 	if (command.isUnknown()) {
-		cout << "invalid input"<< endl;
+        writer.outputErrorToScreen("Invalid input");
 		return false;
 	}
 
@@ -98,7 +95,7 @@ bool GoToTime::processCommand(Command command) {
         processPutCommand(command);
     } else if (commandWord.compare("quit") == 0) {
         if (command.hasSecondWord()) {
-            cout << "overdefined input"<< endl;
+            writer.outputTextToScreen("overdefined input");
         } else {
             return true; /**signal to quit*/
         }
@@ -108,23 +105,22 @@ bool GoToTime::processCommand(Command command) {
 
 
 /** COMMANDS **/
-void GoToTime::printHelp() {
-	cout << "valid inputs are; " << endl;
-	parser.showCommands();
 
+void GoToTime::printHelp() {
+    writer.outputTextToScreen("Valid inputs are:\n" + parser.showCommands());
 }
 
 void GoToTime::printMap() {
-    cout << "[90s] --- [70s]    [50s] " << endl;
-    cout << "            |        |   " << endl;
-    cout << "            |        |   " << endl;
-    cout << "          [60s]    [30s] " << endl;
-    cout << "            |        |   " << endl;
-    cout << "            |        |   " << endl;
-    cout << "[00s] --- [TP] --- [20s] " << endl;
-    cout << " |          |        |   " << endl;
-    cout << " |          |        |   " << endl;
-    cout << "[PD]      [80s]    [40s] " << endl;
+    writer.outputTextToScreen("[90s] --- [70s]    [50s] ");
+    writer.outputTextToScreen("            |        |   ");
+    writer.outputTextToScreen("            |        |   ");
+    writer.outputTextToScreen("          [60s]    [30s] ");
+    writer.outputTextToScreen("            |        |   ");
+    writer.outputTextToScreen("            |        |   ");
+    writer.outputTextToScreen("[00s] --- [TP] --- [20s] ");
+    writer.outputTextToScreen(" |          |        |   ");
+    writer.outputTextToScreen(" |          |        |   ");
+    writer.outputTextToScreen("[PD]      [80s]    [40s] ");
 }
 
 void GoToTime::processTakeCommand(Command command) {
@@ -164,7 +160,7 @@ void GoToTime::processPutCommand(Command command) {
 }
 void GoToTime::goTimezone(Command command) {
 	if (!command.hasSecondWord()) {
-		cout << "incomplete input"<< endl;
+        writer.outputErrorToScreen("Incomplete input");
 		return;
 	}
 
@@ -174,10 +170,10 @@ void GoToTime::goTimezone(Command command) {
     Timezone* nextTimezone = currentTimezone->nextTimezone(direction);
 
     if (nextTimezone == NULL)
-		cout << "underdefined input"<< endl;
+         writer.outputErrorToScreen("Underdefined input");
 	else {
         currentTimezone = nextTimezone;
-        cout << currentTimezone->longDescription() << endl;
+        writer.outputTextToScreen("Successfully changed timezones.\n" + currentTimezone->longDescription());
 	}
 }
 
