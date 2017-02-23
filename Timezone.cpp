@@ -2,8 +2,9 @@
 #include "Command.h"
 
 
-Timezone::Timezone(string description) {
+Timezone::Timezone(string description, string path) {
 	this->description = description;
+    this->imagePath = path;
 }
 
 void Timezone::setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west) {
@@ -17,6 +18,10 @@ void Timezone::setExits(Timezone *north, Timezone *east, Timezone *south, Timezo
 		exits["west"] = west;
 }
 
+string Timezone::getImagePath() {
+    return imagePath;
+}
+
 string Timezone::shortDescription() {
 	return description;
 }
@@ -26,7 +31,7 @@ string Timezone::longDescription() {
 }
 
 string Timezone::exitString() {
-	string returnString = "\nexits =";
+    string returnString = "\nAvailable exits =";
 	for (map<string, Timezone*>::iterator i = exits.begin(); i != exits.end(); i++)
 		// Loop through map
 		returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)

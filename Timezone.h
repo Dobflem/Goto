@@ -15,14 +15,16 @@ private:
     map<string, Timezone*> exits;
 	string exitString();
     vector <Item> itemsInTimezone;
+    string imagePath;
 
 
 public:
     int numberOfItems();
-    Timezone(string description);
+    Timezone(string description, string path);
     void setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west);
 	string shortDescription();
 	string longDescription();
+    string getImagePath();
     Timezone* nextTimezone(string direction);
     void addItem(Item *inItem);
     string displayItem();

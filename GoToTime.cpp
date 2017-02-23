@@ -8,34 +8,33 @@
 
 #include "GoToTime.h"
 #include "mainwindow.h"
+
 using namespace std;
 
 int main(int argc, char **argv) {
     QApplication app(argc, argv);
     MainWindow *m = new MainWindow();
 
+    //createTimezones();
+
     m->show();
     return app.exec();
 }
 
-GoToTime::GoToTime() {
-    createTimezones();
-}
-
-void GoToTime::createTimezones()  {
+/*void GoToTime::createTimezones()  {
     Timezone *tzTimePortal, *tz20s, *tz30s, *tz40s, *tz50s, *tz60s, *tz70s, *tz80s, *tz90s, *tz00s, *tzPresentDay;
 
-    tzTimePortal = new Timezone("Time-Portal");
-    tz20s = new Timezone("Twenties");
-    tz30s = new Timezone("Thirties");
-    tz40s = new Timezone("Fourties");
-    tz50s = new Timezone("Fifties");
-    tz60s = new Timezone("Sixties");
-    tz70s = new Timezone("Seventies");
-    tz80s = new Timezone("Eighties");
-    tz90s = new Timezone("Nineties");
-    tz00s = new Timezone("Noughties");
-    tzPresentDay = new Timezone("Present Day");
+    tzTimePortal = new Timezone("Time-Portal", "portal.jpg");
+    tz20s = new Timezone("Twenties", "twenties.jpg");
+    tz30s = new Timezone("Thirties", "thirties.jpg");
+    tz40s = new Timezone("Fourties", "fourties.jpg");
+    tz50s = new Timezone("Fifties", "fifties.jpg");
+    tz60s = new Timezone("Sixties", "sixties.png");
+    tz70s = new Timezone("Seventies", "seventies.jpg");
+    tz80s = new Timezone("Eighties", "eighties.jpg");
+    tz90s = new Timezone("Nineties", "nineties.jpg");
+    tz00s = new Timezone("Noughties", "noughties.jpg");
+    tzPresentDay = new Timezone("Present Day", "today.jpg");
 
     // (N, E, S, W)
     tzTimePortal->setExits(tz60s, tz20s, tz80s, tz00s);
@@ -50,13 +49,13 @@ void GoToTime::createTimezones()  {
     tz00s->setExits(NULL, tzTimePortal, tzPresentDay, NULL);
     tzPresentDay->setExits(tz00s, NULL, NULL, NULL);
 
-    currentTimezone = tzTimePortal;
-}
+   // currentTimezone = tzTimePortal;
+}*/
 
 /**
  *  Main play routine.  Loops until end of play.
  */
-void GoToTime::play() {
+/*void GoToTime::play() {
 	printWelcome();
 
 	// Enter the main command loop.  Here we repeatedly read commands and
@@ -85,7 +84,8 @@ void GoToTime::printWelcome() {
  * If this command ends the GoToTime game, true is returned, otherwise false is
  * returned.
  */
-bool GoToTime::processCommand(Command command) {
+
+/*bool GoToTime::processCommand(Command command) {
 	if (command.isUnknown()) {
         writer.outputErrorToScreen("Invalid input");
 		return false;
@@ -106,16 +106,17 @@ bool GoToTime::processCommand(Command command) {
         if (command.hasSecondWord()) {
             writer.outputTextToScreen("overdefined input");
         } else {
-            return true; /**signal to quit*/
+            return true; //signal to quit
         }
     }
 	return false;
-}
+}*/
 
 
 /** COMMANDS **/
 
-void GoToTime::printHelp() {
+
+/*void GoToTime::printHelp() {
     writer.outputTextToScreen("Valid inputs are:\n" + parser.showCommands());
 }
 
@@ -151,7 +152,7 @@ void GoToTime::processTakeCommand(Command command) {
                 cout << currentTimezone->longDescription() << endl;
             }
         }
-    }*/
+    }
 }
 
 void GoToTime::processPutCommand(Command command) {
@@ -164,11 +165,12 @@ void GoToTime::processPutCommand(Command command) {
         if (command.hasSecondWord()) {
         cout << "you're adding " + command.getSecondWord() << endl;
         itemsInTimezone.push_Back;
-    }*/
+    }
 
 }
+
 void GoToTime::goTimezone(Command command) {
-	if (!command.hasSecondWord()) {
+    if (!command.hasSecondWord()) {
         writer.outputErrorToScreen("Incomplete input");
 		return;
 	}
@@ -198,4 +200,4 @@ string GoToTime::go(string direction) {
         currentTimezone = nextTimezone;
         return currentTimezone->longDescription();
 	}
-}
+}*/
