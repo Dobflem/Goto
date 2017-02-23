@@ -6,51 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1329</width>
-    <height>662</height>
+    <width>1341</width>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #262626;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QFrame" name="side_panel_frame">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>1051</width>
-      <height>641</height>
+      <x>1070</x>
+      <y>10</y>
+      <width>241</width>
+      <height>581</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="resources.qrc">:/Resources/portal.jpg</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="textFieldLabel">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>560</y>
-      <width>761</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QFrame" name="text_area_frame">
-    <property name="geometry">
-     <rect>
-      <x>1080</x>
-      <y>280</y>
-      <width>231</width>
-      <height>171</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">background-color: #404040;
+border: 2px solid  #333333;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -61,94 +39,168 @@
     <widget class="QTextEdit" name="textEdit">
      <property name="geometry">
       <rect>
-       <x>23</x>
-       <y>14</y>
-       <width>191</width>
+       <x>10</x>
+       <y>270</y>
+       <width>221</width>
        <height>141</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #b3b3b3;
+border-color: #999999;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="map_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>221</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resources.qrc">:/Resources/map.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>440</y>
+       <width>151</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #b3b3b3;
+border-color: #999999;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QToolButton" name="southButton">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>70</y>
+        <width>34</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: #808080;
+ border-style: solid;
+ border-width:1.5px;
+ border-radius:12px;
+ border-color: #737373;
+ max-width:30px;
+ max-height:30px;
+ min-width:30px;
+ min-height:30px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="northButton">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>34</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: #808080;
+ border-style: solid;
+ border-width:1.5px;
+ border-radius:12px;
+ border-color: #737373;
+ max-width:30px;
+ max-height:30px;
+ min-width:30px;
+ min-height:30px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="eastButton">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>40</y>
+        <width>34</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: #808080;
+ border-style: solid;
+ border-width:1.5px;
+ border-radius:12px;
+ border-color:#737373;
+ max-width:30px;
+ max-height:30px;
+ min-width:30px;
+ min-height:30px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="westButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>34</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> background-color: #808080;
+ border-style: solid;
+ border-width:1.5px;
+ border-radius:12px;
+ border-color:#737373;
+ max-width:30px;
+ max-height:30px;
+ min-width:30px;
+ min-height:30px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="map_label">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>1080</x>
-      <y>30</y>
-      <width>221</width>
-      <height>231</height>
+      <x>30</x>
+      <y>10</y>
+      <width>1021</width>
+      <height>581</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
-   </widget>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>1079</x>
-      <y>460</y>
-      <width>231</width>
-      <height>131</height>
-     </rect>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/Resources/portal.jpg</pixmap>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QToolButton" name="southButton">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>90</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="northButton">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>10</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="eastButton">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>50</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="westButton">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>50</y>
-       <width>41</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -156,7 +208,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1329</width>
+     <width>1341</width>
      <height>25</height>
     </rect>
    </property>
