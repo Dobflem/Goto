@@ -1,23 +1,22 @@
-#include "mainwindow.h"
+#include "include/mainwindow.h"
+#include "ui_mainwindow.h"
+
 #include <iostream>
 #include <QPixmap>
 #include <QString>
 
-#include "ui_mainwindow.h"
-#include "GoToTime.h"
-
-#include "tzportal.h"
-#include "tz20.h"
-#include "tz30.h"
-#include "tz40.h"
-#include "tz50.h"
-#include "tz60.h"
-#include "tz70.h"
-#include "tz80.h"
-#include "tz90.h"
-#include "tz00.h"
-#include "tzpresent.h"
-
+#include "include/GoToTime.h"
+#include "include/tzportal.h"
+#include "include/tz20.h"
+#include "include/tz30.h"
+#include "include/tz40.h"
+#include "include/tz50.h"
+#include "include/tz60.h"
+#include "include/tz70.h"
+#include "include/tz80.h"
+#include "include/tz90.h"
+#include "include/tz00.h"
+#include "include/tzpresent.h"
 
 using namespace std;
 

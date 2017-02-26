@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+
 // QIncludes
 #include <QApplication>
 #include <QString>
 
-#include "GoToTime.h"
-#include "mainwindow.h"
+#include "include/GoToTime.h"
+#include "include/mainwindow.h"
 
 using namespace std;
 

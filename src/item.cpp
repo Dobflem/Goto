@@ -1,4 +1,4 @@
-#include "item.h"
+#include "include/item.h"
 
 Item::Item (string inDescription, int inWeightGrams, float inValue/**, int weaponCheck*/) {
 	description = inDescription;

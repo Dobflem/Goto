@@ -1,4 +1,4 @@
-#include "Command.h"
+#include "include/Command.h"
 
 /**
  * Create a command object. First and second word must be supplied, but
