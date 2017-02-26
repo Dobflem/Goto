@@ -6,12 +6,12 @@ Event Driven Programming C++ Project
 # TODO
 
 ### Create Skeleton Classes
-- [ ] Main
+- [X] Main
 - [ ] BackPack
 - [ ] Item
-- [ ] Room
 - [ ] Token :: Item
-- [ ] TimeZone :: Room
+- [X] Timezone
+- [X] Timezones :: Timezone
 
 ### Create Layout of Rooms
 
