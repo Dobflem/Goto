@@ -45,10 +45,8 @@ public:
     QString getTZImage();
 
     // VIRTUAL METHODS
-    virtual ~Timezone() = default;
-    virtual bool canEnterRoom() {
-      return true;
-    }
+    virtual ~Timezone() {}
+    virtual bool canEnterRoom() { return true; }
 };
 
 #endif
