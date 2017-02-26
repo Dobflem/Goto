@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QPixmap>
 #include <QString>
+#include <QThread>
 
 #include "include/GoToTime.h"
 #include "include/tzportal.h"
@@ -81,35 +82,37 @@ void MainWindow::createTimezones()  {
 
 void MainWindow::moveEast() {
     Timezone *tz = this->currentTimezone->getEastTimezone();
-    if (tz != NULL) {
-        this->setCurrentTimezone(tz);
-    }
+    this->setCurrentTimezone(tz);
 }
 
 void MainWindow::moveNorth() {
     Timezone *tz = this->currentTimezone->getNorthTimezone();
-    if (tz != NULL) {
-        this->setCurrentTimezone(tz);
-    }
+    this->setCurrentTimezone(tz);
 }
 
 void MainWindow::moveSouth() {
     Timezone *tz = this->currentTimezone->getSouthTimezone();
-    if (tz != NULL) {
-        this->setCurrentTimezone(tz);
-    }
+    this->setCurrentTimezone(tz);
 }
 
 void MainWindow::moveWest() {
     Timezone *tz = this->currentTimezone->getWestTimezone();
-    if (tz != NULL) {
-        this->setCurrentTimezone(tz);
-    }
+    this->setCurrentTimezone(tz);
 }
 
 void MainWindow::setCurrentTimezone(Timezone *tz) {
-    this->currentTimezone = tz;
-    this->setBackgroundImage(tz->getTZImage());
+    // Check if there is a room to move to
+    if (tz != NULL) {
+        // Check if we can enter the room
+        // This is a VIRTUAL method
+        // The super method always returns true
+        if (tz->canEnterRoom()) {
+            this->currentTimezone = tz;
+            this->setBackgroundImage(tz->getTZImage());
+        } else {
+            this->setInformationText("This room is currently locked. Please find token first.");
+        }
+    }
 }
 
 void MainWindow::setBackgroundImage(QString fileName) {
@@ -118,10 +121,22 @@ void MainWindow::setBackgroundImage(QString fileName) {
     ui->tzImage->setPixmap(image);
 }
 
+void MainWindow::setInformationText(QString txt) {
+    for (int i = 1; i <= txt.length(); i++) {
+        ui->txtInfo->setText(txt.left(i));
+        // Have to manually call repaint
+        // Qt does a smart refresh to stop flickering
+        // This means if we don't add a repaint
+        // the text box won't update until outside the loop.
+        ui->txtInfo->repaint();
+        QThread::msleep(16);
+    }
+}
+
 void MainWindow::setMapImage(QString mapImage) {
     QString qstr = ":Resources/" + mapImage;
     QPixmap pix(qstr);
-     ui->map_label->setPixmap(pix);
+    ui->map_label->setPixmap(pix);
 }
 
 void MainWindow::setupSignalsAndSlots() {

@@ -36,7 +36,7 @@ border: 2px solid  #333333;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="txtInfo">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -66,7 +66,7 @@ border-color: #999999;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="resources.qrc">:/Resources/map.png</pixmap>
+      <pixmap resource="../resources.qrc">:/Resources/map.png</pixmap>
      </property>
     </widget>
     <widget class="QFrame" name="frame">
@@ -213,7 +213,7 @@ border-color: #999999;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>

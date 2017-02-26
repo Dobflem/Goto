@@ -41,6 +41,7 @@ private:
     // SETTERS
     void setBackgroundImage(QString fileName);
     void setCurrentTimezone(Timezone *tz);
+    void setInformationText(QString txt);
     void setMapImage(QString mapImage);
 };
 

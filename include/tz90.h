@@ -11,6 +11,8 @@ public:
     {
         // Don't need to do anything
     }
+
+    bool canEnterRoom();
 };
 
 #endif // TZ90_H

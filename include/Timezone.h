@@ -23,12 +23,11 @@ private:
 
 public:
     Timezone(QString description, QString path);
+
     Timezone* getNorthTimezone();
     Timezone* getSouthTimezone();
     Timezone* getEastTimezone();
     Timezone* getWestTimezone();
-
-
 
     void addItem(Item *inItem);
     void removeItemFromTimezone(int location);
@@ -44,6 +43,12 @@ public:
 
     // GETTERS
     QString getTZImage();
+
+    // VIRTUAL METHODS
+    virtual ~Timezone() = default;
+    virtual bool canEnterRoom() {
+      return true;
+    }
 };
 
 #endif
