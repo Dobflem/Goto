@@ -23,7 +23,18 @@ SOURCES  += \
             Timezone.cpp \
             GoToTime.cpp \
             output.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tzportal.cpp \
+    tz20.cpp \
+    tz30.cpp \
+    tz40.cpp \
+    tz50.cpp \
+    tz60.cpp \
+    tz70.cpp \
+    tz80.cpp \
+    tz90.cpp \
+    tz00.cpp \
+    tzpresent.cpp
 
 
 HEADERS  += \
@@ -35,7 +46,18 @@ HEADERS  += \
             Timezone.h \
             GoToTime.h \
             output.h \
-    mainwindow.h
+    mainwindow.h \
+    tzportal.h \
+    tz20.h \
+    tz30.h \
+    tz40.h \
+    tz50.h \
+    tz60.h \
+    tz70.h \
+    tz80.h \
+    tz90.h \
+    tz00.h \
+    tzpresent.h
 
 FORMS += \
     mainwindow.ui

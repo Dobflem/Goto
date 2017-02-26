@@ -22,18 +22,26 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_northButton_clicked();
-    void on_eastButton_clicked();
-    void on_southButton_clicked();
-    void on_westButton_clicked();
+    void moveNorth();
+    void moveSouth();
+    void moveEast();
+    void moveWest();
 
 private:
     Ui::MainWindow *ui;
-    Timezone *currentTimezone;
+    Timezone *currentTimezone, *tzPortal, *tz20s, *tz30s, *tz40s, *tz50s, *tz60s, *tz70s, *tz80s, *tz90s, *tz00s, *tzPresent;
+
     void createTimezones();
-    void goTimezone(string direction);
-    void changeBackgroundImage(string fileName);
-    void changeMapImage(string mapImage);
+    void goTimezone(QString direction);
+    void setupSignalsAndSlots();
+
+    // GETTERS
+    Timezone getCurrentTimezone();
+
+    // SETTERS
+    void setBackgroundImage(QString fileName);
+    void setCurrentTimezone(Timezone *tz);
+    void setMapImage(QString mapImage);
 };
 
 #endif // MAINWINDOW_H

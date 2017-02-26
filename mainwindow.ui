@@ -186,7 +186,7 @@ border-color: #999999;</string>
      </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="tzImage">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -198,9 +198,6 @@ border-color: #999999;</string>
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap resource="resources.qrc">:/Resources/portal.jpg</pixmap>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -209,7 +206,7 @@ border-color: #999999;</string>
      <x>0</x>
      <y>0</y>
      <width>1341</width>
-     <height>25</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>
