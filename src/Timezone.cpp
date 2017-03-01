@@ -39,9 +39,6 @@ Timezone* Timezone::getWestTimezone() {
 }
 
 /*
-string Timezone::getImagePath() {
-    return imagePath;
-}
 
 string Timezone::shortDescription() {
 	return description;

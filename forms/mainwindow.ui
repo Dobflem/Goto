@@ -199,6 +199,17 @@ border-color: #999999;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>119</x>
+      <y>30</y>
+      <width>821</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout"/>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -206,7 +217,7 @@ border-color: #999999;</string>
      <x>0</x>
      <y>0</y>
      <width>1341</width>
-     <height>19</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

@@ -109,6 +109,9 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
         if (tz->canEnterRoom()) {
             this->currentTimezone = tz;
             this->setBackgroundImage(tz->getTZImage());
+
+            //getTimezoneWidget is a virtual method
+            ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
         } else {
             this->setInformationText("This room is currently locked. Please find token first.");
         }

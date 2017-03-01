@@ -16,10 +16,7 @@ TEMPLATE = app
 
 SOURCES  += \
             src/Character.cpp \
-            src/Command.cpp \
-            src/CommandWords.cpp \
             src/item.cpp \
-            src/Parser.cpp \
             src/Timezone.cpp \
             src/GoToTime.cpp \
             src/output.cpp \
@@ -34,15 +31,13 @@ SOURCES  += \
             src/tz80.cpp \
             src/tz90.cpp \
             src/tz00.cpp \
-            src/tzpresent.cpp
+            src/tzpresent.cpp \
+    src/tz40widget.cpp
 
 
 HEADERS  += \
             include/Character.h \
-            include/Command.h \
-            include/CommandWords.h \
             include/item.h \
-            include/Parser.h \
             include/Timezone.h \
             include/GoToTime.h \
             include/output.h \
@@ -57,10 +52,12 @@ HEADERS  += \
             include/tz80.h \
             include/tz90.h \
             include/tz00.h \
-            include/tzpresent.h
+            include/tzpresent.h \
+    include/tz40widget.h
 
 FORMS += \
-    forms/mainwindow.ui
+    forms/mainwindow.ui \
+    forms/tz40s.ui
 
 RESOURCES += \
     resources.qrc

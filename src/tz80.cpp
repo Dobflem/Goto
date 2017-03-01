@@ -3,3 +3,7 @@
 bool TZ80::canEnterRoom() {
     return true;
 }
+
+/*QWidget* TZ80::getTimezoneWidget() {
+    return widget;
+}*/

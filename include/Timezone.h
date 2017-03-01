@@ -7,6 +7,7 @@
 #define TIMEZONE_H_
 
 #include <QString>
+#include <QWidget>
 
 using namespace std;
 using std::vector;
@@ -39,14 +40,24 @@ public:
     QString displayItem();
     QString shortDescription();
     QString longDescription();
-    QString getImagePath();
+
 
     // GETTERS
     QString getTZImage();
+    QString getImagePath();
 
     // VIRTUAL METHODS
     virtual ~Timezone() {}
     virtual bool canEnterRoom() { return true; }
+    virtual QWidget* getTimezoneWidget() {
+       //currently returning empty widget as default.
+       //This needs to be changed
+
+        QWidget *def = new QWidget();
+        return def;
+    }
+
+    //virtual QWidget* getTimezoneWidget() = 0;
 };
 
 #endif
