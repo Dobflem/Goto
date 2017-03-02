@@ -1,5 +1,5 @@
 #include "Timezone.h"
-//#include "tz00widget.h"
+#include "tz00widget.h"
 #include <QWidget>
 
 #ifndef TZ00_H
@@ -9,14 +9,15 @@
 class TZ00 : public Timezone
 {
 public:
-    //tz00Widget *widget;
+    tz00Widget *widget;
     TZ00(QString description, QString image):Timezone(description, image)
     {
+        widget = new tz00Widget();
         // Don't need to do anything
     }
 
     bool canEnterRoom();
-    //QWidget* getTimezoneWidget();
+    QWidget* getTimezoneWidget();
 };
 
 #endif // TZ00_H

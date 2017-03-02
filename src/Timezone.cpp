@@ -38,23 +38,24 @@ Timezone* Timezone::getWestTimezone() {
     return this->exits["west"];
 }
 
-/*
 
-string Timezone::shortDescription() {
-	return description;
+QString Timezone::shortDescription() {
+    return description;
 }
 
-string Timezone::longDescription() {
+/*
+QString Timezone::longDescription() {
     return "timezone = " + description + ".\n" + displayItem() + exitString();
 }
 
-string Timezone::exitString() {
+QString Timezone::exitString() {
     string returnString = "\nAvailable exits =";
 	for (map<string, Timezone*>::iterator i = exits.begin(); i != exits.end(); i++)
 		// Loop through map
 		returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)
-	return returnString;
+    return QString::fromStdString(returnString);
 }
+
 
 Timezone* Timezone::nextTimezone(string direction) {
 	map<string, Timezone*>::iterator next = exits.find(direction); //returns an iterator for the "pair"

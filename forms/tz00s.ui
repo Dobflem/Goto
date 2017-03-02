@@ -13,22 +13,22 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="tz40widget" name="tz40WidgetPlaceholder" native="true">
+  <widget class="tz00widget" name="tz00WidgetPlaceholder" native="true">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>991</width>
-     <height>541</height>
+     <x>30</x>
+     <y>30</y>
+     <width>951</width>
+     <height>501</height>
     </rect>
    </property>
   </widget>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>tz40widget</class>
+   <class>tz00widget</class>
    <extends>QWidget</extends>
-   <header>tz40widget.h</header>
+   <header>tz00widget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

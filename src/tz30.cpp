@@ -4,6 +4,6 @@ bool TZ30::canEnterRoom() {
     return false;
 }
 
-/*QWidget* TZ30::getTimezoneWidget() {
+QWidget* TZ30::getTimezoneWidget() {
     return widget;
-}*/
+}

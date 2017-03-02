@@ -41,7 +41,6 @@ public:
     QString shortDescription();
     QString longDescription();
 
-
     // GETTERS
     QString getTZImage();
     QString getImagePath();
@@ -53,6 +52,7 @@ public:
        //currently returning empty widget as default.
        //This needs to be changed
 
+        cout << "In default get timezone widget" << endl;
         QWidget *def = new QWidget();
         return def;
     }

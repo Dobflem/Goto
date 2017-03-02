@@ -4,6 +4,6 @@ bool TZPresent::canEnterRoom() {
     return true;
 }
 
-/*QWidget* TZPresent::getTimezoneWidget() {
+QWidget* TZPresent::getTimezoneWidget() {
     return widget;
-}*/
+}

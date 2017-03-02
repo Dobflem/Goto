@@ -107,6 +107,12 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
         // This is a VIRTUAL method
         // The super method always returns true
         if (tz->canEnterRoom()) {
+
+            //QString tp = QString::fromStdString("Time-Portal");
+            //if (this->currentTimezone->shortDescription() != tp) {
+                //ui->gridLayout->removeWidget(this->currentTimezone->getTimezoneWidget());
+            //}
+
             this->currentTimezone = tz;
             this->setBackgroundImage(tz->getTZImage());
 
