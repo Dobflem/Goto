@@ -1,4 +1,4 @@
-#include "include/tz50widget.h"
+#include "tz50widget.h"
 #include "ui_tz50widget.h"
 #include <QtGui>
 

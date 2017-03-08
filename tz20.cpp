@@ -1,4 +1,4 @@
-#include "include/tz20.h"
+#include "tz20.h"
 
 bool TZ20::canEnterRoom() {
     return true;

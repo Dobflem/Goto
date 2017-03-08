@@ -15,77 +15,77 @@ TEMPLATE = app
 
 
 SOURCES  += \
-        src/Character.cpp \
-        src/item.cpp \
-        src/Timezone.cpp \
-        src/GoToTime.cpp \
-        src/mainwindow.cpp \
-        src/tzportal.cpp \
-        src/tz20.cpp \
-        src/tz30.cpp \
-        src/tz40.cpp \
-        src/tz50.cpp \
-        src/tz60.cpp \
-        src/tz70.cpp \
-        src/tz80.cpp \
-        src/tz90.cpp \
-        src/tz00.cpp \
-        src/tzpresent.cpp \
-        src/tz00widget.cpp \
-        src/tz20widget.cpp \
-        src/tz30widget.cpp \
-        src/tz40widget.cpp \
-        src/tz50widget.cpp \
-        src/tz60widget.cpp \
-        src/tz70widget.cpp \
-        src/tz80widget.cpp \
-        src/tz90widget.cpp \
-    src/tzportalwidget.cpp \
-    src/tzpresentwidget.cpp
+        Character.cpp \
+        item.cpp \
+        Timezone.cpp \
+        GoToTime.cpp \
+        mainwindow.cpp \
+        tzportal.cpp \
+        tz20.cpp \
+        tz30.cpp \
+        tz40.cpp \
+        tz50.cpp \
+        tz60.cpp \
+        tz70.cpp \
+        tz80.cpp \
+        tz90.cpp \
+        tz00.cpp \
+        tzpresent.cpp \
+        tz00widget.cpp \
+        tz20widget.cpp \
+        tz30widget.cpp \
+        tz40widget.cpp \
+        tz50widget.cpp \
+        tz60widget.cpp \
+        tz70widget.cpp \
+        tz80widget.cpp \
+        tz90widget.cpp \
+        tzportalwidget.cpp \
+        tzpresentwidget.cpp
 
 
 HEADERS  += \
-        include/Character.h \
-        include/item.h \
-        include/Timezone.h \
-        include/GoToTime.h \
-        include/mainwindow.h \
-        include/tzportal.h \
-        include/tz20.h \
-        include/tz30.h \
-        include/tz40.h \
-        include/tz50.h \
-        include/tz60.h \
-        include/tz70.h \
-        include/tz80.h \
-        include/tz90.h \
-        include/tz00.h \
-        include/tzpresent.h \
-        include/tz00widget.h \
-        include/tz20widget.h \
-        include/tz30widget.h \
-        include/tz40widget.h \
-        include/tz50widget.h \
-        include/tz60widget.h \
-        include/tz70widget.h \
-        include/tz80widget.h \
-        include/tz90widget.h \
-        include/tzportalwidget.h \
-        include/tzpresentwidget.h
+        Character.h \
+        item.h \
+        Timezone.h \
+        GoToTime.h \
+        mainwindow.h \
+        tzportal.h \
+        tz20.h \
+        tz30.h \
+        tz40.h \
+        tz50.h \
+        tz60.h \
+        tz70.h \
+        tz80.h \
+        tz90.h \
+        tz00.h \
+        tzpresent.h \
+        tz00widget.h \
+        tz20widget.h \
+        tz30widget.h \
+        tz40widget.h \
+        tz50widget.h \
+        tz60widget.h \
+        tz70widget.h \
+        tz80widget.h \
+        tz90widget.h \
+        tzportalwidget.h \
+        tzpresentwidget.h
 
 FORMS += \
-    forms/mainwindow.ui \
-    forms/tz60widget.ui \
-    forms/tz70widget.ui \
-    forms/tz80widget.ui \
-    forms/tzportalwidget.ui \
-    forms/tzpresentwidget.ui \
-    forms/tz50widget.ui \
-    forms/tz40widget.ui \
-    forms/tz30widget.ui \
-    forms/tz20widget.ui \
-    forms/tz00widget.ui \
-    forms/tz90widget.ui
+    mainwindow.ui \
+    tz60widget.ui \
+    tz70widget.ui \
+    tz80widget.ui \
+    tzportalwidget.ui \
+    tzpresentwidget.ui \
+    tz50widget.ui \
+    tz40widget.ui \
+    tz30widget.ui \
+    tz20widget.ui \
+    tz00widget.ui \
+    tz90widget.ui
 
 RESOURCES += \
     resources.qrc

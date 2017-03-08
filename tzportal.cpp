@@ -1,4 +1,4 @@
-#include "include/tzportal.h"
+#include "tzportal.h"
 
 bool TZPortal::canEnterRoom() {
     return true;

@@ -1,5 +1,5 @@
-#include "include/Timezone.h"
-#include "include/Command.h"
+#include "Timezone.h"
+#include "Command.h"
 
 
 Timezone::Timezone(QString description, QString path, QString mapPath) {

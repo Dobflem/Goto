@@ -7,8 +7,8 @@
 #include <QApplication>
 #include <QString>
 
-#include "include/GoToTime.h"
-#include "include/mainwindow.h"
+#include "GoToTime.h"
+#include "mainwindow.h"
 
 using namespace std;
 

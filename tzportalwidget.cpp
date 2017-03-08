@@ -1,4 +1,4 @@
-#include "include/tzportalwidget.h"
+#include "tzportalwidget.h"
 #include "ui_tzportalwidget.h"
 #include <QtGui>
 
