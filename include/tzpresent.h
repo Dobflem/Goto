@@ -1,5 +1,5 @@
 #include "Timezone.h"
-#include "tzPresentWidget.h"
+#include "tzpresentwidget.h"
 #include <QWidget>
 
 #ifndef TZPRESENT_H
@@ -9,10 +9,10 @@
 class TZPresent : public Timezone
 {
 public:
-    tzPresentWidget *widget;
+    tzpresentwidget *widget;
     TZPresent(QString description, QString image):Timezone(description, image)
     {
-        widget = new tzPresentWidget();
+        widget = new tzpresentwidget();
         // Don't need to do anything
     }
 

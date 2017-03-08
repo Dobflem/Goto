@@ -5,5 +5,6 @@ bool TZ50::canEnterRoom() {
 }
 
 QWidget* TZ50::getTimezoneWidget() {
+   cout << "getting 60 widget" << endl;
     return widget;
 }

@@ -1,10 +1,13 @@
 #include "include/tz40widget.h"
+#include "ui_tz40widget.h"
 #include <QtGui>
 
 
-tz40Widget::tz40Widget(QWidget *parent)
-    : QWidget(parent)
+tz40widget::tz40widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tz40widget)
 {
+    ui->setupUi(this);
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     timer->start(1000);
@@ -13,7 +16,11 @@ tz40Widget::tz40Widget(QWidget *parent)
     resize(200, 200);
 }
 
-void tz40Widget::paintEvent(QPaintEvent *)
+tz40widget::~tz40widget() {
+    delete ui;
+}
+
+void tz40widget::paintEvent(QPaintEvent *)
 {
     static const QPoint hourHand[3] = {
         QPoint(7, 8),

@@ -5,14 +5,13 @@
 #ifndef TZ00_H
 #define TZ00_H
 
-
 class TZ00 : public Timezone
 {
 public:
-    tz00Widget *widget;
+    tz00widget *widget;
     TZ00(QString description, QString image):Timezone(description, image)
     {
-        widget = new tz00Widget();
+        widget = new tz00widget();
         // Don't need to do anything
     }
 

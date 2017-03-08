@@ -1,14 +1,20 @@
 #include "include/tz20widget.h"
+#include "ui_tz20widget.h"
 #include <QtGui>
 
 
-tz20Widget::tz20Widget(QWidget *parent)
-    : QWidget(parent)
+tz20widget::tz20widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tz20widget)
 {
-    setWindowTitle(tr("20s"));
+    ui->setupUi(this);
 }
 
-void tz20Widget::paintEvent(QPaintEvent *)
+tz20widget::~tz20widget() {
+    delete ui;
+}
+
+/*void tz20widget::paintEvent(QPaintEvent *)
 {
     //paint here
-}
+}*/

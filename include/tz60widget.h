@@ -8,13 +8,25 @@
 #include <QPoint>
 
 
-class tz60Widget : public QWidget
+namespace Ui {
+class tz60widget;
+}
+
+class tz60widget : public QWidget
 {
     Q_OBJECT
 
 public:
-    tz60Widget(QWidget *parent = 0);
-    void paintEvent(QPaintEvent *event);
+    explicit tz60widget(QWidget *parent = 0);
+    ~tz60widget();
+    //void paintEvent(QPaintEvent *event);
+
+private slots:
+
+
+private:
+    Ui::tz60widget *ui;
 };
 
 #endif // TZ60WIDGET_H
+

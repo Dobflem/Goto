@@ -9,10 +9,10 @@
 class TZ70 : public Timezone
 {
 public:
-    tz70Widget *widget;
+    tz70widget *widget;
     TZ70(QString description, QString image):Timezone(description, image)
     {
-        widget = new tz70Widget();
+        widget = new tz70widget();
         // Don't need to do anything
     }
 

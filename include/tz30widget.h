@@ -8,13 +8,22 @@
 #include <QPoint>
 
 
-class tz30Widget : public QWidget
+namespace Ui {
+class tz30widget;
+}
+
+class tz30widget : public QWidget
 {
     Q_OBJECT
 
 public:
-    tz30Widget(QWidget *parent = 0);
-    void paintEvent(QPaintEvent *event);
+    explicit tz30widget(QWidget *parent = 0);
+    ~tz30widget();
+    //void paintEvent(QPaintEvent *event);
+
+private:
+    Ui::tz30widget *ui;
 };
 
 #endif // TZ30WIDGET_H
+

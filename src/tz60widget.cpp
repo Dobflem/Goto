@@ -1,14 +1,21 @@
 #include "include/tz60widget.h"
+#include "ui_tz60widget.h"
 #include <QtGui>
 
 
-tz60Widget::tz60Widget(QWidget *parent)
-    : QWidget(parent)
+tz60widget::tz60widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tz60widget)
 {
-    setWindowTitle(tr("60s"));
+    ui->setupUi(this);
 }
 
-void tz60Widget::paintEvent(QPaintEvent *)
+tz60widget::~tz60widget() {
+    delete ui;
+}
+
+
+/*void tz60widget::paintEvent(QPaintEvent *)
 {
     //paint here
-}
+}*/

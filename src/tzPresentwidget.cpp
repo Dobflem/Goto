@@ -1,14 +1,20 @@
-#include "include/tzPresentWidget.h"
+#include "include/tzpresentwidget.h"
+#include "ui_tzpresentwidget.h"
 #include <QtGui>
 
 
-tzPresentWidget::tzPresentWidget(QWidget *parent)
-    : QWidget(parent)
+tzpresentwidget::tzpresentwidget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tzpresentwidget)
 {
-    setWindowTitle(tr("Present"));
+    ui->setupUi(this);
 }
 
-void tzPresentWidget::paintEvent(QPaintEvent *)
+tzpresentwidget::~tzpresentwidget() {
+    delete ui;
+}
+
+/*void tzpresentwidget::paintEvent(QPaintEvent *)
 {
     //paint here
-}
+}*/

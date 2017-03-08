@@ -33,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
         this->createTimezones();
         this->setupSignalsAndSlots();
+
+        //ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
     }
 
 MainWindow::~MainWindow() {
@@ -108,16 +110,18 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
         // The super method always returns true
         if (tz->canEnterRoom()) {
 
-            //QString tp = QString::fromStdString("Time-Portal");
-            //if (this->currentTimezone->shortDescription() != tp) {
-                //ui->gridLayout->removeWidget(this->currentTimezone->getTimezoneWidget());
-            //}
+            //TODO: add deletion of widget in view before adding new widget
+            // currently not working
+            /*QWidget* wid = currentTimezone->getTimezoneWidget();
+            ui->gridLayout->removeWidget(wid);
+            delete wid;*/
 
             this->currentTimezone = tz;
-            this->setBackgroundImage(tz->getTZImage());
 
             //getTimezoneWidget is a virtual method
-            ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
+             ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
+
+
         } else {
             this->setInformationText("This room is currently locked. Please find token first.");
         }

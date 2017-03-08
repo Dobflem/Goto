@@ -1,14 +1,20 @@
 #include "include/tz00widget.h"
+#include "ui_tz00widget.h"
 #include <QtGui>
 
 
-tz00Widget::tz00Widget(QWidget *parent)
-    : QWidget(parent)
+tz00widget::tz00widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tz00widget)
 {
-    setWindowTitle(tr("00s"));
+    ui->setupUi(this);
 }
 
-void tz00Widget::paintEvent(QPaintEvent *)
+tz00widget::~tz00widget() {
+    delete ui;
+}
+
+/*void tz00widget::paintEvent(QPaintEvent *)
 {
     //paint here
-}
+}*/

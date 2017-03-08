@@ -1,14 +1,21 @@
 #include "include/tz90widget.h"
+#include "ui_tz90widget.h"
 #include <QtGui>
 
 
-tz90Widget::tz90Widget(QWidget *parent)
-    : QWidget(parent)
+tz90widget::tz90widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tz90widget)
 {
-    setWindowTitle(tr("90s"));
+    ui->setupUi(this);
 }
 
-void tz90Widget::paintEvent(QPaintEvent *)
+tz90widget::~tz90widget() {
+
+    delete ui;
+}
+
+/*void tz90widget::paintEvent(QPaintEvent *)
 {
     //paint here
-}
+}*/

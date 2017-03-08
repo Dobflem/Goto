@@ -202,17 +202,13 @@ border-color: #999999;</string>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>119</x>
-      <y>30</y>
-      <width>821</width>
-      <height>541</height>
+      <x>59</x>
+      <y>20</y>
+      <width>961</width>
+      <height>551</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QWidget" name="widget" native="true"/>
-     </item>
-    </layout>
+    <layout class="QGridLayout" name="gridLayout"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

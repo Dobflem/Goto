@@ -5,5 +5,6 @@ bool TZPresent::canEnterRoom() {
 }
 
 QWidget* TZPresent::getTimezoneWidget() {
+    cout << "getting present widget" << endl;
     return widget;
 }

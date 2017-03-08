@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <qstring.h>
 #include <QPixmap>
+#include <QWidget>
+#include <QLayoutItem>
 #include <iostream>
 #include "Timezone.h"
 

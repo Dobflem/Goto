@@ -1,14 +1,20 @@
 #include "include/tz80widget.h"
+#include "ui_tz80widget.h"
 #include <QtGui>
 
 
-tz80Widget::tz80Widget(QWidget *parent)
-    : QWidget(parent)
+tz80widget::tz80widget(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::tz80widget)
 {
-
+    ui->setupUi(this);
 }
 
-void tz80Widget::paintEvent(QPaintEvent *)
+tz80widget::~tz80widget() {
+    delete ui;
+}
+
+/*void tz80widget::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setBrush(QBrush(Qt::black));
@@ -17,4 +23,4 @@ void tz80Widget::paintEvent(QPaintEvent *)
         painter.rotate(30.0);
     }
     painter.save();
-}
+}*/

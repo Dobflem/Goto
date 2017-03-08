@@ -19,7 +19,6 @@ SOURCES  += \
         src/item.cpp \
         src/Timezone.cpp \
         src/GoToTime.cpp \
-        src/output.cpp \
         src/mainwindow.cpp \
         src/tzportal.cpp \
         src/tz20.cpp \
@@ -41,7 +40,8 @@ SOURCES  += \
         src/tz70widget.cpp \
         src/tz80widget.cpp \
         src/tz90widget.cpp \
-        src/tzPresentwidget.cpp
+    src/tzportalwidget.cpp \
+    src/tzpresentwidget.cpp
 
 
 HEADERS  += \
@@ -49,7 +49,6 @@ HEADERS  += \
         include/item.h \
         include/Timezone.h \
         include/GoToTime.h \
-        include/output.h \
         include/mainwindow.h \
         include/tzportal.h \
         include/tz20.h \
@@ -71,21 +70,24 @@ HEADERS  += \
         include/tz70widget.h \
         include/tz80widget.h \
         include/tz90widget.h \
-        include/tzPresentWidget.h
+        include/tzportalwidget.h \
+        include/tzpresentwidget.h
 
 FORMS += \
     forms/mainwindow.ui \
-    forms/tz00s.ui \
-    forms/tz20s.ui \
-    forms/tz30s.ui \
-    forms/tz40s.ui \
-    forms/tz50s.ui \
-    forms/tz60s.ui \
-    forms/tz70s.ui \
-    forms/tz80s.ui \
-    forms/tz90s.ui \
-    forms/tzPresent.ui
+    forms/tz60widget.ui \
+    forms/tz70widget.ui \
+    forms/tz80widget.ui \
+    forms/tzportalwidget.ui \
+    forms/tzpresentwidget.ui \
+    forms/tz50widget.ui \
+    forms/tz40widget.ui \
+    forms/tz30widget.ui \
+    forms/tz20widget.ui \
+    forms/tz00widget.ui \
+    forms/tz90widget.ui
 
 RESOURCES += \
     resources.qrc
+
 
