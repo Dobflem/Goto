@@ -12,5 +12,15 @@
 		<file>Resources/noughties.jpg</file>
 		<file>Resources/today.jpg</file>
 		<file>Resources/map.png</file>
+		<file>Resources/map-20s.png</file>
+		<file>Resources/map-30s.png</file>
+		<file>Resources/map-40s.png</file>
+		<file>Resources/map-50s.png</file>
+		<file>Resources/map-60s.png</file>
+		<file>Resources/map-70s.png</file>
+		<file>Resources/map-80s.png</file>
+		<file>Resources/map-90s.png</file>
+		<file>Resources/map-00s.png</file>
+		<file>Resources/map-present.png</file>
     </qresource>
 </RCC>

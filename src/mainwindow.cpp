@@ -54,17 +54,17 @@ MainWindow::~MainWindow() {
 
 void MainWindow::createTimezones()  {
 
-    this->tzPortal = new TZPortal("Time-Portal", "portal.jpg");
-    this->tz20s = new TZ20("Twenties", "twenties.jpg");
-    this->tz30s = new TZ30("Thirties", "thirties.jpg");
-    this->tz40s = new TZ40("Fourties", "fourties.jpg");
-    this->tz50s = new TZ50("Fifties", "fifties.jpg");
-    this->tz60s = new TZ60("Sixties", "sixties.png");
-    this->tz70s = new TZ70("Seventies", "seventies.jpg");
-    this->tz80s = new TZ80("Eighties", "eighties.jpg");
-    this->tz90s = new TZ90("Nineties", "nineties.jpg");
-    this->tz00s = new TZ00("Noughties", "noughties.jpg");
-    this->tzPresent = new TZPresent("Present Day", "today.jpg");
+    this->tzPortal = new TZPortal("Time-Portal", "portal.jpg", "map.png");
+    this->tz20s = new TZ20("Twenties", "twenties.jpg", "map-20s.png");
+    this->tz30s = new TZ30("Thirties", "thirties.jpg", "map-30s.png");
+    this->tz40s = new TZ40("Fourties", "fourties.jpg", "map-40s.png");
+    this->tz50s = new TZ50("Fifties", "fifties.jpg", "map-50s.png");
+    this->tz60s = new TZ60("Sixties", "sixties.png", "map-60s.png");
+    this->tz70s = new TZ70("Seventies", "seventies.jpg", "map-70s.png");
+    this->tz80s = new TZ80("Eighties", "eighties.jpg", "map-80s.png");
+    this->tz90s = new TZ90("Nineties", "nineties.jpg", "map-90s.png");
+    this->tz00s = new TZ00("Noughties", "noughties.jpg", "map-00s.png");
+    this->tzPresent = new TZPresent("Present Day", "today.jpg", "map-present.png");
 
     // (N, E, S, W)
     this->tzPortal->setExits(tz60s, tz20s, tz80s, tz00s);
@@ -119,13 +119,20 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
             this->currentTimezone = tz;
 
             //getTimezoneWidget is a virtual method
-             ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
 
+             ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
+             setMapImage(currentTimezone->getMapPath());
 
         } else {
             this->setInformationText("This room is currently locked. Please find token first.");
         }
     }
+}
+
+void MainWindow::setMapImage(QString mapImage) {
+    QString resource = ":Resources/" + mapImage;
+    QPixmap image(resource);
+    ui->map_label->setPixmap(image);
 }
 
 void MainWindow::setBackgroundImage(QString fileName) {
@@ -144,12 +151,6 @@ void MainWindow::setInformationText(QString txt) {
         ui->txtInfo->repaint();
         QThread::msleep(16);
     }
-}
-
-void MainWindow::setMapImage(QString mapImage) {
-    QString qstr = ":Resources/" + mapImage;
-    QPixmap pix(qstr);
-    ui->map_label->setPixmap(pix);
 }
 
 void MainWindow::setupSignalsAndSlots() {

@@ -17,13 +17,14 @@ class Timezone {
 private:
     QString description;
     QString imagePath;
+    QString mapPath;
     QString exitString();
 
     map<string, Timezone*> exits;
     vector <Item> itemsInTimezone;
 
 public:
-    Timezone(QString description, QString path);
+    Timezone(QString description, QString path, QString mapPath);
 
     Timezone* getNorthTimezone();
     Timezone* getSouthTimezone();
@@ -44,6 +45,7 @@ public:
     // GETTERS
     QString getTZImage();
     QString getImagePath();
+    QString getMapPath();
 
     // VIRTUAL METHODS
     virtual ~Timezone() {}

@@ -9,7 +9,7 @@ class TZPortal: public Timezone
 {
 public:
     tzportalwidget *widget;
-    TZPortal(QString description, QString image):Timezone(description, image)
+    TZPortal(QString description, QString image, QString mapImage):Timezone(description, image, mapImage)
     {
         widget = new tzportalwidget();
         // Don't need to do anything

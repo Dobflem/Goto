@@ -2,13 +2,18 @@
 #include "include/Command.h"
 
 
-Timezone::Timezone(QString description, QString path) {
+Timezone::Timezone(QString description, QString path, QString mapPath) {
 	this->description = description;
     this->imagePath = path;
+    this->mapPath = mapPath;
 }
 
 QString Timezone::getTZImage() {
     return this->imagePath;
+}
+
+QString Timezone::getMapPath() {
+    return this->mapPath;
 }
 
 void Timezone::setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west) {
