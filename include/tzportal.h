@@ -1,5 +1,5 @@
 #include "Timezone.h"
-#include "tzPortalwidget.h"
+#include "tzportalwidget.h"
 #include <QWidget>
 
 #ifndef TZPORTAL_H
