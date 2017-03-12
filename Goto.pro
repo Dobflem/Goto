@@ -41,7 +41,9 @@ SOURCES  += \
         tz80widget.cpp \
         tz90widget.cpp \
         tzportalwidget.cpp \
-        tzpresentwidget.cpp
+        tzpresentwidget.cpp \
+    dragwidget.cpp \
+    backpack.cpp
 
 
 HEADERS  += \
@@ -71,7 +73,9 @@ HEADERS  += \
         tz80widget.h \
         tz90widget.h \
         tzportalwidget.h \
-        tzpresentwidget.h
+        tzpresentwidget.h \
+    dragwidget.h \
+    backpack.h
 
 FORMS += \
     mainwindow.ui \

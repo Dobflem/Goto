@@ -1,26 +1,26 @@
 <RCC>
     <qresource prefix="/">
-		<file>Resources/portal.jpg</file>
-		<file>Resources/twenties.jpg</file>
-		<file>Resources/thirties.jpg</file>
-		<file>Resources/fourties.jpg</file>
-		<file>Resources/fifties.jpg</file>
-		<file>Resources/sixties.png</file>
-		<file>Resources/seventies.jpg</file>
+        <file>Resources/portal.jpg</file>
+        <file>Resources/twenties.jpg</file>
+        <file>Resources/thirties.jpg</file>
+        <file>Resources/fourties.jpg</file>
+        <file>Resources/fifties.jpg</file>
+        <file>Resources/sixties.png</file>
+        <file>Resources/seventies.jpg</file>
         <file>Resources/eighties.jpg</file>
         <file>Resources/nineties.jpg</file>
-		<file>Resources/noughties.jpg</file>
-		<file>Resources/today.jpg</file>
-		<file>Resources/map.png</file>
-		<file>Resources/map-20s.png</file>
-		<file>Resources/map-30s.png</file>
-		<file>Resources/map-40s.png</file>
-		<file>Resources/map-50s.png</file>
-		<file>Resources/map-60s.png</file>
-		<file>Resources/map-70s.png</file>
-		<file>Resources/map-80s.png</file>
-		<file>Resources/map-90s.png</file>
-		<file>Resources/map-00s.png</file>
-		<file>Resources/map-present.png</file>
+        <file>Resources/noughties.jpg</file>
+        <file>Resources/today.jpg</file>
+        <file>Resources/map.png</file>
+        <file>Resources/map-20s.png</file>
+        <file>Resources/map-30s.png</file>
+        <file>Resources/map-40s.png</file>
+        <file>Resources/map-50s.png</file>
+        <file>Resources/map-60s.png</file>
+        <file>Resources/map-70s.png</file>
+        <file>Resources/map-80s.png</file>
+        <file>Resources/map-90s.png</file>
+        <file>Resources/map-00s.png</file>
+        <file>Resources/map-present.png</file>
     </qresource>
 </RCC>

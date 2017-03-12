@@ -8,6 +8,7 @@
 
 #include <QString>
 #include <QWidget>
+#include "backpack.h"
 
 using namespace std;
 using std::vector;
@@ -22,6 +23,7 @@ private:
 
     map<string, Timezone*> exits;
     vector <Item> itemsInTimezone;
+    Backpack *backpack;
 
 public:
     Timezone(QString description, QString path, QString mapPath);
@@ -31,9 +33,12 @@ public:
     Timezone* getEastTimezone();
     Timezone* getWestTimezone();
 
+
+    void leave();
     void addItem(Item *inItem);
     void removeItemFromTimezone(int location);
     void setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west);
+    void enter(Backpack *b);
 
     int numberOfItems();
     int isItemInTimezone(string inString);
@@ -49,7 +54,7 @@ public:
 
     // VIRTUAL METHODS
     virtual ~Timezone() {}
-    virtual bool canEnterRoom() { return true; }
+    virtual bool canEnterRoom(Backpack *b = NULL) { return true; }
     virtual QWidget* getTimezoneWidget() {
        //currently returning empty widget as default.
        //This needs to be changed

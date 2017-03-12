@@ -43,9 +43,16 @@ Timezone* Timezone::getWestTimezone() {
     return this->exits["west"];
 }
 
-
 QString Timezone::shortDescription() {
     return description;
+}
+
+void Timezone::enter(Backpack *b) {
+    this->backpack = b;
+}
+
+void Timezone::leave() {
+    this->backpack = NULL;
 }
 
 /*

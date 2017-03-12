@@ -16,21 +16,8 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="../resources.qrc">:/Resources/fourties.jpg</pixmap>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <layout class="QHBoxLayout" name="horizontalLayout"/>
  </widget>
- <resources>
-  <include location="../resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

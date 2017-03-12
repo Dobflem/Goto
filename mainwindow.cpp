@@ -5,6 +5,7 @@
 #include <QPixmap>
 #include <QString>
 #include <QThread>
+#include <QDebug>
 
 #include "GoToTime.h"
 #include "tzportal.h"
@@ -31,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->eastButton->setArrowType(Qt::RightArrow);
         ui->westButton->setArrowType(Qt::LeftArrow);
 
+        this->backpack = new Backpack();
+
         this->createTimezones();
         this->setupSignalsAndSlots();
 
@@ -49,6 +52,7 @@ MainWindow::~MainWindow() {
     delete this->tz90s;
     delete this->tz00s;
     delete this->tzPresent;
+    delete this->backpack;
     delete ui;
 }
 
@@ -110,18 +114,22 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
         // The super method always returns true
         if (tz->canEnterRoom()) {
 
-            //TODO: add deletion of widget in view before adding new widget
-            // currently not working
-            /*QWidget* wid = currentTimezone->getTimezoneWidget();
-            ui->gridLayout->removeWidget(wid);
-            delete wid;*/
-
+            // Remove the current widget so multiple don't show
+            if (this->currentTZWidget != NULL) {
+                ui->gridLayout->removeWidget(this->currentTZWidget);
+            }
+            // Need to store the current timezone so the signals know which slots to call
+            this->currentTimezone->leave();
             this->currentTimezone = tz;
-
-            //getTimezoneWidget is a virtual method
-
-             ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
-             setMapImage(currentTimezone->getMapPath());
+            this->currentTimezone->enter(this->backpack);
+            // Set up the Widgets
+            this->currentTZWidget = this->currentTimezone->getTimezoneWidget();
+            ui->gridLayout->addWidget(this->currentTZWidget);
+            // Make sure we call raise or else it will not be brought to front.
+            this->currentTZWidget->raise();
+            // Setup the map image
+            // We don't need to store this because we don't reference it anywhere else
+            this->setMapImage(this->currentTimezone->getMapPath());
 
         } else {
             this->setInformationText("This room is currently locked. Please find token first.");
@@ -149,6 +157,7 @@ void MainWindow::setInformationText(QString txt) {
         // This means if we don't add a repaint
         // the text box won't update until outside the loop.
         ui->txtInfo->repaint();
+        // We wait 16ms for that SLICK text effect.
         QThread::msleep(16);
     }
 }

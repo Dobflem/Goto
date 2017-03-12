@@ -3,28 +3,18 @@
 
 #include <map>
 #include <string>
+#include <QString>
 #include <iostream>
 using namespace std;
 
 class Item {
 private:
-	string description;
-	string longDescription;
-	int weightGrams;
-	float value;
-	bool weaponCheck;
+    QString description;
+    int ID;
 
 public:
-    Item (string description, int inWeight, float inValue);
-    Item (string description);
-	string getShortDescription();
-    string getLongDescription();
-	int getWeight();
-	void setWeight(int weightGrams);
-	float getValue();
-	void setValue(float value);
-	int getWeaponCheck();
-	void setWeaponCheck(int weaponCheck);
+    Item(int id, QString desc);
+    int getID();
 };
 
 #endif /*ITEM_H_*/
