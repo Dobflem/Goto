@@ -88,6 +88,5 @@ FORMS += \
     tz90widget.ui
 
 RESOURCES += \
-    resources.qrc
-
+    resources.qrc \
 
