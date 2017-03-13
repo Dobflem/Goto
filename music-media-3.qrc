@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+		<file>Resources/1940-swing.mp3</file>
+		<file>Resources/creepy-buildup.mp3</file>
+		<file>Resources/boots.mp3</file>
+    </qresource>
+</RCC>

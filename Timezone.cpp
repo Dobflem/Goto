@@ -2,10 +2,11 @@
 #include "Command.h"
 
 
-Timezone::Timezone(QString description, QString path, QString mapPath) {
+Timezone::Timezone(QString description, QString path, QString mapPath, QString musicPath) {
 	this->description = description;
     this->imagePath = path;
     this->mapPath = mapPath;
+    this->musicPath = musicPath;
 }
 
 QString Timezone::getTZImage() {
@@ -14,6 +15,10 @@ QString Timezone::getTZImage() {
 
 QString Timezone::getMapPath() {
     return this->mapPath;
+}
+
+QString Timezone::getMusicPath() {
+    return this->musicPath;
 }
 
 void Timezone::setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west) {

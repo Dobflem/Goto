@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/take-on-me.mp3</file>
+        <file>Resources/roaring-20s.mp3</file>
+		<file>Resources/sci-fi.mp3</file>
+		<file>Resources/dancing-queen.mp3</file>
+    </qresource>
+</RCC>

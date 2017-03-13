@@ -10,7 +10,7 @@ class TZ60 : public Timezone
 {
 public:
     tz60widget *widget;
-    TZ60(QString description, QString image, QString mapImage):Timezone(description, image, mapImage)
+    TZ60():Timezone("Sixties", "sixties.png", "map-60s.png", "boots.mp3")
     {
         widget = new tz60widget();
         // Don't need to do anything

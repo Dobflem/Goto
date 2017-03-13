@@ -10,7 +10,7 @@ class TZ80 : public Timezone
 {
 public:
     tz80widget *widget;
-    TZ80(QString description, QString image, QString mapImage):Timezone(description, image, mapImage)
+    TZ80():Timezone("Eighties", "eighties.jpg", "map-80s.png", "take-on-me.mp3")
     {
         widget = new tz80widget();
         // Don't need to do anything

@@ -19,14 +19,14 @@ private:
     QString description;
     QString imagePath;
     QString mapPath;
-    QString exitString();
+    QString musicPath;
 
     map<string, Timezone*> exits;
     vector <Item> itemsInTimezone;
     Backpack *backpack;
 
 public:
-    Timezone(QString description, QString path, QString mapPath);
+    Timezone(QString description, QString path, QString mapPath, QString musicPath);
 
     Timezone* getNorthTimezone();
     Timezone* getSouthTimezone();
@@ -51,6 +51,7 @@ public:
     QString getTZImage();
     QString getImagePath();
     QString getMapPath();
+    QString getMusicPath();
 
     // VIRTUAL METHODS
     virtual ~Timezone() {}

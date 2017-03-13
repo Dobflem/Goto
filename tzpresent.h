@@ -10,7 +10,7 @@ class TZPresent : public Timezone
 {
 public:
     tzpresentwidget *widget;
-    TZPresent(QString description, QString image, QString mapImage):Timezone(description, image, mapImage)
+    TZPresent():Timezone("Present Day", "today.jpg", "map-present.png", "creepy-buildup.mp3")
     {
         widget = new tzpresentwidget();
         // Don't need to do anything

@@ -33,11 +33,10 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->westButton->setArrowType(Qt::LeftArrow);
 
         this->backpack = new Backpack();
+        this->music = new QMediaPlayer();
 
         this->createTimezones();
         this->setupSignalsAndSlots();
-
-        //ui->gridLayout->addWidget(currentTimezone->getTimezoneWidget());
     }
 
 MainWindow::~MainWindow() {
@@ -53,22 +52,23 @@ MainWindow::~MainWindow() {
     delete this->tz00s;
     delete this->tzPresent;
     delete this->backpack;
+    delete this->music;
     delete ui;
 }
 
 void MainWindow::createTimezones()  {
 
-    this->tzPortal = new TZPortal("Time-Portal", "portal.jpg", "map.png");
-    this->tz20s = new TZ20("Twenties", "twenties.jpg", "map-20s.png");
-    this->tz30s = new TZ30("Thirties", "thirties.jpg", "map-30s.png");
-    this->tz40s = new TZ40("Fourties", "fourties.jpg", "map-40s.png");
-    this->tz50s = new TZ50("Fifties", "fifties.jpg", "map-50s.png");
-    this->tz60s = new TZ60("Sixties", "sixties.png", "map-60s.png");
-    this->tz70s = new TZ70("Seventies", "seventies.jpg", "map-70s.png");
-    this->tz80s = new TZ80("Eighties", "eighties.jpg", "map-80s.png");
-    this->tz90s = new TZ90("Nineties", "nineties.jpg", "map-90s.png");
-    this->tz00s = new TZ00("Noughties", "noughties.jpg", "map-00s.png");
-    this->tzPresent = new TZPresent("Present Day", "today.jpg", "map-present.png");
+    this->tzPortal = new TZPortal();
+    this->tz20s = new TZ20();
+    this->tz30s = new TZ30();
+    this->tz40s = new TZ40();
+    this->tz50s = new TZ50();
+    this->tz60s = new TZ60();
+    this->tz70s = new TZ70();
+    this->tz80s = new TZ80();
+    this->tz90s = new TZ90();
+    this->tz00s = new TZ00();
+    this->tzPresent = new TZPresent();
 
     // (N, E, S, W)
     this->tzPortal->setExits(tz60s, tz20s, tz80s, tz00s);
@@ -113,7 +113,6 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
         // This is a VIRTUAL method
         // The super method always returns true
         if (tz->canEnterRoom()) {
-
             // Remove the current widget so multiple don't show
             if (this->currentTZWidget != NULL) {
                 ui->gridLayout->removeWidget(this->currentTZWidget);
@@ -131,10 +130,19 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
             // We don't need to store this because we don't reference it anywhere else
             this->setMapImage(this->currentTimezone->getMapPath());
 
+            this->changeSong();
+
         } else {
             this->setInformationText("This room is currently locked. Please find token first.");
         }
     }
+}
+
+void MainWindow::changeSong() {
+    QString resource = "qrc:Resources/" + this->currentTimezone->getMusicPath();
+    music->setMedia(QUrl(resource));
+    music->setVolume(7);
+    music->play();
 }
 
 void MainWindow::setMapImage(QString mapImage) {
