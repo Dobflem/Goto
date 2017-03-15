@@ -3,17 +3,20 @@
 
 #include "item.h"
 #include "vector"
+#include "list.h"
 
 class Backpack
 {
 public:
     Backpack();
-    void addItem(Item i);
+    ~Backpack();
+    void addItem(Item *i);
     Item *getItem(int id);
     bool hasItem(int id);
 
 private:
-    vector<Item> items;
+    List<Item> *items;
+    // vector<Item> items;
 };
 
 #endif // BACKPACK_H
