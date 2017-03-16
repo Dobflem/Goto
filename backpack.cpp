@@ -12,7 +12,6 @@ Backpack::~Backpack() {
 }
 
 void Backpack::addItem(Item *i) {
-    cout << "adding to backpack item: " << i->getDescription().toStdString() << endl;
     items->add(i);
     // items.push_back(i);
 }
@@ -26,22 +25,12 @@ Item *Backpack::getItem(int id) {
 }
 
 bool Backpack::hasItem(int id) {
-    cout << "in hasItem" << endl;
-
-   // this method is crashing here - needs to be fixed
 
     for(items->start(); items->currentItem != NULL; items->next()) {
-        cout << "here" << endl;
         if (items->currentItem->getID() == id) {
             cout << items->currentItem->getDescription().toStdString() << endl;
 
             return true;
         }
     } return false;
-
-    /*
-    for(vector<Item>::size_type i = 0; i != items.size(); i++) {
-        if(id == items[i].getID()) return true;
-    } return false;
-    */
 }

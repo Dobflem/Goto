@@ -5,7 +5,7 @@
     #-------------------------------------------------
 
     QT       += core gui
-    QT       += multimedia
+    # QT       += multimedia
 
     CONFIG += console
 
@@ -44,7 +44,8 @@
             tzportalwidget.cpp \
             tzpresentwidget.cpp \
             backpack.cpp \
-            infomessage.cpp
+            infomessage.cpp \
+    clickablelabel.cpp
 
 
     HEADERS  += \
@@ -77,7 +78,8 @@
             tzpresentwidget.h \
             backpack.h \
             list.h \
-            infomessage.h
+            infomessage.h \
+    clickablelabel.h
 
     FORMS += \
         mainwindow.ui \

@@ -22,7 +22,7 @@ public:
     void setMessage(QString message);
 
 signals:
-    valueChanged();
+    void valueChanged(QString);
 };
 
 

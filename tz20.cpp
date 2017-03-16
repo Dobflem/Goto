@@ -2,9 +2,7 @@
 
 bool TZ20::canEnterRoom(Backpack *b) {
     //hasItem method not working
-    //return (b->hasItem(20));
-
-    return true;
+    return (b->hasItem(20));
 }
 
 QWidget* TZ20::getTimezoneWidget() {

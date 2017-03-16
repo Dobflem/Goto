@@ -6,7 +6,7 @@
 #include <QWidget>
 #include <QLayoutItem>
 #include <iostream>
-#include <QtMultimedia/QMediaPlayer>
+// #include <QtMultimedia/QMediaPlayer>
 #include <QFileInfo>
 #include "Timezone.h"
 #include "backpack.h"
@@ -27,7 +27,7 @@ public:
     ~MainWindow();
 
 public slots:
-    void setInfoText();
+    void setInfoText(QString);
 
 private slots:
     void moveNorth();
@@ -40,12 +40,12 @@ private:
     Timezone *currentTimezone, *tzPortal, *tz20s, *tz30s, *tz40s, *tz50s, *tz60s, *tz70s, *tz80s, *tz90s, *tz00s, *tzPresent;
     QWidget *currentTZWidget;
     Backpack *backpack;
-    QMediaPlayer* music;
+    // QMediaPlayer* music;
 
     void createTimezones();
     void goTimezone(QString direction);
     void setupSignalsAndSlots();
-    void changeSong();
+    // void changeSong();
     void setTimezoneExits();
     void addTokensToRooms();
 

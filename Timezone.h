@@ -7,6 +7,7 @@
 #define TIMEZONE_H_
 
 #include <QString>
+#include <QDebug>
 #include <QWidget>
 #include "backpack.h"
 #include "infomessage.h"
@@ -35,7 +36,6 @@ public:
     Timezone* getEastTimezone();
     Timezone* getWestTimezone();
 
-    void leave();
     void addItem(Item *inItem);
     void removeItemFromTimezone(int location);
     void setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west);
@@ -56,9 +56,17 @@ public:
 
     // VIRTUAL METHODS
     virtual QString getInfoText() { return NULL; }
-    virtual void enter(Backpack *b) { this->setBackpack(b); }
+    virtual void enter(Backpack *b) {
+        this->setBackpack(b);
+    }
     virtual ~Timezone() {}
-    virtual bool canEnterRoom(Backpack *b = NULL) { return true; }
+    virtual bool canEnterRoom(Backpack *b) {
+        if(b != NULL) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     virtual QWidget* getTimezoneWidget() {
        //currently returning empty widget as default.
        //This needs to be changed
@@ -68,6 +76,7 @@ public:
         return def;
     }
 
+    virtual void leave() {}
     //virtual QWidget* getTimezoneWidget() = 0;
 };
 

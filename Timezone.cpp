@@ -57,18 +57,15 @@ Timezone* Timezone::getWestTimezone() {
     return this->exits["west"];
 }
 
-
-/*void Timezone::enter(Backpack *b) {
-    this->backpack = b;
-}*/
-
 void Timezone::setBackpack(Backpack *b) {
     this->backpack = b;
 }
 
+/*
 void Timezone::leave() {
-    this->backpack = NULL;
+    // this->backpack = NULL;
 }
+*/
 
 void Timezone::addItem(Item *inItem) {
     itemsInTimezone.push_back(*inItem);

@@ -33,13 +33,13 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->westButton->setArrowType(Qt::LeftArrow);
 
         this->backpack = new Backpack();
-        this->music = new QMediaPlayer();
+        this->backpack->addItem(new Item(20, "20s timezone token."));
+        // this->music = new QMediaPlayer();
 
         this->createTimezones();
         this->setTimezoneExits();
         this->addTokensToRooms();
         this->setCurrentTimezone(tzPortal);
-        this->backpack->addItem(new Item(20, "20s timezone token"));
         this->setupSignalsAndSlots();
     }
 
@@ -56,7 +56,7 @@ MainWindow::~MainWindow() {
     delete this->tz00s;
     delete this->tzPresent;
     delete this->backpack;
-    delete this->music;
+    // delete this->music;
     delete ui;
 }
 
@@ -121,13 +121,8 @@ void MainWindow::moveWest() {
     this->setCurrentTimezone(tz);
 }
 
-void MainWindow::setInfoText() {
-
-
-    QString txt = this->currentTimezone->getInfoMessage()->getMessage();
-
-    cout << "in setInfoText in mainWindow.cpp. Msg: " << txt.toStdString() << endl;
-
+void MainWindow::setInfoText(QString txt) {
+    // QString txt = this->currentTimezone->getInfoMessage()->getMessage();
     for (int i = 1; i <= txt.length(); i++) {
         ui->txtInfo->setText(txt.left(i));
         // Have to manually call repaint
@@ -146,15 +141,18 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
         // Check if we can enter the room
         // This is a VIRTUAL method
         // The super method always returns true
-        if (tz->canEnterRoom()) {
-
+        if (tz->canEnterRoom(this->backpack)) {
 
             // Remove the current widget so multiple don't show
             if (this->currentTZWidget != NULL) {
                 ui->gridLayout->removeWidget(this->currentTZWidget);
             }
+
             // Need to store the current timezone so the signals know which slots to call
-            this->currentTimezone->leave();
+            if (this->currentTimezone != NULL) {
+                this->currentTimezone->leave();
+            }
+
             this->currentTimezone = tz;
 
             // Setup the map image
@@ -169,23 +167,24 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
             this->currentTZWidget->raise();
 
             // Change the music to the current timezone track
-            this->changeSong();
+            // this->changeSong();
 
             this->currentTimezone->enter(this->backpack);
 
         } else {
-            cout << "Can not enter room " << tz->getDescription().toStdString() << endl;
             this->currentTimezone->getInfoMessage()->setMessage(tz->getDescription().append(" is currently locked. Please find token first."));
         }
     }
 }
 
+/*
 void MainWindow::changeSong() {
     QString resource = "qrc:Resources/" + this->currentTimezone->getMusicPath();
     music->setMedia(QUrl(resource));
     music->setVolume(7);
     music->play();
 }
+*/
 
 void MainWindow::setMapImage(QString mapImage) {
     QString resource = ":Resources/" + mapImage;
@@ -199,36 +198,21 @@ void MainWindow::setBackgroundImage(QString fileName) {
     ui->tzImage->setPixmap(image);
 }
 
-/*
-void MainWindow::setInformationText(QString txt) {
-    cout << "outputting text" << endl;
-    for (int i = 1; i <= txt.length(); i++) {
-        ui->txtInfo->setText(txt.left(i));
-        // Have to manually call repaint
-        // Qt does a smart refresh to stop flickering
-        // This means if we don't add a repaint
-        // the text box won't update until outside the loop.
-        ui->txtInfo->repaint();
-        // We wait 16ms for that SLICK text effect.
-        QThread::msleep(16);
-    }
-}*/
-
 void MainWindow::setupSignalsAndSlots() {
     QObject::connect(ui->northButton, SIGNAL(clicked(bool)), this, SLOT(moveNorth()));
     QObject::connect(ui->southButton, SIGNAL(clicked(bool)), this, SLOT(moveSouth()));
     QObject::connect(ui->eastButton, SIGNAL(clicked(bool)), this, SLOT(moveEast()));
     QObject::connect(ui->westButton, SIGNAL(clicked(bool)), this, SLOT(moveWest()));
 
-    QObject::connect(this->tz20s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz30s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz40s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz50s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz60s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz70s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz80s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz90s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tz00s->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tzPortal->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
-    QObject::connect(this->tzPresent->getInfoMessage(), SIGNAL(valueChanged()), this, SLOT(setInfoText()));
+    QObject::connect(this->tz20s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz30s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz40s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz50s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz60s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz70s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz80s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz90s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tz00s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tzPortal->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+    QObject::connect(this->tzPresent->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
 }

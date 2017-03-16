@@ -1,6 +1,7 @@
 #include "tz30widget.h"
 #include "ui_tz30widget.h"
 #include <QtGui>
+#include <QLabel>
 
 
 tz30widget::tz30widget(QWidget *parent) :
@@ -14,7 +15,6 @@ tz30widget::~tz30widget() {
     delete ui;
 }
 
-/*void tz30widget::paintEvent(QPaintEvent *)
-{
-    //paint here
-}*/
+ClickableLabel *tz30widget::getCapone() {
+    return ui->capone;
+}

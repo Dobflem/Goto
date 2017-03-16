@@ -18,13 +18,45 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources.qrc">:/Resources/thirties.jpg</pixmap>
-     </property>
+    <widget class="QStackedWidget" name="stack">
+     <widget class="QWidget" name="page">
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>-10</y>
+         <width>1024</width>
+         <height>599</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/thirties.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="ClickableLabel" name="capone">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>210</y>
+         <width>71</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/capone.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2"/>
     </widget>
    </item>
   </layout>

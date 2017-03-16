@@ -22,5 +22,6 @@
         <file>Resources/map-90s.png</file>
         <file>Resources/map-00s.png</file>
         <file>Resources/map-present.png</file>
+        <file>Resources/capone.jpg</file>
     </qresource>
 </RCC>
