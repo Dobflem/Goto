@@ -43,7 +43,8 @@
             tz90widget.cpp \
             tzportalwidget.cpp \
             tzpresentwidget.cpp \
-            backpack.cpp
+            backpack.cpp \
+            infomessage.cpp
 
 
     HEADERS  += \
@@ -75,7 +76,8 @@
             tzportalwidget.h \
             tzpresentwidget.h \
             backpack.h \
-            list.h
+            list.h \
+            infomessage.h
 
     FORMS += \
         mainwindow.ui \

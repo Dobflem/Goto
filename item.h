@@ -15,6 +15,7 @@ private:
 public:
     Item(int id, QString desc);
     int getID();
+    QString getDescription();
 };
 
 #endif /*ITEM_H_*/

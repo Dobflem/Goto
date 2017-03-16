@@ -10,6 +10,7 @@
 #include <QFileInfo>
 #include "Timezone.h"
 #include "backpack.h"
+#include "infomessage.h"
 
 using namespace std;
 
@@ -24,6 +25,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+public slots:
+    void setInfoText();
 
 private slots:
     void moveNorth();
@@ -42,6 +46,8 @@ private:
     void goTimezone(QString direction);
     void setupSignalsAndSlots();
     void changeSong();
+    void setTimezoneExits();
+    void addTokensToRooms();
 
     // GETTERS
     Timezone getCurrentTimezone();
@@ -51,6 +57,7 @@ private:
     void setCurrentTimezone(Timezone *tz);
     void setInformationText(QString txt);
     void setMapImage(QString mapImage);
+
 };
 
 #endif // MAINWINDOW_H

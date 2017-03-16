@@ -8,3 +8,7 @@ Item::Item(int id, QString desc) {
 int Item::getID() {
     return this->ID;
 }
+
+QString Item::getDescription() {
+    return this->description;
+}

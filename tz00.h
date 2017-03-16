@@ -7,6 +7,8 @@
 
 class TZ00 : public Timezone
 {
+private:
+
 public:
     tz00widget *widget;
     TZ00():Timezone("Noughties", "noughties.jpg", "map-00s.png", "where-is-the-love.mp3")
@@ -16,6 +18,7 @@ public:
         // Don't need to do anything
     }
 
+    void enter(Backpack* b);
     bool canEnterRoom();
     QWidget* getTimezoneWidget();
 };

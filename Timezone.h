@@ -9,6 +9,7 @@
 #include <QString>
 #include <QWidget>
 #include "backpack.h"
+#include "infomessage.h"
 
 using namespace std;
 using std::vector;
@@ -24,6 +25,7 @@ private:
     map<string, Timezone*> exits;
     vector <Item> itemsInTimezone;
     Backpack *backpack;
+    InfoMessage* infoMessage;
 
 public:
     Timezone(QString description, QString path, QString mapPath, QString musicPath);
@@ -33,27 +35,28 @@ public:
     Timezone* getEastTimezone();
     Timezone* getWestTimezone();
 
-
     void leave();
     void addItem(Item *inItem);
     void removeItemFromTimezone(int location);
     void setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west);
-    void enter(Backpack *b);
-
+    bool isItemInTimezone(int itemId);
     int numberOfItems();
-    int isItemInTimezone(string inString);
 
-    QString displayItem();
-    QString shortDescription();
-    QString longDescription();
 
     // GETTERS
     QString getTZImage();
     QString getImagePath();
     QString getMapPath();
     QString getMusicPath();
+    QString getDescription();
+    InfoMessage* getInfoMessage();
+
+    // SETTERS
+    void setBackpack(Backpack *b);
 
     // VIRTUAL METHODS
+    virtual QString getInfoText() { return NULL; }
+    virtual void enter(Backpack *b) { this->setBackpack(b); }
     virtual ~Timezone() {}
     virtual bool canEnterRoom(Backpack *b = NULL) { return true; }
     virtual QWidget* getTimezoneWidget() {

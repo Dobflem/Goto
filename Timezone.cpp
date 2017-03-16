@@ -7,6 +7,7 @@ Timezone::Timezone(QString description, QString path, QString mapPath, QString m
     this->imagePath = path;
     this->mapPath = mapPath;
     this->musicPath = musicPath;
+    this->infoMessage = new InfoMessage();
 }
 
 QString Timezone::getTZImage() {
@@ -19,6 +20,14 @@ QString Timezone::getMapPath() {
 
 QString Timezone::getMusicPath() {
     return this->musicPath;
+}
+
+QString Timezone::getDescription() {
+    return description;
+}
+
+InfoMessage* Timezone::getInfoMessage() {
+    return infoMessage;
 }
 
 void Timezone::setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west) {
@@ -48,11 +57,12 @@ Timezone* Timezone::getWestTimezone() {
     return this->exits["west"];
 }
 
-QString Timezone::shortDescription() {
-    return description;
-}
 
-void Timezone::enter(Backpack *b) {
+/*void Timezone::enter(Backpack *b) {
+    this->backpack = b;
+}*/
+
+void Timezone::setBackpack(Backpack *b) {
     this->backpack = b;
 }
 
@@ -60,68 +70,27 @@ void Timezone::leave() {
     this->backpack = NULL;
 }
 
-/*
-QString Timezone::longDescription() {
-    return "timezone = " + description + ".\n" + displayItem() + exitString();
-}
-
-QString Timezone::exitString() {
-    string returnString = "\nAvailable exits =";
-	for (map<string, Timezone*>::iterator i = exits.begin(); i != exits.end(); i++)
-		// Loop through map
-		returnString += "  " + i->first;	// access the "first" element of the pair (direction as a string)
-    return QString::fromStdString(returnString);
-}
-
-
-Timezone* Timezone::nextTimezone(string direction) {
-	map<string, Timezone*>::iterator next = exits.find(direction); //returns an iterator for the "pair"
-    if (next == exits.end()) {
-        return NULL;
-    }// if exits.end() was returned, there's no timezone in that direction.
-    return next->second; // If there is a timezone, remove the "second" (Timezone*)
-                // part of the "pair" (<string, Timezone*>) and return it.
-}
-
 void Timezone::addItem(Item *inItem) {
     itemsInTimezone.push_back(*inItem);
-}
-
-string Timezone::displayItem() {
-    string tempString = "items in timezone = ";
-    int sizeItems = (itemsInTimezone.size());
-    if (itemsInTimezone.size() < 1) {
-        tempString = "no items in timezone";
-    } else if (itemsInTimezone.size() > 0) {
-       int x = (0);
-       for (int n = sizeItems; n > 0; n--) {
-        tempString = tempString + itemsInTimezone[x].getShortDescription() + "  " ;
-        x++;
-       }
-    }
-    return tempString;
 }
 
 int Timezone::numberOfItems() {
     return itemsInTimezone.size();
 }
 
-int Timezone::isItemInTimezone(string inString) {
-    int sizeItems = (itemsInTimezone.size());
+bool Timezone::isItemInTimezone(int itemId) {
     if (itemsInTimezone.size() < 1) {
         return false;
-    } else if (itemsInTimezone.size() > 0) {
-       int x = (0);
-       for (int n = sizeItems; n > 0; n--) {
-           // compare inString with short description
-           int tempFlag = inString.compare( itemsInTimezone[x].getShortDescription());
-           if (tempFlag == 0) {
-               itemsInTimezone.erase(itemsInTimezone.begin()+x);
-               return x;
-           }
-           x++;
+    } else {
+        for(vector<Item>::size_type i = 0; i != itemsInTimezone.size(); i++) {
+            if(itemId == itemsInTimezone[i].getID()) {
+                return true;
+            }
         }
     }
-    return -1;
+    return false;
 }
-*/
+
+void Timezone::removeItemFromTimezone(int location) {
+    itemsInTimezone.erase(itemsInTimezone.begin() + location);
+}
