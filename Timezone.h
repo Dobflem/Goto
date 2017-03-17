@@ -16,7 +16,6 @@ using namespace std;
 using std::vector;
 
 class Timezone {
-
 private:
     QString description;
     QString imagePath;

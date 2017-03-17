@@ -16,17 +16,6 @@
 void TZ30::enter(Backpack *b) {
     Timezone::enter(b);
     this->startPlaying();
-
-    ClickableLabel *capone = this->widget->getCapone();
-    int capone_width = capone->width();
-    int capone_height = capone->height();
-    int width = (this->widget->width()) - capone_width;
-    int height = (this->widget->height()) - capone_height;
-    int x = 0, y = 0;
-    x = qrand() % width;
-    y = qrand() % height;
-    capone->setGeometry(x, y, capone_width, capone_height);
-    capone->show();
 }
 
 bool TZ30::canEnterRoom() {
@@ -40,7 +29,7 @@ void TZ30::startPlaying() {
 }
 
 void TZ30::run() {
-    /*
+
     ClickableLabel *capone = this->widget->getCapone();
     int capone_width = capone->width();
     int capone_height = capone->height();
@@ -53,11 +42,10 @@ void TZ30::run() {
         y = qrand() % height;
         capone->setGeometry(x, y, capone_width, capone_height);
         capone->show();
-        this_thread::sleep_for(chrono::milliseconds(10000));
+        this_thread::sleep_for(chrono::milliseconds(1000));
         capone->hide();
         this_thread::sleep_for(chrono::milliseconds(1000));
     }
-    */
 }
 
 QWidget* TZ30::getTimezoneWidget() {

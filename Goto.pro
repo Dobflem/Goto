@@ -14,7 +14,6 @@
     TARGET = Goto
     TEMPLATE = app
 
-
     SOURCES  += \
             Character.cpp \
             item.cpp \

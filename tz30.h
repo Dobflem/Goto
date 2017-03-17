@@ -7,14 +7,16 @@
 #ifndef TZ30_H
 #define TZ30_H
 
-class TZ30 : public Timezone, public QThread
+#include <QObject>
+
+class TZ30 : public Timezone, private QThread
 {
 public:
     tz30widget *widget;
     TZ30():Timezone("Thirties", "thirties.jpg", "map-30s.png", "roaring-30s.mp3")
     {
         widget = new tz30widget();
-        connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
+        //QThread::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
         // Don't need to do anything
     }
 
@@ -25,14 +27,14 @@ public:
 
 private:
     bool playing = false;
+    int score = 0;
     void startPlaying();
     void stopPlaying();
-    int score = 0;
 
 protected:
     void run();
 
-public slots:
+private slots:
    void caughtCapone();
 };
 
