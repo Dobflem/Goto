@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>1070</x>
-      <y>10</y>
+      <y>20</y>
       <width>241</width>
       <height>581</height>
      </rect>
@@ -72,7 +72,7 @@ border-color: #999999;</string>
     <widget class="QFrame" name="frame">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>20</x>
        <y>440</y>
        <width>151</width>
        <height>111</height>
@@ -185,6 +185,29 @@ border-color: #999999;</string>
       </property>
      </widget>
     </widget>
+    <widget class="QPushButton" name="viewBackpackItemsButton">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>470</y>
+       <width>50</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:   #404040;
+max-width: 20px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="tzImage">
     <property name="geometry">
@@ -192,7 +215,7 @@ border-color: #999999;</string>
       <x>30</x>
       <y>10</y>
       <width>1021</width>
-      <height>581</height>
+      <height>601</height>
      </rect>
     </property>
     <property name="text">
@@ -209,6 +232,24 @@ border-color: #999999;</string>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout"/>
+   </widget>
+   <widget class="QLabel" name="backpackContents">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>580</y>
+      <width>951</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #404040;
+border: 2px solid  #333333;
+min-height: 20px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

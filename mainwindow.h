@@ -28,12 +28,14 @@ public:
 
 public slots:
     void setInfoText(QString);
+    void setBackpackText(QString);
 
 private slots:
     void moveNorth();
     void moveSouth();
     void moveEast();
     void moveWest();
+    void on_viewBackpackItemsButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -45,9 +47,11 @@ private:
     void createTimezones();
     void goTimezone(QString direction);
     void setupSignalsAndSlots();
+    void setBackpackSignalandSlot();
     // void changeSong();
     void setTimezoneExits();
     void addTokensToRooms();
+    void setupBackpackButtonSettings();
 
     // GETTERS
     Timezone getCurrentTimezone();
@@ -57,6 +61,7 @@ private:
     void setCurrentTimezone(Timezone *tz);
     void setInformationText(QString txt);
     void setMapImage(QString mapImage);
+    void setArrows();
 
 };
 

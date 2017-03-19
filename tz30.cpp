@@ -18,8 +18,10 @@ void TZ30::enter(Backpack *b) {
     this->startPlaying();
 }
 
-bool TZ30::canEnterRoom() {
-    return true;
+bool TZ30::canEnterRoom(Backpack *b) {
+    return (b->hasItem(30));
+
+    //return true;
 }
 
 void TZ30::startPlaying() {

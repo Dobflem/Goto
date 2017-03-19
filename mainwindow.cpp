@@ -29,14 +29,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow) {
         ui->setupUi(this);
 
-        ui->northButton->setArrowType(Qt::UpArrow);
-        ui->southButton->setArrowType(Qt::DownArrow);
-        ui->eastButton->setArrowType(Qt::RightArrow);
-        ui->westButton->setArrowType(Qt::LeftArrow);
+        this->setArrows();
+        this->setupBackpackButtonSettings();
+
+
 
         this->currentTimezone = NULL;
         this->backpack = new Backpack();
-        this->backpack->addItem(new Item(20, "20s timezone token."));
+
+        this->setBackpackSignalandSlot();
+        this->backpack->addItem(new Item(20, "20s Token"));
         // this->music = new QMediaPlayer();
 
         this->createTimezones();
@@ -77,6 +79,22 @@ void MainWindow::createTimezones()  {
     this->tzPresent = new TZPresent();
 }
 
+void MainWindow::setArrows() {
+    ui->northButton->setArrowType(Qt::UpArrow);
+    ui->southButton->setArrowType(Qt::DownArrow);
+    ui->eastButton->setArrowType(Qt::RightArrow);
+    ui->westButton->setArrowType(Qt::LeftArrow);
+}
+
+void MainWindow::setupBackpackButtonSettings() {
+    QPixmap pixmap(":Resources/backpack_icon.png");
+    QIcon ButtonIcon(pixmap);
+    ui->viewBackpackItemsButton->setIcon(ButtonIcon);
+    ui->viewBackpackItemsButton->setIconSize(QSize(35, 35));
+
+    ui->backpackContents->hide();
+}
+
 void MainWindow::setTimezoneExits() {
     // (N, E, S, W)
     this->tzPortal->setExits(tz60s, tz20s, tz80s, tz00s);
@@ -93,15 +111,15 @@ void MainWindow::setTimezoneExits() {
 }
 
 void MainWindow::addTokensToRooms() {
-    this->tz20s->addItem(new Item(30, "30s timezone token"));
-    this->tz30s->addItem(new Item(40, "40s timezone token"));
-    this->tz40s->addItem(new Item(50, "50s timezone token"));
-    this->tz50s->addItem(new Item(60, "60s timezone token"));
-    this->tz60s->addItem(new Item(70, "70s timezone token"));
-    this->tz70s->addItem(new Item(80, "80s timezone token"));
-    this->tz80s->addItem(new Item(90, "90s timezone token"));
-    this->tz90s->addItem(new Item(00, "00s timezone token"));
-    this->tz00s->addItem(new Item(10, "Present timezone token"));
+    this->tz20s->addItem(new Item(30, "30s Token"));
+    this->tz30s->addItem(new Item(40, "40s Token"));
+    this->tz40s->addItem(new Item(50, "50s Token"));
+    this->tz50s->addItem(new Item(60, "60s Token"));
+    this->tz60s->addItem(new Item(70, "70s Token"));
+    this->tz70s->addItem(new Item(80, "80s Token"));
+    this->tz80s->addItem(new Item(90, "90s Token"));
+    this->tz90s->addItem(new Item(00, "00s Token"));
+    this->tz00s->addItem(new Item(10, "Present Token"));
 }
 
 void MainWindow::moveEast() {
@@ -124,8 +142,14 @@ void MainWindow::moveWest() {
     this->setCurrentTimezone(tz);
 }
 
+void MainWindow::setBackpackText(QString txt) {
+    cout << "setting backpack text to: " << txt.toStdString() << endl;
+
+    ui->backpackContents->setText(txt);
+    ui->backpackContents->repaint();
+}
+
 void MainWindow::setInfoText(QString txt) {
-    // QString txt = this->currentTimezone->getInfoMessage()->getMessage();
     for (int i = 1; i <= txt.length(); i++) {
         ui->txtInfo->setText(txt.left(i));
         // Have to manually call repaint
@@ -140,24 +164,24 @@ void MainWindow::setInfoText(QString txt) {
 
 void MainWindow::setCurrentTimezone(Timezone *tz) {
     // Check if there is a room to move to
-    qDebug() << "setCurrentTimezone();";
+   // qDebug() << "setCurrentTimezone();";
     if (tz != NULL) {
-        qDebug() << "tz != NULL;";
+     //   qDebug() << "tz != NULL;";
         // Check if we can enter the room
         // This is a VIRTUAL method
         // The super method always returns true
         if (tz->canEnterRoom(this->backpack)) {
 
-            qDebug() << "tz->canEnterRoom();";
+       //     qDebug() << "tz->canEnterRoom();";
             // Remove the current widget so multiple don't show
             if (this->currentTZWidget != NULL) {
-                qDebug() << "Removing widget";
+         //       qDebug() << "Removing widget";
                 ui->gridLayout->removeWidget(this->currentTZWidget);
             }
 
             // Need to store the current timezone so the signals know which slots to call
             if (this->currentTimezone != NULL) {
-                qDebug() << "Leaving room";
+           //     qDebug() << "Leaving room";
                 this->currentTimezone->leave();
             }
 
@@ -165,30 +189,30 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
 
             // Setup the map image
             // We don't need to store this because we don't reference it anywhere else
-            qDebug() << "Setting map image";
+            //qDebug() << "Setting map image";
             this->setMapImage(this->currentTimezone->getMapPath());
-            qDebug() << "Map image set";
+            //qDebug() << "Map image set";
 
             // Set up the Widgets
             this->currentTZWidget = this->currentTimezone->getTimezoneWidget();
-            qDebug() << "Adding widget";
+            //qDebug() << "Adding widget";
             ui->gridLayout->addWidget(this->currentTZWidget);
-            qDebug() << "Widget added";
+            //qDebug() << "Widget added";
 
             // Make sure we call raise or else it will not be brought to front.
-            qDebug() << "Raising widget";
+            //qDebug() << "Raising widget";
             this->currentTZWidget->raise();
-            qDebug() << "Widget raised";
+            //qDebug() << "Widget raised";
 
             // Change the music to the current timezone track
             // this->changeSong();
 
-            qDebug() << "Entering room";
+            //qDebug() << "Entering room";
             this->currentTimezone->enter(this->backpack);
-            qDebug() << "Room entered";
+            //qDebug() << "Room entered";
 
         } else {
-            qDebug() << "Room Locked";
+            //qDebug() << "Room Locked";
             this->currentTimezone->getInfoMessage()->setMessage(tz->getDescription().append(" is currently locked. Please find token first."));
         }
     }
@@ -232,4 +256,16 @@ void MainWindow::setupSignalsAndSlots() {
     QObject::connect(this->tz00s->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
     QObject::connect(this->tzPortal->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
     QObject::connect(this->tzPresent->getInfoMessage(), SIGNAL(valueChanged(QString)), this, SLOT(setInfoText(QString)));
+}
+
+void MainWindow::setBackpackSignalandSlot() {
+   QObject::connect(this->backpack->getContents(), SIGNAL(valueChanged(QString)), this, SLOT(setBackpackText(QString)));
+}
+
+void MainWindow::on_viewBackpackItemsButton_clicked() {
+    if (ui->backpackContents->isHidden()) {
+         ui->backpackContents->show();
+    } else {
+        ui->backpackContents->hide();
+    }
 }

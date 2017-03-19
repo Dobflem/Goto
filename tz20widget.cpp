@@ -15,7 +15,6 @@ tz20widget::~tz20widget() {
     delete ui;
 }
 
-/*void tz20widget::paintEvent(QPaintEvent *)
-{
-    //paint here
-}*/
+QPushButton* tz20widget::getButton() {
+    return ui->tokenButton;
+}

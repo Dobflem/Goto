@@ -16,6 +16,10 @@ using namespace std;
 using std::vector;
 
 class Timezone {
+
+protected:
+    vector<Item> itemsInTimezone;
+
 private:
     QString description;
     QString imagePath;
@@ -23,7 +27,6 @@ private:
     QString musicPath;
 
     map<string, Timezone*> exits;
-    vector <Item> itemsInTimezone;
     Backpack *backpack;
     InfoMessage* infoMessage;
 
@@ -39,6 +42,7 @@ public:
     void removeItemFromTimezone(int location);
     void setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west);
     bool isItemInTimezone(int itemId);
+    int getLocationOfItemInTimezone(int itemId);
     int numberOfItems();
 
 
@@ -49,16 +53,20 @@ public:
     QString getMusicPath();
     QString getDescription();
     InfoMessage* getInfoMessage();
+    Backpack* getBackpack();
+    vector<Item> getItemsInTimezone();
+
 
     // SETTERS
     void setBackpack(Backpack *b);
 
     // VIRTUAL METHODS
-    virtual QString getInfoText() { return NULL; }
     virtual void enter(Backpack *b) {
         this->setBackpack(b);
     }
-    virtual ~Timezone() {}
+    virtual ~Timezone() {
+        delete this;
+    }
     virtual bool canEnterRoom(Backpack *b) {
         if(b != NULL) {
             return true;
@@ -67,9 +75,6 @@ public:
         }
     }
     virtual QWidget* getTimezoneWidget() {
-       //currently returning empty widget as default.
-       //This needs to be changed
-
         cout << "In default get timezone widget" << endl;
         QWidget *def = new QWidget();
         return def;

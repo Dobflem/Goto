@@ -20,7 +20,7 @@ public:
         // Don't need to do anything
     }
 
-    bool canEnterRoom();
+    bool canEnterRoom(Backpack *b);
     QWidget* getTimezoneWidget();
     void enter(Backpack *b = NULL);
     void leave();

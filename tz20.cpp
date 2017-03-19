@@ -1,7 +1,15 @@
 #include "tz20.h"
+#include "clickablelabel.h"
+
+#include <QLabel>
+#include <QLineEdit>
+#include <QDebug>
+#include <QFuture>
+#include <QtConcurrent/QtConcurrent>
+#include <QMouseEvent>
+#include <QDebug>
 
 bool TZ20::canEnterRoom(Backpack *b) {
-    //hasItem method not working
     return (b->hasItem(20));
 }
 
@@ -12,11 +20,54 @@ QWidget* TZ20::getTimezoneWidget() {
 void TZ20::enter(Backpack *b) {
     this->setBackpack(b);
 
-    //start room description / functionality
+    qDebug() << "Token recieved " << this->tokenRecieved;
+
     this->displayInfo();
 }
 
+void TZ20::run() {
+    qDebug() << "running";
+}
+
 void TZ20::displayInfo() {
-    Timezone::getInfoMessage()->setMessage("Welcome to the roaring 20s. An age of dramatic social and political revolution.");
-    //Timezone::getInfoMessage()->setMessage("In order to collect the timezone token to enter the 30s.... Please select the timezone token button on the screen");
+
+    if (this->tokenRecieved) {
+        displayAlreadyPassed();
+    } else {
+        Timezone::getInfoMessage()->setMessage("Welcome to the roaring 20s");
+        Timezone::getInfoMessage()->setMessage("");
+        usleep(50000);
+        Timezone::getInfoMessage()->setMessage("In order to collect the timezone token to enter the 30s.... Please select the timezone token button on the screen");
+    }
+}
+
+void TZ20::tokenButtonPressed() {
+    this->tokenRecieved = true;
+    qDebug() << "Token button pressed";
+
+    this->widget->getButton()->hide();
+
+    displayAlreadyPassed();
+
+
+    if (isItemInTimezone(30)) {
+        qDebug() << "token 30 in tz20";
+
+        int location = getLocationOfItemInTimezone(30);
+         qDebug() << "location of item30 in 20 " << location;
+
+         qDebug() << Timezone::itemsInTimezone[location].getDescription();
+
+        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
+        removeItemFromTimezone(location);
+    }
+}
+
+void TZ20::displayAlreadyPassed() {
+    Timezone::getInfoMessage()->setMessage("You have passed this level. Continue your adventure.");
+}
+
+void TZ20::leave() {
+    qDebug() << "Leaving";
+    // Timezone::leave();
 }

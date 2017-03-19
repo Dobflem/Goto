@@ -23,5 +23,7 @@
         <file>Resources/map-00s.png</file>
         <file>Resources/map-present.png</file>
         <file>Resources/capone.jpg</file>
+		<file>Resources/token.png</file>
+		<file>Resources/backpack_icon.png</file>
     </qresource>
 </RCC>

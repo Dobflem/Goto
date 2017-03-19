@@ -7,6 +7,8 @@ QString InfoMessage::getMessage() {
 }
 
 void InfoMessage::setMessage(QString msg) {
+    cout << "setting infoMessage to " << msg.toStdString() << " .END" << endl;
+
     this->message = msg;
     emit valueChanged(this->message);
 }

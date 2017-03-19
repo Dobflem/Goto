@@ -4,9 +4,9 @@
 #include "item.h"
 #include "vector"
 #include "list.h"
+#include "infomessage.h"
 
-class Backpack
-{
+class Backpack {
 public:
     Backpack();
     ~Backpack();
@@ -14,8 +14,13 @@ public:
     Item *getItem(int id);
     bool hasItem(int id);
 
+    InfoMessage* getContents();
+    QString contentsString;
+
 private:
     List<Item> *items;
+    InfoMessage* contents;
+    void setContentsString();
     // vector<Item> items;
 };
 

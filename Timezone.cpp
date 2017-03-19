@@ -30,6 +30,14 @@ InfoMessage* Timezone::getInfoMessage() {
     return infoMessage;
 }
 
+Backpack* Timezone::getBackpack() {
+    return backpack;
+}
+
+vector<Item> Timezone::getItemsInTimezone() {
+    return itemsInTimezone;
+}
+
 void Timezone::setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west) {
 	if (north != NULL)
         this->exits["north"] = north;
@@ -82,6 +90,19 @@ bool Timezone::isItemInTimezone(int itemId) {
         for(vector<Item>::size_type i = 0; i != itemsInTimezone.size(); i++) {
             if(itemId == itemsInTimezone[i].getID()) {
                 return true;
+            }
+        }
+    }
+    return false;
+}
+
+int Timezone::getLocationOfItemInTimezone(int itemId) {
+    if (itemsInTimezone.size() < 1) {
+        return false;
+    } else {
+        for(vector<Item>::size_type i = 0; i != itemsInTimezone.size(); i++) {
+            if(itemId == itemsInTimezone[i].getID()) {
+                return i;
             }
         }
     }

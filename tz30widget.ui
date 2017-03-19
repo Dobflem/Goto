@@ -36,7 +36,7 @@
         <pixmap resource="resources.qrc">:/Resources/thirties.jpg</pixmap>
        </property>
       </widget>
-      <widget class="ClickableLabel" name="capone">
+      <widget class="ClickableLabel" name="capone" native="true">
        <property name="geometry">
         <rect>
          <x>770</x>
@@ -45,13 +45,13 @@
          <height>91</height>
         </rect>
        </property>
-       <property name="text">
+       <property name="text" stdset="0">
         <string/>
        </property>
-       <property name="pixmap">
+       <property name="pixmap" stdset="0">
         <pixmap resource="resources.qrc">:/Resources/capone.jpg</pixmap>
        </property>
-       <property name="scaledContents">
+       <property name="scaledContents" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -61,6 +61,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClickableLabel</class>
+   <extends>QWidget</extends>
+   <header>clickablelabel.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>
