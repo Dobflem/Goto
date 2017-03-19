@@ -25,7 +25,7 @@ bool TZ30::canEnterRoom() {
 void TZ30::startPlaying() {
     qDebug() << "Setting playing - true";
     this->playing = true;
-    this->start();
+    // this->start();
 }
 
 void TZ30::run() {

@@ -96,7 +96,7 @@
 
     RESOURCES += \
         resources.qrc \
-        music-media.qrc \
-        music-media-2.qrc \
-        music-media-3.qrc
+       # music-media.qrc \
+       # music-media-2.qrc \
+       # music-media-3.qrc
 

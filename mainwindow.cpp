@@ -20,6 +20,8 @@
 #include "tz00.h"
 #include "tzpresent.h"
 
+#include <QDebug>
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -32,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->eastButton->setArrowType(Qt::RightArrow);
         ui->westButton->setArrowType(Qt::LeftArrow);
 
+        this->currentTimezone = NULL;
         this->backpack = new Backpack();
         this->backpack->addItem(new Item(20, "20s timezone token."));
         // this->music = new QMediaPlayer();
@@ -137,19 +140,24 @@ void MainWindow::setInfoText(QString txt) {
 
 void MainWindow::setCurrentTimezone(Timezone *tz) {
     // Check if there is a room to move to
+    qDebug() << "setCurrentTimezone();";
     if (tz != NULL) {
+        qDebug() << "tz != NULL;";
         // Check if we can enter the room
         // This is a VIRTUAL method
         // The super method always returns true
         if (tz->canEnterRoom(this->backpack)) {
 
+            qDebug() << "tz->canEnterRoom();";
             // Remove the current widget so multiple don't show
             if (this->currentTZWidget != NULL) {
+                qDebug() << "Removing widget";
                 ui->gridLayout->removeWidget(this->currentTZWidget);
             }
 
             // Need to store the current timezone so the signals know which slots to call
             if (this->currentTimezone != NULL) {
+                qDebug() << "Leaving room";
                 this->currentTimezone->leave();
             }
 
@@ -157,21 +165,30 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
 
             // Setup the map image
             // We don't need to store this because we don't reference it anywhere else
+            qDebug() << "Setting map image";
             this->setMapImage(this->currentTimezone->getMapPath());
+            qDebug() << "Map image set";
 
             // Set up the Widgets
             this->currentTZWidget = this->currentTimezone->getTimezoneWidget();
+            qDebug() << "Adding widget";
             ui->gridLayout->addWidget(this->currentTZWidget);
+            qDebug() << "Widget added";
 
             // Make sure we call raise or else it will not be brought to front.
+            qDebug() << "Raising widget";
             this->currentTZWidget->raise();
+            qDebug() << "Widget raised";
 
             // Change the music to the current timezone track
             // this->changeSong();
 
+            qDebug() << "Entering room";
             this->currentTimezone->enter(this->backpack);
+            qDebug() << "Room entered";
 
         } else {
+            qDebug() << "Room Locked";
             this->currentTimezone->getInfoMessage()->setMessage(tz->getDescription().append(" is currently locked. Please find token first."));
         }
     }
