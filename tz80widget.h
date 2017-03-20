@@ -27,6 +27,7 @@ public:
     QComboBox* getQ4ComboBox();
     QLabel* getWarningLabel();
     QFrame* getQuizFrame();
+    QFrame* getLockedQuestionFrame();
     QPushButton* getTokenButton();
     QPushButton* getStartButton();
     QPushButton* getCloseButton();

@@ -54,3 +54,7 @@ QPushButton* tz80widget::getStartButton() {
 QPushButton* tz80widget::getCloseButton() {
     return ui->closeButton;
 }
+
+QFrame* tz80widget::getLockedQuestionFrame() {
+    return ui->questionlocked_frame;
+}

@@ -13,17 +13,29 @@ QWidget* TZ80::getTimezoneWidget() {
 void TZ80::enter(Backpack *b) {
     this->setBackpack(b);
     this->displayInfo();
+
+    showHideLockedQuestion();
 }
 
 void TZ80::run() {
     qDebug() << "running";
 }
 
+void TZ80::showHideLockedQuestion() {
+    if (this->getBackpack()->hasItem(81)) {
+        qDebug() << "hiding locked panel";
+        this->widget->getLockedQuestionFrame()->hide();
+    } else {
+        qDebug() << "showing locked panel";
+        this->widget->getLockedQuestionFrame()->show();
+    }
+}
+
 void TZ80::displayInfo() {
     if (this->tokenRecieved) {
         displayAlreadyPassed();
     } else {
-        Timezone::getInfoMessage()->setMessage("Welcome to the 1980s. To pass this level and receive the timzone token for the 90s. Answer each of the trivia questions correctly");
+        Timezone::getInfoMessage()->setMessage("Welcome to the 1980s. To pass this level and receive the timzone token for the 90s.... Answer each of the trivia questions correctly");
     }
 }
 
@@ -54,8 +66,6 @@ void TZ80::submitAnswersButtonPressed() {
         this->widget->getTokenButton()->show();
 
         Timezone::getInfoMessage()->setMessage("Congratulations. You have answered all questions correctly. Select your 90s timezon token to put it in your backpack");
-
-
     } else {
         qDebug() << "Incorrect";
         this->widget->getWarningLabel()->show();

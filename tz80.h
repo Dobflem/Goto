@@ -23,6 +23,7 @@ private:
 
     void displayInfo();
     void displayAlreadyPassed();
+    void showHideLockedQuestion();
 
 public:
     tz80widget *widget;
@@ -33,6 +34,7 @@ public:
         widget->getWarningLabel()->hide();
         this->widget->getTokenButton()->hide();
         this->widget->getQuizFrame()->hide();
+        this->widget->getLockedQuestionFrame()->hide();
 
         tokenRecieved = false;
         QObject::connect(widget->getSubmitButton(), SIGNAL(clicked()), this, SLOT(submitAnswersButtonPressed()));
