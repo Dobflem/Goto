@@ -2,11 +2,10 @@
 #define TZ80WIDGET_H
 
 #include <QWidget>
-#include <QTime>
-#include <QPainter>
-#include <QColor>
-#include <QPoint>
-
+#include <QPushButton>
+#include <QComboBox>
+#include <QLabel>
+#include <QFrame>
 
 namespace Ui {
 class tz80widget;
@@ -19,7 +18,18 @@ class tz80widget : public QWidget
 public:
     explicit tz80widget(QWidget *parent = 0);
     ~tz80widget();
-    //void paintEvent(QPaintEvent *event);
+
+    //Getters for ui elements
+    QPushButton* getSubmitButton();
+    QComboBox* getQ1ComboBox();
+    QComboBox* getQ2ComboBox();
+    QComboBox* getQ3ComboBox();
+    QComboBox* getQ4ComboBox();
+    QLabel* getWarningLabel();
+    QFrame* getQuizFrame();
+    QPushButton* getTokenButton();
+    QPushButton* getStartButton();
+    QPushButton* getCloseButton();
 
 private:
     Ui::tz80widget *ui;

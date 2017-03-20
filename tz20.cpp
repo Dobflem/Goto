@@ -19,9 +19,6 @@ QWidget* TZ20::getTimezoneWidget() {
 
 void TZ20::enter(Backpack *b) {
     this->setBackpack(b);
-
-    qDebug() << "Token recieved " << this->tokenRecieved;
-
     this->displayInfo();
 }
 
@@ -43,21 +40,12 @@ void TZ20::displayInfo() {
 
 void TZ20::tokenButtonPressed() {
     this->tokenRecieved = true;
-    qDebug() << "Token button pressed";
-
     this->widget->getButton()->hide();
 
     displayAlreadyPassed();
 
-
     if (isItemInTimezone(30)) {
-        qDebug() << "token 30 in tz20";
-
         int location = getLocationOfItemInTimezone(30);
-         qDebug() << "location of item30 in 20 " << location;
-
-         qDebug() << Timezone::itemsInTimezone[location].getDescription();
-
         Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
         removeItemFromTimezone(location);
     }

@@ -5,7 +5,6 @@
 #include <QThread>
 #include <unistd.h>
 #include <QDebug>
-#include "clickablelabel.h"
 
 #ifndef TZ20_H
 #define TZ20_H

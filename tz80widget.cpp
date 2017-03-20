@@ -14,13 +14,43 @@ tz80widget::~tz80widget() {
     delete ui;
 }
 
-/*void tz80widget::paintEvent(QPaintEvent *)
-{
-    QPainter painter(this);
-    painter.setBrush(QBrush(Qt::black));
-    for (int i = 0; i < 12; ++i) {
-        painter.drawLine(88, 0, 96, 0);
-        painter.rotate(30.0);
-    }
-    painter.save();
-}*/
+//add getters for ui elements
+QPushButton* tz80widget::getSubmitButton() {
+    return ui->submitButton;
+}
+
+QComboBox* tz80widget::getQ1ComboBox() {
+    return ui->question1_comboBox;
+}
+
+QComboBox* tz80widget::getQ2ComboBox() {
+    return ui->question2_comboBox;
+}
+
+QComboBox* tz80widget::getQ3ComboBox() {
+    return ui->question3_comboBox;
+}
+
+QComboBox* tz80widget::getQ4ComboBox() {
+    return ui->question4_comboBox;
+}
+
+QLabel* tz80widget::getWarningLabel() {
+    return ui->warning_label;
+}
+
+QFrame* tz80widget::getQuizFrame() {
+    return ui->quiz_frame;
+}
+
+QPushButton* tz80widget::getTokenButton() {
+    return ui->tokenButton;
+}
+
+QPushButton* tz80widget::getStartButton() {
+    return ui->startButton;
+}
+
+QPushButton* tz80widget::getCloseButton() {
+    return ui->closeButton;
+}
