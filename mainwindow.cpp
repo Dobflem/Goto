@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
         this->createTimezones();
         this->setTimezoneExits();
         this->addTokensToRooms();
+        this->addOtherItemsToRooms();
         this->setCurrentTimezone(tzPortal);
         this->setupSignalsAndSlots();
     }
@@ -120,6 +121,10 @@ void MainWindow::addTokensToRooms() {
     this->tz80s->addItem(new Item(90, "90s Token"));
     this->tz90s->addItem(new Item(00, "00s Token"));
     this->tz00s->addItem(new Item(10, "Present Token"));
+}
+
+void MainWindow::addOtherItemsToRooms() {
+    this->tz20s->addItem(new Item(81, "Unlock 80s Question Key"));
 }
 
 void MainWindow::moveEast() {

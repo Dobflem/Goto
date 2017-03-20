@@ -26,6 +26,7 @@ public:
         tokenRecieved = false;
 
         QObject::connect(widget->getButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
+        QObject::connect(widget->getKeyButton(), SIGNAL(clicked()), this, SLOT(keyButtonPressed()));
     }
 
     //Virtual
@@ -37,6 +38,7 @@ public:
 
 public slots:
    void tokenButtonPressed();
+   void keyButtonPressed();
 
 protected:
     void run();

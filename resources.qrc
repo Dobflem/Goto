@@ -25,5 +25,6 @@
         <file>Resources/capone.jpg</file>
 		<file>Resources/token.png</file>
 		<file>Resources/backpack_icon.png</file>
+		<file>Resources/key_1.png</file>
     </qresource>
 </RCC>

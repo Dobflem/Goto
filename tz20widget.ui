@@ -64,6 +64,29 @@ background-image: url(:/Resources/token.png);
         <pixmap resource="resources.qrc">:/Resources/token.png</pixmap>
        </property>
       </widget>
+      <widget class="QPushButton" name="keyButton">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>100</y>
+         <width>71</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/Resources/key_1.png);
+border: none;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="buttonImage" stdset="0">
+        <pixmap resource="resources.qrc">:/Resources/token.png</pixmap>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="page_2"/>
     </widget>

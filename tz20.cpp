@@ -38,6 +38,15 @@ void TZ20::displayInfo() {
     }
 }
 
+void TZ20::displayAlreadyPassed() {
+    Timezone::getInfoMessage()->setMessage("You have passed this level. Continue your adventure.");
+}
+
+void TZ20::leave() {
+    qDebug() << "Leaving";
+    // Timezone::leave();
+}
+
 void TZ20::tokenButtonPressed() {
     this->tokenRecieved = true;
     this->widget->getButton()->hide();
@@ -51,11 +60,12 @@ void TZ20::tokenButtonPressed() {
     }
 }
 
-void TZ20::displayAlreadyPassed() {
-    Timezone::getInfoMessage()->setMessage("You have passed this level. Continue your adventure.");
-}
+void TZ20::keyButtonPressed() {
+    this->widget->getKeyButton()->hide();
 
-void TZ20::leave() {
-    qDebug() << "Leaving";
-    // Timezone::leave();
+    if (isItemInTimezone(81)) {
+        int location = getLocationOfItemInTimezone(81);
+        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
+        removeItemFromTimezone(location);
+    }
 }

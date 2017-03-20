@@ -18,3 +18,7 @@ tz20widget::~tz20widget() {
 QPushButton* tz20widget::getButton() {
     return ui->tokenButton;
 }
+
+QPushButton* tz20widget::getKeyButton() {
+    return ui->keyButton;
+}

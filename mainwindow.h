@@ -51,6 +51,7 @@ private:
     // void changeSong();
     void setTimezoneExits();
     void addTokensToRooms();
+    void addOtherItemsToRooms();
     void setupBackpackButtonSettings();
 
     // GETTERS

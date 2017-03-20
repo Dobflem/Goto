@@ -17,6 +17,7 @@ public:
     explicit tz20widget(QWidget *parent = 0);
     ~tz20widget();
     QPushButton* getButton();
+    QPushButton* getKeyButton();
 
 private:
     Ui::tz20widget *ui;
