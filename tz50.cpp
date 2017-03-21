@@ -10,7 +10,7 @@ QWidget* TZ50::getTimezoneWidget() {
 }
 
 void TZ50::enter(Backpack* b) {
-
+    this->setBackpack(b);
 }
 
 void TZ50::leave() {
