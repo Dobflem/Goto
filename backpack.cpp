@@ -44,11 +44,9 @@ Item *Backpack::getItem(int id) {
 }
 
 bool Backpack::hasItem(int id) {
-
     for(items->start(); items->currentItem != NULL; items->next()) {
         if (items->currentItem->getID() == id) {
-            cout << items->currentItem->getDescription().toStdString() << endl;
-
+            qDebug() << items->currentItem->getDescription() << endl;
             return true;
         }
     } return false;

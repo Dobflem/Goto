@@ -9,20 +9,20 @@
 
 #include <QObject>
 
-class TZ30 : public Timezone, private QThread
+class TZ30 : public QThread, public Timezone
 {
+Q_OBJECT
 public:
     tz30widget *widget;
     TZ30():Timezone("Thirties", "thirties.jpg", "map-30s.png", "roaring-30s.mp3")
     {
         widget = new tz30widget();
-        //QThread::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
-        // Don't need to do anything
+        QThread::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
     }
 
-    bool canEnterRoom(Backpack *b);
+    virtual bool canEnterRoom(Backpack *b);
     QWidget* getTimezoneWidget();
-    void enter(Backpack *b = NULL);
+    virtual void enter(Backpack *b = NULL);
     void leave();
 
 private:

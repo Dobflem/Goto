@@ -5,11 +5,14 @@
 #include <cstddef>
 #include <iterator>
 
+#include <QDebug>
+
 template <class T> class List {
 private:
     std::list<T *> *objects;
     int count;
-    int currentIndex;
+    uint currentIndex;
+    typename std::list<T*>::iterator item_iter;
 
 public:
     void add(T *obj);
@@ -24,6 +27,9 @@ public:
         this->currentIndex = 0;
         this->count = 0;
         this->objects = new std::list<T *>;
+    }
+    ~List() {
+        delete this->objects;
     }
 };
 
@@ -47,7 +53,9 @@ template <class T>
 void List<T>::start() {
     this->currentIndex = 0;
     if (this->objects->size() > 0) {
-      this->currentItem = *this->objects->begin();
+      this->item_iter = this->objects->begin();
+      this->currentItem = *(this->item_iter);
+      qDebug() << this->currentItem->getDescription();
     } else {
       this->currentItem = NULL;
     }
@@ -57,9 +65,8 @@ template <class T>
 void List<T>::next() {
     if (this->currentIndex < this->objects->size() - 1) {
       this->currentIndex++;
-      typename std::list<T*>::iterator it = this->objects->begin();
-      std::advance(it, this->currentIndex);
-      this->currentItem = *it;
+      std::advance(item_iter, 1);
+      this->currentItem = *item_iter;
     } else {
       this->currentItem = NULL;
     }

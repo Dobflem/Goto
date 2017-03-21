@@ -110,5 +110,5 @@ int Timezone::getLocationOfItemInTimezone(int itemId) {
 }
 
 void Timezone::removeItemFromTimezone(int location) {
-    itemsInTimezone.erase(itemsInTimezone.begin() + location);
+    // itemsInTimezone.erase(itemsInTimezone.begin() + location);
 }
