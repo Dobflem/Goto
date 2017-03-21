@@ -2,10 +2,7 @@
 #define TZ50WIDGET_H
 
 #include <QWidget>
-#include <QTime>
-#include <QPainter>
-#include <QColor>
-#include <QPoint>
+#include <QPushButton>
 
 
 namespace Ui {
@@ -19,7 +16,7 @@ class tz50widget : public QWidget
 public:
     explicit tz50widget(QWidget *parent = 0);
     ~tz50widget();
-    //void paintEvent(QPaintEvent *event);
+    QPushButton* getJunkFood();
 
 private:
     Ui::tz50widget *ui;

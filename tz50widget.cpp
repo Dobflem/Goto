@@ -14,10 +14,6 @@ tz50widget::~tz50widget() {
     delete ui;
 }
 
-/*void tz50widget::paintEvent(QPaintEvent *)
-{
-   // QPainter painter(this);
-    //painter.setBrush(QBrush(Qt::black));
-    //painter.drawLine(88, 0, 96, 0);
-    //painter.save();
-}*/
+QPushButton* tz50widget::getJunkFood() {
+    return ui->junkFoodButton;
+}

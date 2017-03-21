@@ -31,10 +31,7 @@ void TZ20::displayInfo() {
     if (this->tokenRecieved) {
         displayAlreadyPassed();
     } else {
-        Timezone::getInfoMessage()->setMessage("Welcome to the roaring 20s");
-        Timezone::getInfoMessage()->setMessage("");
-        usleep(50000);
-        Timezone::getInfoMessage()->setMessage("In order to collect the timezone token to enter the 30s.... Please select the timezone token button on the screen");
+        Timezone::getInfoMessage()->setMessage("Welcome to the roaring 20s. In order to collect the timezone token to enter the 30s.... Please select the timezone token button on the screen");
     }
 }
 
@@ -43,7 +40,7 @@ void TZ20::displayAlreadyPassed() {
 }
 
 void TZ20::leave() {
-    qDebug() << "Leaving";
+    qDebug() << "Leaving 20s";
     // Timezone::leave();
 }
 

@@ -14,13 +14,17 @@ Backpack::~Backpack() {
 }
 
 void Backpack::addItem(Item *i) {
-    cout << "Adding item to backpack" << endl;
-    cout << i->getDescription().toStdString() << endl;
+
+    qDebug() << "Adding item to backpack" << i->getDescription();
 
     items->add(i);
+    qDebug() << "item added";
+
     // items.push_back(i);
     setContentsString();
+    qDebug() << "Set contents string";
     this->contents->setMessage(this->contentsString);
+    qDebug() << "set contents message";
 }
 
 InfoMessage* Backpack::getContents() {

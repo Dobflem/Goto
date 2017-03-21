@@ -14,9 +14,6 @@ tz40widget::~tz40widget() {
     delete ui;
 }
 
-void tz40widget::paintEvent(QPaintEvent *e)
-{
-    QPainter painter(this);
-    QPixmap hitler = QPixmap(":/hitler.jpg");
-    painter.drawPixmap(300, 300, 300, 300, hitler);
+QPushButton* tz40widget::getJoint() {
+    return ui->jointButton;
 }

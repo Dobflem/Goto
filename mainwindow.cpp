@@ -125,6 +125,8 @@ void MainWindow::addTokensToRooms() {
 
 void MainWindow::addOtherItemsToRooms() {
     this->tz20s->addItem(new Item(81, "Unlock 80s Question Key"));
+    this->tz40s->addItem(new Item(41, "Joint"));
+    this->tz50s->addItem(new Item(51, "Junk Food"));
 }
 
 void MainWindow::moveEast() {
@@ -148,8 +150,6 @@ void MainWindow::moveWest() {
 }
 
 void MainWindow::setBackpackText(QString txt) {
-    cout << "setting backpack text to: " << txt.toStdString() << endl;
-
     ui->backpackContents->setText(txt);
     ui->backpackContents->repaint();
 }
