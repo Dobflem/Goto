@@ -9,6 +9,7 @@ tz30widget::tz30widget(QWidget *parent) :
     ui(new Ui::tz30widget)
 {
     ui->setupUi(this);
+    ui->btnToken->hide();
 }
 
 tz30widget::~tz30widget() {
@@ -17,4 +18,17 @@ tz30widget::~tz30widget() {
 
 ClickableLabel *tz30widget::getCapone() {
     return ui->capone;
+}
+
+void tz30widget::showToken() {
+   ui->btnToken->show();
+   ui->btnToken->raise();
+}
+
+bool tz30widget::tokenVisible() {
+   return ui->btnToken->isVisible();
+}
+
+QPushButton *tz30widget::getToken() {
+    return ui->btnToken;
 }

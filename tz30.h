@@ -16,8 +16,11 @@ public:
     tz30widget *widget;
     TZ30():Timezone("Thirties", "thirties.jpg", "map-30s.png", "roaring-30s.mp3")
     {
-        widget = new tz30widget();
+        this->playing = false;
+        this->score = 0;
+        this->widget = new tz30widget();
         QThread::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
+        QObject::connect(widget->getToken(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
     }
 
     virtual bool canEnterRoom(Backpack *b);
@@ -26,8 +29,8 @@ public:
     void leave();
 
 private:
-    bool playing = false;
-    int score = 0;
+    bool playing;
+    int score;
     void startPlaying();
     void stopPlaying();
 
@@ -36,6 +39,7 @@ protected:
 
 private slots:
    void caughtCapone();
+   void tokenButtonPressed();
 };
 
 #endif // TZ30_H

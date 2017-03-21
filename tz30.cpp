@@ -15,7 +15,9 @@
 
 void TZ30::enter(Backpack *b) {
     Timezone::enter(b);
-    this->startPlaying();
+    if (!b->hasItem(40) && !this->widget->tokenVisible()) {
+      this->startPlaying();
+    }
 }
 
 bool TZ30::canEnterRoom(Backpack *b) {
@@ -30,7 +32,6 @@ void TZ30::startPlaying() {
 }
 
 void TZ30::run() {
-
     ClickableLabel *capone = this->widget->getCapone();
     int capone_width = capone->width();
     int capone_height = capone->height();
@@ -54,15 +55,19 @@ QWidget* TZ30::getTimezoneWidget() {
 }
 
 void TZ30::stopPlaying() {
-    qDebug() << "Setting playing - false";
     this->playing = false;
 }
 
 void TZ30::leave() {
     this->stopPlaying();
-    // Timezone::leave();
 }
 
 void TZ30::caughtCapone() {
-    qDebug() << "You caught Capone!";
+    this->playing = false;
+    this->widget->showToken();
+}
+
+void TZ30::tokenButtonPressed() {
+    this->getBackpack()->addItem(new Item(40, "40s Token"));
+    this->widget->getToken()->hide();
 }

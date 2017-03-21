@@ -155,6 +155,7 @@ void MainWindow::setBackpackText(QString txt) {
 }
 
 void MainWindow::setInfoText(QString txt) {
+    /*
     for (int i = 1; i <= txt.length(); i++) {
         ui->txtInfo->setText(txt.left(i));
         // Have to manually call repaint
@@ -165,6 +166,9 @@ void MainWindow::setInfoText(QString txt) {
         // We wait 16ms for that SLICK text effect.
         QThread::msleep(16);
     }
+    */
+    ui->txtInfo->setText(txt);
+    ui->txtInfo->repaint();
 }
 
 void MainWindow::setCurrentTimezone(Timezone *tz) {
