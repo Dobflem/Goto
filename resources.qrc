@@ -28,5 +28,7 @@
 		<file>Resources/key_1.png</file>
 		<file>Resources/junk-food.jpg</file>
 		<file>Resources/joint.jpg</file>
+		<file>Resources/hippie.png</file>
+		<file>Resources/hippie_talking.png</file>
     </qresource>
 </RCC>

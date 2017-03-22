@@ -97,6 +97,9 @@ border-color: #999999;</string>
         <height>34</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true"> background-color: #808080;
  border-style: solid;
@@ -120,6 +123,9 @@ border-color: #999999;</string>
         <width>34</width>
         <height>34</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true"> background-color: #808080;
@@ -145,6 +151,9 @@ border-color: #999999;</string>
         <height>34</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true"> background-color: #808080;
  border-style: solid;
@@ -168,6 +177,9 @@ border-color: #999999;</string>
         <width>34</width>
         <height>34</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true"> background-color: #808080;
@@ -199,6 +211,9 @@ border-color: #999999;</string>
        <width>50</width>
        <height>0</height>
       </size>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color:   #404040;

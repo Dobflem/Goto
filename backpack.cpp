@@ -55,3 +55,5 @@ bool Backpack::hasItem(int id) {
         }
     } return false;
 }
+
+//TODO: add remove item function

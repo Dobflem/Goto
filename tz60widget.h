@@ -2,10 +2,8 @@
 #define TZ60WIDGET_H
 
 #include <QWidget>
-#include <QTime>
-#include <QPainter>
-#include <QColor>
-#include <QPoint>
+#include <QPushButton>
+#include <QToolButton>
 
 
 namespace Ui {
@@ -19,10 +17,27 @@ class tz60widget : public QWidget
 public:
     explicit tz60widget(QWidget *parent = 0);
     ~tz60widget();
-    //void paintEvent(QPaintEvent *event);
+    QPushButton* getTokenButton();
+    QPushButton* getStartConvoButton();
+    QPushButton* getGiveHippieFoodButton();
+    QPushButton* getGiveHippieJointButton();
+    QToolButton* getNextButton();
+    void hideSpeechBubble();
+    void showSpeechBubble();
+    void hideNextArrow();
+    void showNextArrow();
+    void showFoodOptions();
+    void showJointOptions();
+    void hideFoodOptions();
+    void hideJointOptions();
+    void hideNoFoodWarning();
+    void showNoFoodWarning();
+    void hideNoJointWarning();
+    void showNoJointWarning();
+    void setSpeechBubbleText(QString text);
 
-private slots:
-
+public slots:
+    void swapHippieLabels();
 
 private:
     Ui::tz60widget *ui;

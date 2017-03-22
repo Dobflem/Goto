@@ -13,9 +13,9 @@ class TZ20 : public QThread, public Timezone {
     Q_OBJECT
 
 private:
-    void displayInfo();
     bool tokenRecieved;
     void displayAlreadyPassed();
+    void displayInfo();
 
 public:
     tz20widget *widget;
