@@ -32,6 +32,10 @@ public:
 
 private:
     Ui::tz30widget *ui;
+
+public slots:
+    void caponeGeometoryChanged(int x, int y);
+    void toggleCapone();
 };
 
 #endif // TZ30WIDGET_H

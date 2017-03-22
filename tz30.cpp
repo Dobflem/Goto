@@ -42,10 +42,12 @@ void TZ30::run() {
     while(this->playing) {
         x = qrand() % width;
         y = qrand() % height;
-        capone->setGeometry(x, y, capone_width, capone_height);
-        capone->show();
+
+        emit caponeXYchanged(x, y);
+
+        emit caponeToggle();
         this_thread::sleep_for(chrono::milliseconds(1000));
-        capone->hide();
+        emit caponeToggle();
         this_thread::sleep_for(chrono::milliseconds(1000));
     }
 }

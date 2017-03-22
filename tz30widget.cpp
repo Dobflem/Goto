@@ -32,3 +32,21 @@ bool tz30widget::tokenVisible() {
 QPushButton *tz30widget::getToken() {
     return ui->btnToken;
 }
+
+void tz30widget::caponeGeometoryChanged(int x, int y) {
+    int capone_width = getCapone()->width();
+    int capone_height = getCapone()->height();
+
+    qDebug() << "Changing capone geometry";
+    ui->capone->setGeometry(x , y, capone_width, capone_height);
+}
+
+void tz30widget::toggleCapone() {
+    ClickableLabel* capone = getCapone();
+
+    if (capone->isHidden()) {
+        capone->show();
+    } else {
+        capone->hide();
+    }
+}

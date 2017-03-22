@@ -21,6 +21,9 @@ public:
         this->widget = new tz30widget();
         QThread::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
         QObject::connect(widget->getToken(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
+
+        QObject::connect(this, SIGNAL(caponeXYchanged(int, int)), this->widget, SLOT(caponeGeometoryChanged(int, int)));
+        QObject::connect(this, SIGNAL(caponeToggle()), this->widget, SLOT(toggleCapone()));
     }
 
     virtual bool canEnterRoom(Backpack *b);
@@ -40,6 +43,10 @@ protected:
 private slots:
    void caughtCapone();
    void tokenButtonPressed();
+
+signals:
+    void caponeXYchanged(int x, int y);
+    void caponeToggle();
 };
 
 #endif // TZ30_H
