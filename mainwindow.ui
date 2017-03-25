@@ -240,10 +240,10 @@ max-width: 20px;</string>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>59</x>
-      <y>20</y>
-      <width>961</width>
-      <height>551</height>
+      <x>29</x>
+      <y>10</y>
+      <width>991</width>
+      <height>561</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout"/>
@@ -251,9 +251,9 @@ max-width: 20px;</string>
    <widget class="QLabel" name="backpackContents">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>580</y>
-      <width>951</width>
+      <width>981</width>
       <height>24</height>
      </rect>
     </property>

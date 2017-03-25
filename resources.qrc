@@ -30,5 +30,10 @@
 		<file>Resources/joint.jpg</file>
 		<file>Resources/hippie.png</file>
 		<file>Resources/hippie_talking.png</file>
+		<file>Resources/slinky.jpg</file>
+		<file>Resources/band-aid.jpg</file>
+		<file>Resources/jeep.jpg</file>
+		<file>Resources/barbie.jpg</file>
+		<file>Resources/microwave.jpg</file>
     </qresource>
 </RCC>
