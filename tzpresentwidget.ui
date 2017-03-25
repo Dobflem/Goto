@@ -18,12 +18,12 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="trump">
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="resources.qrc">:/Resources/today.jpg</pixmap>
+      <pixmap resource="resources.qrc">:/Resources/trump.jpg</pixmap>
      </property>
     </widget>
    </item>

@@ -14,7 +14,3 @@ tzpresentwidget::~tzpresentwidget() {
     delete ui;
 }
 
-/*void tzpresentwidget::paintEvent(QPaintEvent *)
-{
-    //paint here
-}*/

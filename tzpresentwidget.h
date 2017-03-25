@@ -2,10 +2,7 @@
 #define TZPRESENTWIDGET_H
 
 #include <QWidget>
-#include <QTime>
-#include <QPainter>
-#include <QColor>
-#include <QPoint>
+#include <QLabel>
 
 
 namespace Ui {
@@ -19,10 +16,10 @@ class tzpresentwidget : public QWidget
 public:
     explicit tzpresentwidget(QWidget *parent = 0);
     ~tzpresentwidget();
-    //void paintEvent(QPaintEvent *event);
 
 private:
     Ui::tzpresentwidget *ui;
+
 };
 
 #endif // TZPRESENTWIDGET_H
