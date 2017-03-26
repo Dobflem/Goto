@@ -2,6 +2,7 @@
 #include "tz50widget.h"
 #include <QWidget>
 #include <QObject>
+#include <QSlider>
 #include <QThread>
 
 #ifndef TZ50_H
@@ -15,11 +16,15 @@ public:
     tz50widget *widget;
     TZ50():Timezone("Fifties", "fifties.jpg", "map-50s.png", "jailhouse-rock.mp3")
     {
-        widget = new tz50widget();
-        QObject::connect(widget->getJunkFood(), SIGNAL(clicked()), this, SLOT(junkFoodButtonPressed()));
+        this->widget = new tz50widget();
+        this->sliderR = this->widget->getSliderR();
+        this->sliderG = this->widget->getSliderG();
+        this->sliderB = this->widget->getSliderB();
+        this->r = this->g = this->b = this->signal = 0;
+        this->setupSignalsAndSlots();
     }
 
-    //Virtual
+    // Virtual
     void enter(Backpack* b);
     bool canEnterRoom(Backpack *b);
     QWidget* getTimezoneWidget();
@@ -27,6 +32,19 @@ public:
 
 public slots:
    void junkFoodButtonPressed();
+   void sliderRChanged(int);
+   void sliderGChanged(int);
+   void sliderBChanged(int);
+   void checkSignalStrength();
+
+private:
+    QSlider *sliderR;
+    QSlider *sliderG;
+    QSlider *sliderB;
+    double r, g, b, signal;
+
+    void setupSignalsAndSlots();
+    void calculateSignal();
 };
 
 #endif // TZ50_H

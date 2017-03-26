@@ -2,7 +2,9 @@
 #define TZ50WIDGET_H
 
 #include <QWidget>
+#include <QSlider>
 #include <QPushButton>
+#include <QLabel>
 
 
 namespace Ui {
@@ -17,6 +19,10 @@ public:
     explicit tz50widget(QWidget *parent = 0);
     ~tz50widget();
     QPushButton* getJunkFood();
+    QSlider *getSliderR();
+    QSlider *getSliderG();
+    QSlider *getSliderB();
+    QLabel *getColouredOz();
 
 private:
     Ui::tz50widget *ui;

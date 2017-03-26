@@ -39,10 +39,10 @@
       <widget class="QPushButton" name="junkFoodButton">
        <property name="geometry">
         <rect>
-         <x>400</x>
-         <y>220</y>
-         <width>91</width>
-         <height>91</height>
+         <x>10</x>
+         <y>30</y>
+         <width>81</width>
+         <height>81</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -55,6 +55,139 @@ border: none;</string>
         <string/>
        </property>
       </widget>
+      <widget class="QLabel" name="imgTV">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>30</y>
+         <width>381</width>
+         <height>321</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/tv.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="imgOzBandW">
+       <property name="geometry">
+        <rect>
+         <x>368</x>
+         <y>83</y>
+         <width>261</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/oz_bandw.jpeg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="imgOzColoured">
+       <property name="geometry">
+        <rect>
+         <x>368</x>
+         <y>83</y>
+         <width>261</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/oz_colored.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderR">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>370</y>
+         <width>361</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderG">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>390</y>
+         <width>361</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sliderB">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>410</y>
+         <width>361</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QGraphicsView" name="graphicsView">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>350</y>
+         <width>381</width>
+         <height>91</height>
+        </rect>
+       </property>
+      </widget>
+      <zorder>label</zorder>
+      <zorder>graphicsView</zorder>
+      <zorder>junkFoodButton</zorder>
+      <zorder>imgTV</zorder>
+      <zorder>imgOzBandW</zorder>
+      <zorder>imgOzColoured</zorder>
+      <zorder>sliderR</zorder>
+      <zorder>sliderG</zorder>
+      <zorder>sliderB</zorder>
      </widget>
      <widget class="QWidget" name="page_2"/>
     </widget>

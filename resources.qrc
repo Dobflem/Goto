@@ -23,18 +23,21 @@
         <file>Resources/map-00s.png</file>
         <file>Resources/map-present.png</file>
         <file>Resources/capone.jpg</file>
-		<file>Resources/token.png</file>
-		<file>Resources/backpack_icon.png</file>
-		<file>Resources/key_1.png</file>
-		<file>Resources/junk-food.jpg</file>
-		<file>Resources/joint.jpg</file>
-		<file>Resources/hippie.png</file>
-		<file>Resources/hippie_talking.png</file>
-		<file>Resources/slinky.jpg</file>
-		<file>Resources/band-aid.jpg</file>
-		<file>Resources/jeep.jpg</file>
-		<file>Resources/barbie.jpg</file>
-		<file>Resources/microwave.jpg</file>
-		<file>Resources/trump.jpg</file>
+        <file>Resources/token.png</file>
+        <file>Resources/backpack_icon.png</file>
+        <file>Resources/key_1.png</file>
+        <file>Resources/junk-food.jpg</file>
+        <file>Resources/joint.jpg</file>
+        <file>Resources/hippie.png</file>
+        <file>Resources/hippie_talking.png</file>
+        <file>Resources/slinky.jpg</file>
+        <file>Resources/band-aid.jpg</file>
+        <file>Resources/jeep.jpg</file>
+        <file>Resources/barbie.jpg</file>
+        <file>Resources/microwave.jpg</file>
+        <file>Resources/trump.jpg</file>
+        <file>Resources/oz_bandw.jpeg</file>
+        <file>Resources/oz_colored.jpg</file>
+        <file>Resources/tv.jpg</file>
     </qresource>
 </RCC>

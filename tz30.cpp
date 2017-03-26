@@ -66,6 +66,7 @@ void TZ30::leave() {
 
 void TZ30::caughtCapone() {
     this->playing = false;
+    this->widget->getCapone()->hide();
     this->widget->showToken();
 }
 
