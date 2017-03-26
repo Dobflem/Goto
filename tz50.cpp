@@ -44,6 +44,8 @@ void TZ50::calculateSignal() {
 
     QString msg = "Signal Strength: " + QString::number(this->signal);
     this->getInfoMessage()->setMessage(msg);
+    this->widget->getColouredOz()->hide();
+    if (this->signal == 100) this->widget->getColouredOz()->show();
 }
 
 void TZ50::checkSignalStrength() {
