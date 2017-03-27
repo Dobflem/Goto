@@ -18,6 +18,18 @@ void TZ50::leave() {
     // Timezone::leave();
 }
 
+void TZ50::setup() {
+    this->widget = new tz50widget();
+    this->sliderR = this->widget->getSliderR();
+    this->sliderG = this->widget->getSliderG();
+    this->sliderB = this->widget->getSliderB();
+    this->r = this->sliderR->value();
+    this->g = this->sliderG->value();
+    this->b = this->sliderB->value();
+    this->signal = 0;
+    this->setupSignalsAndSlots();
+}
+
 void TZ50::junkFoodButtonPressed() {
     this->widget->getJunkFood()->hide();
 

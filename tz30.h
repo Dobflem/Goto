@@ -9,32 +9,27 @@
 
 #include <QObject>
 
-class TZ30 : public QThread, public Timezone
-{
+class TZ30 : public QThread, public Timezone  {
 Q_OBJECT
+
 public:
     tz30widget *widget;
     TZ30():Timezone("Thirties", "thirties.jpg", "map-30s.png", "roaring-30s.mp3")
     {
-        this->playing = false;
-        this->score = 0;
-        this->widget = new tz30widget();
-        QObject::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
-        QObject::connect(widget->getToken(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
-        QObject::connect(this, SIGNAL(caponeXYchanged(int, int)), this->widget, SLOT(caponeGeometoryChanged(int, int)));
-        QObject::connect(this, SIGNAL(caponeToggle()), this->widget, SLOT(toggleCapone()));
+        this->setup();
     }
 
     virtual bool canEnterRoom(Backpack *b);
-    QWidget* getTimezoneWidget();
+    virtual QWidget* getTimezoneWidget();
     virtual void enter(Backpack *b = NULL);
-    void leave();
+    virtual void leave();
 
 private:
     bool playing;
     int score;
     void startPlaying();
     void stopPlaying();
+    void setup();
 
 protected:
     void run();

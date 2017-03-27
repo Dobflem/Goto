@@ -12,18 +12,17 @@ class TZ90 : public QObject, public Timezone
 Q_OBJECT
 public:
     tz90widget *widget;
-    TZ90():Timezone("Nineties", "nineties.jpg", "map-90s.png", "byebyebye.mp3")
-    {
+    TZ90():Timezone("Nineties", "nineties.jpg", "map-90s.png", "byebyebye.mp3") {
         this->widget = new tz90widget();
         this->setupSignalsAndSlots();
     }
 
-    bool canEnterRoom(Backpack *b);
-    QWidget* getTimezoneWidget();
+    virtual bool canEnterRoom(Backpack *b);
+    virtual QWidget* getTimezoneWidget();
 
 public slots:
     void transparentTokenClicked();
-    void clickedToken(bool);
+    void clickedToken();
 
 private:
     void setupSignalsAndSlots();

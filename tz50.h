@@ -14,24 +14,14 @@ class TZ50 : public QObject, public Timezone {
 
 public:
     tz50widget *widget;
-    TZ50():Timezone("Fifties", "fifties.jpg", "map-50s.png", "jailhouse-rock.mp3")
-    {
-        this->widget = new tz50widget();
-        this->sliderR = this->widget->getSliderR();
-        this->sliderG = this->widget->getSliderG();
-        this->sliderB = this->widget->getSliderB();
-        this->r = this->sliderR->value();
-        this->g = this->sliderG->value();
-        this->b = this->sliderB->value();
-        this->signal = 0;
-        this->setupSignalsAndSlots();
+    TZ50():Timezone("Fifties", "fifties.jpg", "map-50s.png", "jailhouse-rock.mp3") {
+        setup();
     }
 
-    // Virtual
-    void enter(Backpack* b);
-    bool canEnterRoom(Backpack *b);
-    QWidget* getTimezoneWidget();
-    void leave();
+    virtual void enter(Backpack* b);
+    virtual bool canEnterRoom(Backpack *b);
+    virtual QWidget* getTimezoneWidget();
+    virtual void leave();
 
 public slots:
    void junkFoodButtonPressed();
@@ -49,6 +39,7 @@ private:
 
     void setupSignalsAndSlots();
     void calculateSignal();
+    void setup();
 };
 
 #endif // TZ50_H
