@@ -2,10 +2,8 @@
 #define TZ00WIDGET_H
 
 #include <QWidget>
-#include <QTime>
-#include <QPainter>
-#include <QColor>
-#include <QPoint>
+#include <QPushButton>
+#include <QLabel>
 
 
 namespace Ui {
@@ -19,7 +17,17 @@ class tz00widget : public QWidget
 public:
     explicit tz00widget(QWidget *parent = 0);
     ~tz00widget();
-    //void paintEvent(QPaintEvent *event);
+
+    QPushButton* getTokenButton();
+    QPushButton* getSubmitButton();
+    bool getTitanicCheckBox();
+    bool getNelsonCheckBox();
+    bool getMjCheckBox();
+    bool getIpodCheckBox();
+    bool getBigBrotherCheckBox();
+    bool getYoutubeCheckBox();
+    QLabel* getWarningLabel();
+    QFrame* getGameFrame();
 
 private:
     Ui::tz00widget *ui;

@@ -40,5 +40,11 @@
         <file>Resources/oz_colored.jpg</file>
         <file>Resources/tv.jpg</file>
         <file>Resources/speaker.png</file>
+		<file>Resources/youtube.png</file>
+		<file>Resources/nelson.jpg</file>
+		<file>Resources/mj.jpg</file>
+		<file>Resources/ipod.jpg</file>
+		<file>Resources/bigbro.png</file>
+		<file>Resources/titanic.jpg</file>
     </qresource>
 </RCC>

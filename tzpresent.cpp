@@ -1,8 +1,7 @@
 #include "tzpresent.h"
 
 bool TZPresent::canEnterRoom(Backpack *b) {
-    //return (b->hasItem(10));
-    return true;
+    return (b->hasItem(10));
 }
 
 QWidget* TZPresent::getTimezoneWidget() {
