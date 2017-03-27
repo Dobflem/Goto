@@ -16,7 +16,6 @@
     TEMPLATE = app
 
     SOURCES  += \
-            Character.cpp \
             item.cpp \
             Timezone.cpp \
             GoToTime.cpp \
@@ -49,7 +48,6 @@
 
 
     HEADERS  += \
-            Character.h \
             item.h \
             Timezone.h \
             GoToTime.h \
