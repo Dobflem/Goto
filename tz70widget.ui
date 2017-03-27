@@ -18,13 +18,68 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="resources.qrc">:/Resources/seventies.jpg</pixmap>
-     </property>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <widget class="QWidget" name="page">
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1145</width>
+         <height>599</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/seventies.jpg</pixmap>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdVolume">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>390</y>
+         <width>391</width>
+         <height>101</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>281</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="resources.qrc">:/Resources/speaker.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QDial" name="dialVolume">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>440</y>
+         <width>51</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2"/>
     </widget>
    </item>
   </layout>

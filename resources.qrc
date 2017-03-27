@@ -39,5 +39,6 @@
         <file>Resources/oz_bandw.jpeg</file>
         <file>Resources/oz_colored.jpg</file>
         <file>Resources/tv.jpg</file>
+        <file>Resources/speaker.png</file>
     </qresource>
 </RCC>

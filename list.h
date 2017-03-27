@@ -20,6 +20,7 @@ public:
     void start();
     bool empty();
     void next();
+    T operator ++();
     T *currentItem;
 
     List() {
@@ -55,7 +56,6 @@ void List<T>::start() {
     if (this->objects->size() > 0) {
       this->item_iter = this->objects->begin();
       this->currentItem = *(this->item_iter);
-      qDebug() << this->currentItem->getDescription();
     } else {
       this->currentItem = NULL;
     }
@@ -75,6 +75,12 @@ void List<T>::next() {
 template <class T>
 bool List<T>::empty() {
     return !this->objects->size();
+}
+
+template <class T>
+T List<T>::operator++() {
+    this->next();
+    return this;
 }
 
 #endif // LIST_H

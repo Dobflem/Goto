@@ -33,14 +33,14 @@ InfoMessage* Backpack::getContents() {
 
 void Backpack::setContentsString() {
     this->contentsString = "";
-    for(items->start(); items->currentItem != NULL; items->next()) {
+    for(items->start(); items->currentItem != NULL; items++) {
         this->contentsString.append(items->currentItem->getDescription());
         this->contentsString.append(", ");
     }
 }
 
 Item *Backpack::getItem(int id) {
-    for(items->start(); items->currentItem != NULL; items->next()) {
+    for(items->start(); items->currentItem != NULL; items++) {
         if (items->currentItem->getID() == id) {
             return items->currentItem;
         }
@@ -48,7 +48,7 @@ Item *Backpack::getItem(int id) {
 }
 
 bool Backpack::hasItem(int id) {
-    for(items->start(); items->currentItem != NULL; items->next()) {
+    for(items->start(); items->currentItem != NULL; items++) {
         if (items->currentItem->getID() == id) {
             qDebug() << items->currentItem->getDescription() << endl;
             return true;

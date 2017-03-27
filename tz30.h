@@ -19,9 +19,8 @@ public:
         this->playing = false;
         this->score = 0;
         this->widget = new tz30widget();
-        QThread::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
+        QObject::connect(widget->getCapone(), SIGNAL(clicked()), this, SLOT(caughtCapone()));
         QObject::connect(widget->getToken(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
-
         QObject::connect(this, SIGNAL(caponeXYchanged(int, int)), this->widget, SLOT(caponeGeometoryChanged(int, int)));
         QObject::connect(this, SIGNAL(caponeToggle()), this->widget, SLOT(toggleCapone()));
     }

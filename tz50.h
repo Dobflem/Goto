@@ -9,7 +9,7 @@
 #define TZ50_H
 
 
-class TZ50 : public QThread, public Timezone {
+class TZ50 : public QObject, public Timezone {
     Q_OBJECT
 
 public:
@@ -20,7 +20,10 @@ public:
         this->sliderR = this->widget->getSliderR();
         this->sliderG = this->widget->getSliderG();
         this->sliderB = this->widget->getSliderB();
-        this->r = this->g = this->b = this->signal = 0;
+        this->r = this->sliderR->value();
+        this->g = this->sliderG->value();
+        this->b = this->sliderB->value();
+        this->signal = 0;
         this->setupSignalsAndSlots();
     }
 

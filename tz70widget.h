@@ -6,7 +6,8 @@
 #include <QPainter>
 #include <QColor>
 #include <QPoint>
-
+#include <QDial>
+#include <QLCDNumber>
 
 namespace Ui {
 class tz70widget;
@@ -19,7 +20,8 @@ class tz70widget : public QWidget
 public:
     explicit tz70widget(QWidget *parent = 0);
     ~tz70widget();
-   // void paintEvent(QPaintEvent *event);
+    QDial *getVolumeDial() const;
+    QLCDNumber *getVolumeLCD() const;
 
 private:
     Ui::tz70widget *ui;

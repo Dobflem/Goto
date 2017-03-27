@@ -1,6 +1,9 @@
 #include "tz70widget.h"
 #include "ui_tz70widget.h"
+
 #include <QtGui>
+#include <QDial>
+#include <QLCDNumber>
 
 
 tz70widget::tz70widget(QWidget *parent) :
@@ -14,7 +17,10 @@ tz70widget::~tz70widget() {
     delete ui;
 }
 
-/*void tz70widget::paintEvent(QPaintEvent *)
-{
-    //paint here
-}*/
+QDial *tz70widget::getVolumeDial() const {
+    return ui->dialVolume;
+}
+
+QLCDNumber *tz70widget::getVolumeLCD() const {
+    return ui->lcdVolume;
+}

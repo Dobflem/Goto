@@ -10,31 +10,31 @@ Timezone::Timezone(QString description, QString path, QString mapPath, QString m
     this->infoMessage = new InfoMessage();
 }
 
-QString Timezone::getTZImage() {
+QString Timezone::getTZImage() const {
     return this->imagePath;
 }
 
-QString Timezone::getMapPath() {
+QString Timezone::getMapPath() const {
     return this->mapPath;
 }
 
-QString Timezone::getMusicPath() {
+QString Timezone::getMusicPath() const {
     return this->musicPath;
 }
 
-QString Timezone::getDescription() {
+QString Timezone::getDescription() const {
     return description;
 }
 
-InfoMessage* Timezone::getInfoMessage() {
+InfoMessage* Timezone::getInfoMessage() const {
     return infoMessage;
 }
 
-Backpack* Timezone::getBackpack() {
+Backpack* Timezone::getBackpack() const {
     return backpack;
 }
 
-vector<Item> Timezone::getItemsInTimezone() {
+vector<Item> Timezone::getItemsInTimezone() const {
     return itemsInTimezone;
 }
 

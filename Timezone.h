@@ -47,14 +47,14 @@ public:
 
 
     // GETTERS
-    QString getTZImage();
-    QString getImagePath();
-    QString getMapPath();
-    QString getMusicPath();
-    QString getDescription();
-    InfoMessage* getInfoMessage();
-    Backpack* getBackpack();
-    vector<Item> getItemsInTimezone();
+    QString getTZImage() const;
+    QString getImagePath() const;
+    QString getMapPath() const;
+    QString getMusicPath() const;
+    QString getDescription() const;
+    InfoMessage* getInfoMessage() const;
+    Backpack* getBackpack() const;
+    vector<Item> getItemsInTimezone() const;
 
 
     // SETTERS
