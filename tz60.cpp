@@ -8,8 +8,7 @@
 #include <QMouseEvent>
 
 bool TZ60::canEnterRoom(Backpack* b) {
-    //return (b->hasItem(60));
-    return true;
+    return (b->hasItem(60));
 }
 
 QWidget* TZ60::getTimezoneWidget() {

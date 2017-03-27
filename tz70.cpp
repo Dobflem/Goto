@@ -1,7 +1,7 @@
 #include "tz70.h"
 
-bool TZ70::canEnterRoom() {
-    return true;
+bool TZ70::canEnterRoom(Backpack *b) {
+    return (b->hasItem(70));
 }
 
 QWidget* TZ70::getTimezoneWidget() {

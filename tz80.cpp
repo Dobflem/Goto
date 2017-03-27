@@ -2,8 +2,7 @@
 #include <QTimer>
 
 bool TZ80::canEnterRoom(Backpack *b) {
-    //return (b->hasItem(80));
-    return true;
+    return (b->hasItem(80));
 }
 
 QWidget* TZ80::getTimezoneWidget() {

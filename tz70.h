@@ -21,7 +21,7 @@ public:
         this->setupSignalsAndSlots();
     }
 
-    bool canEnterRoom();
+    bool canEnterRoom(Backpack *b);
     QWidget* getTimezoneWidget();
 
 public slots:

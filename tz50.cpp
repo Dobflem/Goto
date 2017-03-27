@@ -2,7 +2,7 @@
 #include <cmath>
 
 bool TZ50::canEnterRoom(Backpack *b) {
-    return true;
+    return (b->hasItem(50));
 }
 
 QWidget* TZ50::getTimezoneWidget() {
