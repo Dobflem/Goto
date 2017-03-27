@@ -64,7 +64,7 @@ void TZ50::sliderBChanged(int val) {
 }
 
 void TZ50::clickedToken(bool clicked) {
-    this->getBackpack()->addItem(new Item(60, "50s Token"));
+    this->getBackpack()->addItem(new Item(60, "60s Token"));
     this->widget->getToken()->hide();
 }
 
