@@ -13,8 +13,9 @@ class TZ70 : public QObject, public Timezone
     Q_OBJECT
 public:
     tz70widget *widget;
-    TZ70():Timezone("Seventies", "seventies.jpg", "map-70s.png", "dancing-queen.mp3") {
-        this->setup();
+    TZ70():Timezone("Seventies", "seventies.jpg", "map-70s.png", "dancing-queen.mp3"),
+    widget(new tz70widget()), volumeDial(this->widget->getVolumeDial()), volumeLCD(this->widget->getVolumeLCD()){
+        this->setupSignalsAndSlots();
     }
 
     virtual bool canEnterRoom(Backpack *b);
@@ -29,7 +30,6 @@ private:
     QLCDNumber *volumeLCD;
 
     void setupSignalsAndSlots();
-    void setup();
 
 };
 

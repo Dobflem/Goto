@@ -18,7 +18,9 @@ Q_OBJECT
 
 public:
     tz60widget *widget;
-    TZ60():Timezone("Sixties", "sixties.png", "map-60s.png", "boots.mp3") {
+    TZ60():Timezone("Sixties", "sixties.png", "map-60s.png", "boots.mp3"),
+    widget(new tz60widget()), tokenRecieved(false),
+    hippieTalking(true), indexOfCurrentSentence(0){
         this->setup();
     }
 

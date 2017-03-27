@@ -12,7 +12,8 @@ class TZ40 : public QThread, public Timezone {
 
 public:
     tz40widget *widget;
-    TZ40():Timezone("Fourties", "fourties.jpg", "map-40s.png", "1940-swing.mp3") {
+    TZ40():Timezone("Fourties", "fourties.jpg", "map-40s.png", "1940-swing.mp3"),
+      widget(new tz40widget()), tokenRecieved(false) {
         this->setup();
     }
 

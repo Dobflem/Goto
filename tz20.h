@@ -20,7 +20,8 @@ private:
 public:
     tz20widget *widget;
 
-    TZ20():Timezone("Twenties", "twenties.jpg", "map-20s.png", "roaring-20s.mp3") {
+    TZ20():Timezone("Twenties", "twenties.jpg", "map-20s.png", "roaring-20s.mp3"),
+        tokenRecieved(false), widget(new tz20widget()) {
         this->setup();
     }
 

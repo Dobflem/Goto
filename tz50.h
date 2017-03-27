@@ -14,7 +14,14 @@ class TZ50 : public QObject, public Timezone {
 
 public:
     tz50widget *widget;
-    TZ50():Timezone("Fifties", "fifties.jpg", "map-50s.png", "jailhouse-rock.mp3") {
+    TZ50():Timezone("Fifties", "fifties.jpg", "map-50s.png", "jailhouse-rock.mp3"),
+        widget(new tz50widget()),
+        sliderR(this->widget->getSliderR()),
+        sliderG(this->widget->getSliderG()),
+        sliderB(this->widget->getSliderB()),
+        r(this->sliderR->value()),
+        g(this->sliderG->value()),
+        b(this->sliderB->value()), signal(0) {
         setup();
     }
 
@@ -29,7 +36,7 @@ public slots:
    void sliderRChanged(int);
    void sliderGChanged(int);
    void sliderBChanged(int);
-   void clickedToken(bool);
+   void clickedToken();
 
 private:
     QSlider *sliderR;

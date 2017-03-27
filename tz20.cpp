@@ -28,9 +28,6 @@ void TZ20::leave() {
 }
 
 void TZ20::setup() {
-    widget = new tz20widget();
-    tokenRecieved = false;
-
     QObject::connect(widget->getButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
     QObject::connect(widget->getKeyButton(), SIGNAL(clicked()), this, SLOT(keyButtonPressed()));
 }

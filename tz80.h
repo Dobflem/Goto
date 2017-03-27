@@ -31,7 +31,7 @@ public:
     tz80widget *widget;
 
     TZ80():Timezone("Eighties", "eighties.jpg", "map-80s.png", "take-on-me.mp3"),
-        answer1(2), answer2(1), answer3(1), answer4(0) {
+        tokenRecieved(false), answer1(2), answer2(1), answer3(1), answer4(0), widget(new tz80widget()) {
          setup();
     }
 

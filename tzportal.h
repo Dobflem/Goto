@@ -9,8 +9,8 @@ class TZPortal: public Timezone
 {
 public:
     tzportalwidget *widget;
-    TZPortal():Timezone("Time-Portal", "portal.jpg", "map.png", "sci-fi.mp3") {
-        widget = new tzportalwidget();
+    TZPortal():Timezone("Time-Portal", "portal.jpg", "map.png", "sci-fi.mp3"),
+    widget(new tzportalwidget()){
     }
 
     virtual bool canEnterRoom();

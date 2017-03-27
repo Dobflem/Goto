@@ -12,8 +12,8 @@ class TZPresent : public Timezone
 {
 public:
     tzpresentwidget *widget;
-    TZPresent():Timezone("Present Day", "today.jpg", "map-present.png", "creepy-buildup.mp3") {
-        widget = new tzpresentwidget();
+    TZPresent():Timezone("Present Day", "today.jpg", "map-present.png", "creepy-buildup.mp3"),
+      widget(new tzpresentwidget()){
     }
 
     virtual void enter(Backpack* b);

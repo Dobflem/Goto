@@ -12,8 +12,8 @@ class TZ90 : public QObject, public Timezone
 Q_OBJECT
 public:
     tz90widget *widget;
-    TZ90():Timezone("Nineties", "nineties.jpg", "map-90s.png", "byebyebye.mp3") {
-        this->widget = new tz90widget();
+    TZ90():Timezone("Nineties", "nineties.jpg", "map-90s.png", "byebyebye.mp3"),
+     widget(new tz90widget()){
         this->setupSignalsAndSlots();
     }
 

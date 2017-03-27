@@ -18,8 +18,6 @@ void TZ00::leave() {
 }
 
 void TZ00::setup() {
-    widget = new tz00widget();
-    tokenRecieved = false;
     QObject::connect(widget->getSubmitButton(), SIGNAL(clicked()), this, SLOT(submitButtonPressed()));
     QObject::connect(widget->getTokenButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
 }
@@ -37,7 +35,7 @@ void TZ00::tokenButtonPressed() {
     this->widget->getTokenButton()->hide();
 
     displayAlreadyPassed();
-    this->getBackpack()->addItem(new Item('10', "Present Token"));
+    this->getBackpack()->addItem(new Item(10, "Present Token"));
 }
 
 void TZ00::displayAlreadyPassed() {

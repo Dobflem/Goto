@@ -22,8 +22,6 @@ void TZ40::leave() {
 }
 
 void TZ40::setup() {
-    widget = new tz40widget();
-    tokenRecieved = false;
     QObject::connect(widget->getJoint(), SIGNAL(clicked()), this, SLOT(jointButtonPressed()));
     QObject::connect(widget->getSubmitButton(), SIGNAL(clicked()), this, SLOT(submitButtonPressed()));
     QObject::connect(widget->getCloseButton(), SIGNAL(clicked()), this, SLOT(closeButtonPressed()));

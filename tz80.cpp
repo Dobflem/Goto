@@ -21,9 +21,6 @@ void TZ80::leave() {
 }
 
 void TZ80::setup() {
-    tokenRecieved = false;
-    widget = new tz80widget();
-
     setupHideUIElements();
     setupSignalsAndSlotConnections();
 }

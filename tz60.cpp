@@ -72,11 +72,6 @@ void TZ60::run() {
 }
 
 void TZ60::setup() {
-    widget = new tz60widget();
-    tokenRecieved = false;
-    hippieTalking = true;
-    indexOfCurrentSentence = 0;
-
     setupSignalsAndSlotsConnections();
     setupHidingUIElements();
     setupHippieSentences();

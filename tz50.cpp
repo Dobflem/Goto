@@ -75,7 +75,7 @@ void TZ50::sliderBChanged(int val) {
     this->calculateSignal();
 }
 
-void TZ50::clickedToken(bool clicked) {
+void TZ50::clickedToken() {
     this->getBackpack()->addItem(new Item(60, "60s Token"));
     this->widget->getToken()->hide();
 }
@@ -88,5 +88,5 @@ void TZ50::setupSignalsAndSlots() {
     QObject::connect(this->sliderR, SIGNAL(sliderReleased()), this, SLOT(checkSignalStrength()));
     QObject::connect(this->sliderG, SIGNAL(sliderReleased()), this, SLOT(checkSignalStrength()));
     QObject::connect(this->sliderB, SIGNAL(sliderReleased()), this, SLOT(checkSignalStrength()));
-    QObject::connect(this->widget->getToken(), SIGNAL(clicked(bool)), this, SLOT(clickedToken(bool)));
+    QObject::connect(this->widget->getToken(), SIGNAL(clicked(bool)), this, SLOT(clickedToken()));
 }

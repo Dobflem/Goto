@@ -8,13 +8,6 @@ QWidget* TZ70::getTimezoneWidget() {
     return widget;
 }
 
-void TZ70::setup() {
-    this->widget = new tz70widget();
-    this->volumeDial = this->widget->getVolumeDial();
-    this->volumeLCD = this->widget->getVolumeLCD();
-    this->setupSignalsAndSlots();
-}
-
 void TZ70::changedVolume(int vol) {
     if ((vol == 100) && (!this->getBackpack()->hasItem(80))) {
         this->widget->getToken()->show();
