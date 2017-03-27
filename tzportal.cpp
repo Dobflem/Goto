@@ -5,6 +5,5 @@ bool TZPortal::canEnterRoom() {
 }
 
 QWidget* TZPortal::getTimezoneWidget() {
-    cout << "Getting portal widget" << endl;
     return widget;
 }

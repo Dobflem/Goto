@@ -5,18 +5,16 @@ bool TZPresent::canEnterRoom(Backpack *b) {
 }
 
 QWidget* TZPresent::getTimezoneWidget() {
-    cout << "getting present widget" << endl;
     return widget;
-}
-
-void TZPresent::leave() {
-    qDebug() << "Leaving Present";
-    // Timezone::leave();
 }
 
 void TZPresent::enter(Backpack *b) {
     this->setBackpack(b);
     this->displayInfo();
+}
+
+void TZPresent::leave() {
+    // Timezone::leave();
 }
 
 void TZPresent::displayInfo() {

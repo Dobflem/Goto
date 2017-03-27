@@ -12,16 +12,14 @@ class TZPresent : public Timezone
 {
 public:
     tzpresentwidget *widget;
-    TZPresent():Timezone("Present Day", "today.jpg", "map-present.png", "creepy-buildup.mp3")
-    {
+    TZPresent():Timezone("Present Day", "today.jpg", "map-present.png", "creepy-buildup.mp3") {
         widget = new tzpresentwidget();
     }
 
-    //Virtual
-    void enter(Backpack* b);
-    bool canEnterRoom(Backpack *b);
-    QWidget* getTimezoneWidget();
-    void leave();
+    virtual void enter(Backpack* b);
+    virtual bool canEnterRoom(Backpack *b);
+    virtual QWidget* getTimezoneWidget();
+    virtual void leave();
 
 private:
     void displayInfo();

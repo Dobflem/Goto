@@ -17,13 +17,27 @@ QWidget* TZ60::getTimezoneWidget() {
 }
 
 void TZ60::enter(Backpack *b) {
-    Timezone::enter(b);
-
+    this->setBackpack(b);
     showHideHaveFoodWarning();
     showHideHaveJointWarning();
-
-    //this->setBackpack(b);
     this->displayInfo();
+}
+
+void TZ60::leave() {
+    qDebug() << "leaving";
+    this->stopTalking();
+}
+
+void TZ60::displayInfo() {
+    if (this->tokenRecieved) {
+        displayAlreadyPassed();
+    } else {
+        Timezone::getInfoMessage()->setMessage("Welcome to the groovy 60s. Talk to the hippy to see if you can pass this level");
+    }
+}
+
+void TZ60::displayAlreadyPassed() {
+    Timezone::getInfoMessage()->setMessage("Congratulations. You have passed the 60s level");
 }
 
 void TZ60::showHideHaveFoodWarning() {
@@ -58,15 +72,33 @@ void TZ60::run() {
 }
 
 void TZ60::setup() {
-    widget->hideSpeechBubble();
+    widget = new tz60widget();
     tokenRecieved = false;
     hippieTalking = true;
     indexOfCurrentSentence = 0;
 
+    setupSignalsAndSlotsConnections();
+    setupHidingUIElements();
+    setupHippieSentences();
+}
+
+void TZ60::setupSignalsAndSlotsConnections() {
+    QObject::connect(widget->getTokenButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
+    QObject::connect(widget->getStartConvoButton(), SIGNAL(clicked()), this, SLOT(startConvoButtonPressed()));
+    QObject::connect(widget->getNextButton(), SIGNAL(clicked()), this, SLOT(nextButtonPressed()));
+    QObject::connect(widget->getGiveHippieFoodButton(), SIGNAL(clicked()), this, SLOT(giveHippieFoodButtonPressed()));
+    QObject::connect(widget->getGiveHippieJointButton(), SIGNAL(clicked()), this, SLOT(giveHippieJointButtonPressed()));
+    QObject::connect(this, SIGNAL(switchHippies()), this->widget, SLOT(swapHippieLabels()));
+}
+
+void TZ60::setupHidingUIElements() {
+    this->widget->hideSpeechBubble();
     this->widget->hideFoodOptions();
     this->widget->hideJointOptions();
     this->widget->getTokenButton()->hide();
+}
 
+void TZ60::setupHippieSentences() {
     hippieSentences.push_back("Hey Man!");
     hippieSentences.push_back("I think I can help you out to get your 70s token. But first ...");
     hippieSentences.push_back("I've got some serious munchies dude.\n Any chance you have any food I can eat?");
@@ -84,23 +116,6 @@ void TZ60::stopTalking() {
     this->hippieTalking = false;
 }
 
-void TZ60::leave() {
-    qDebug() << "leaving";
-    this->stopTalking();
-}
-
-void TZ60::displayInfo() {
-    if (this->tokenRecieved) {
-        displayAlreadyPassed();
-    } else {
-        Timezone::getInfoMessage()->setMessage("Welcome to the groovy 60s. Talk to the hippy to see if you can pass this level");
-    }
-}
-
-void TZ60::displayAlreadyPassed() {
-    Timezone::getInfoMessage()->setMessage("Congratulations. You have passed the 60s level");
-}
-
 void TZ60::startConvoButtonPressed() {
     this->widget->getStartConvoButton()->hide();
     this->startTalking();
@@ -114,7 +129,6 @@ void TZ60::nextButtonPressed() {
     }
 
     incrementSentence();
-
     if (this->indexOfCurrentSentence < this->hippieSentences.size()) {
         switch (this->indexOfCurrentSentence) {
         case 2:
@@ -156,7 +170,6 @@ void TZ60::giveHippieFoodButtonPressed() {
 void TZ60::giveHippieJointButtonPressed() {
     //TODO: remove from backpack
     //Timezone::getBackpack()->removeItem(41);
-
 
     this->widget->hideJointOptions();
     nextButtonPressed();

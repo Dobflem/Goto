@@ -21,6 +21,21 @@ void TZ40::leave() {
     // Timezone::leave();
 }
 
+void TZ40::setup() {
+    widget = new tz40widget();
+    tokenRecieved = false;
+    QObject::connect(widget->getJoint(), SIGNAL(clicked()), this, SLOT(jointButtonPressed()));
+    QObject::connect(widget->getSubmitButton(), SIGNAL(clicked()), this, SLOT(submitButtonPressed()));
+    QObject::connect(widget->getCloseButton(), SIGNAL(clicked()), this, SLOT(closeButtonPressed()));
+    QObject::connect(widget->getStartButton(), SIGNAL(clicked()), this, SLOT(startButtonPressed()));
+    QObject::connect(widget->getTokenButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
+    QObject::connect(widget->getSlider(1), SIGNAL(valueChanged(int)), this, SLOT(slinkySliderValueChanged(int)));
+    QObject::connect(widget->getSlider(2), SIGNAL(valueChanged(int)), this, SLOT(bandAidSliderValueChanged(int)));
+    QObject::connect(widget->getSlider(3), SIGNAL(valueChanged(int)), this, SLOT(jeepSliderValueChanged(int)));
+    QObject::connect(widget->getSlider(4), SIGNAL(valueChanged(int)), this, SLOT(barbieSliderValueChanged(int)));
+    QObject::connect(widget->getSlider(5), SIGNAL(valueChanged(int)), this, SLOT(microwaveSliderValueChanged(int)));
+}
+
 void TZ40::displayInfo() {
     if (this->tokenRecieved) {
         displayAlreadyPassed();
@@ -48,18 +63,13 @@ void TZ40::closeButtonPressed() {
     this->widget->toggleGameFrame();
 }
 
-
 void TZ40::startButtonPressed() {
     this->widget->toggleGameFrame();
     this->widget->getStartButton()->hide();
-
 }
 
 void TZ40::submitButtonPressed() {
-    qDebug() << "Submit button pressed: ";
-
     if (sliderAnswersCorrect()) {
-        qDebug() << "Answers correct";
         this->widget->toggleGameFrame();
         this->widget->getStartButton()->hide();
         this->widget->getTokenButton()->show();
@@ -92,15 +102,15 @@ bool TZ40::sliderAnswersCorrect() {
 
 int TZ40::getImageXValue(int value) {
     switch(value) {
-    case 0:
-        return 100;
-        break;
-    case 1:
-        return 300;
-        break;
-    case 2:
-        return 500;
-        break;
+        case 0:
+            return 100;
+            break;
+        case 1:
+            return 300;
+            break;
+        case 2:
+            return 500;
+            break;
     }
 }
 

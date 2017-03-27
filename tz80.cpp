@@ -16,16 +16,36 @@ void TZ80::enter(Backpack *b) {
     showHideLockedQuestion();
 }
 
-void TZ80::run() {
-    qDebug() << "running";
+void TZ80::leave() {
+    // Timezone::leave();
+}
+
+void TZ80::setup() {
+    tokenRecieved = false;
+    widget = new tz80widget();
+
+    setupHideUIElements();
+    setupSignalsAndSlotConnections();
+}
+
+void TZ80::setupHideUIElements() {
+    this->widget->getWarningLabel()->hide();
+    this->widget->getTokenButton()->hide();
+    this->widget->getQuizFrame()->hide();
+    this->widget->getLockedQuestionFrame()->hide();
+}
+
+void TZ80::setupSignalsAndSlotConnections() {
+    QObject::connect(widget->getSubmitButton(), SIGNAL(clicked()), this, SLOT(submitAnswersButtonPressed()));
+    QObject::connect(widget->getTokenButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
+    QObject::connect(widget->getStartButton(), SIGNAL(clicked()), this, SLOT(startButtonPressed()));
+    QObject::connect(widget->getCloseButton(), SIGNAL(clicked()), this, SLOT(closeButtonPressed()));
 }
 
 void TZ80::showHideLockedQuestion() {
     if (this->getBackpack()->hasItem(81)) {
-        qDebug() << "hiding locked panel";
         this->widget->getLockedQuestionFrame()->hide();
     } else {
-        qDebug() << "showing locked panel";
         this->widget->getLockedQuestionFrame()->show();
     }
 }
@@ -42,34 +62,28 @@ void TZ80::displayAlreadyPassed() {
     Timezone::getInfoMessage()->setMessage("You have passed this level. Continue your adventure.");
 }
 
-void TZ80::leave() {
-    qDebug() << "Leaving";
-    // Timezone::leave();
-}
 
 void TZ80::submitAnswersButtonPressed() {
-    qDebug() << "Submit answers button pressed";
+    int a1 = this->widget->getQ1ComboBox()->currentIndex();
+    int a2 = this->widget->getQ2ComboBox()->currentIndex();
+    int a3 = this->widget->getQ3ComboBox()->currentIndex();
+    int a4 = this->widget->getQ4ComboBox()->currentIndex();
 
-    int answer1Index = this->widget->getQ1ComboBox()->currentIndex();
-    int answer2Index = this->widget->getQ2ComboBox()->currentIndex();
-    int answer3Index = this->widget->getQ3ComboBox()->currentIndex();
-    int answer4Index = this->widget->getQ4ComboBox()->currentIndex();
-
-    if (answer1Index == this->answer1 &&
-        answer2Index == this->answer2 &&
-        answer3Index == this->answer3 &&
-        answer4Index == this->answer4 ) {
-        qDebug() << "All answers correct";
-
+    if (allAnswersCorrect(a1, a2, a3, a4)) {
         this->widget->getQuizFrame()->hide();
         this->widget->getTokenButton()->show();
-
         Timezone::getInfoMessage()->setMessage("Congratulations. You have answered all questions correctly. Select your 90s timezon token to put it in your backpack");
     } else {
-        qDebug() << "Incorrect";
         this->widget->getWarningLabel()->show();
         QTimer::singleShot(5000, this->widget->getWarningLabel(), &QLabel::hide);
     }
+}
+
+bool TZ80::allAnswersCorrect(int a1, int a2, int a3, int a4) {
+    return (a1 == this->answer1 &&
+            a2 == this->answer2 &&
+            a3 == this->answer3 &&
+            a4 == this->answer4 );
 }
 
 void TZ80::tokenButtonPressed() {

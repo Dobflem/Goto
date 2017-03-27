@@ -2,46 +2,36 @@
 #include "tz20widget.h"
 #include <QWidget>
 #include <QObject>
-#include <QThread>
 #include <unistd.h>
 #include <QDebug>
 
 #ifndef TZ20_H
 #define TZ20_H
 
-class TZ20 : public QThread, public Timezone {
+class TZ20 : public QObject, public Timezone {
     Q_OBJECT
 
 private:
     bool tokenRecieved;
     void displayAlreadyPassed();
     void displayInfo();
+    void setup();
 
 public:
     tz20widget *widget;
 
-    TZ20():Timezone("Twenties", "twenties.jpg", "map-20s.png", "roaring-20s.mp3")
-    {
-        widget = new tz20widget();
-        tokenRecieved = false;
-
-        QObject::connect(widget->getButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
-        QObject::connect(widget->getKeyButton(), SIGNAL(clicked()), this, SLOT(keyButtonPressed()));
+    TZ20():Timezone("Twenties", "twenties.jpg", "map-20s.png", "roaring-20s.mp3") {
+        this->setup();
     }
 
-    //Virtual
-    void enter(Backpack* b);
-    bool canEnterRoom(Backpack *b);
-    QWidget* getTimezoneWidget();
-    void leave();
-
+    virtual void enter(Backpack* b);
+    virtual bool canEnterRoom(Backpack *b);
+    virtual QWidget* getTimezoneWidget();
+    virtual void leave();
 
 public slots:
    void tokenButtonPressed();
    void keyButtonPressed();
-
-protected:
-    void run();
 
 };
 

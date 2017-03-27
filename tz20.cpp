@@ -22,12 +22,20 @@ void TZ20::enter(Backpack *b) {
     this->displayInfo();
 }
 
-void TZ20::run() {
-    qDebug() << "running";
+void TZ20::leave() {
+    qDebug() << "Leaving 20s";
+    // Timezone::leave();
+}
+
+void TZ20::setup() {
+    widget = new tz20widget();
+    tokenRecieved = false;
+
+    QObject::connect(widget->getButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
+    QObject::connect(widget->getKeyButton(), SIGNAL(clicked()), this, SLOT(keyButtonPressed()));
 }
 
 void TZ20::displayInfo() {
-
     if (this->tokenRecieved) {
         displayAlreadyPassed();
     } else {
@@ -37,11 +45,6 @@ void TZ20::displayInfo() {
 
 void TZ20::displayAlreadyPassed() {
     Timezone::getInfoMessage()->setMessage("You have passed this level. Continue your adventure.");
-}
-
-void TZ20::leave() {
-    qDebug() << "Leaving 20s";
-    // Timezone::leave();
 }
 
 void TZ20::tokenButtonPressed() {
