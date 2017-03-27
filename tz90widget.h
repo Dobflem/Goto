@@ -6,7 +6,9 @@
 #include <QPainter>
 #include <QColor>
 #include <QPoint>
-
+#include <QPushButton>
+#include <QGraphicsView>
+#include "clickablelabel.h"
 
 namespace Ui {
 class tz90widget;
@@ -19,7 +21,8 @@ class tz90widget : public QWidget
 public:
     explicit tz90widget(QWidget *parent = 0);
     ~tz90widget();
-    //void paintEvent(QPaintEvent *event);
+    QPushButton *getToken() const;
+    ClickableLabel *getTokenTransparent() const;
 
 private:
     Ui::tz90widget *ui;
