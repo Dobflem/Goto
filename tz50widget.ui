@@ -188,6 +188,31 @@ border: none;</string>
         </rect>
        </property>
       </widget>
+      <widget class="QPushButton" name="btnToken">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>170</y>
+         <width>121</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-style: solid;
+background-image: url(:/Resources/token.png);
+ border-width:1px;
+ border-radius:50px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="buttonImage" stdset="0">
+        <pixmap resource="resources.qrc">:/Resources/token.png</pixmap>
+       </property>
+      </widget>
       <zorder>label</zorder>
       <zorder>graphicsView</zorder>
       <zorder>junkFoodButton</zorder>
@@ -197,6 +222,7 @@ border: none;</string>
       <zorder>sliderR</zorder>
       <zorder>sliderG</zorder>
       <zorder>sliderB</zorder>
+      <zorder>btnToken</zorder>
      </widget>
      <widget class="QWidget" name="page_2"/>
     </widget>

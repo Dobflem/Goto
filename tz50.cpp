@@ -35,13 +35,6 @@ void TZ50::calculateSignal() {
 
     this->signal = (r + g + b) / 3;
 
-    /*
-    QString msg = "Signal Strength: " + QString::number(signal) + "\n" +
-            "R: " + QString::number(r) + "\n" +
-            "G: " + QString::number(g) + "\n" +
-            "B: " + QString::number(b) + "\n";
-    */
-
     QString msg = "Signal Strength: " + QString::number(this->signal);
     this->getInfoMessage()->setMessage(msg);
     this->widget->getColouredOz()->hide();
@@ -49,8 +42,8 @@ void TZ50::calculateSignal() {
 }
 
 void TZ50::checkSignalStrength() {
-    if (this->signal == 100) {
-        qDebug() << "Show Token";
+    if ((this->signal == 100) && (!this->getBackpack()->hasItem(60))) {
+        this->widget->getToken()->show();
         this->widget->getColouredOz()->show();
     }
 }
@@ -70,6 +63,11 @@ void TZ50::sliderBChanged(int val) {
     this->calculateSignal();
 }
 
+void TZ50::clickedToken(bool clicked) {
+    this->getBackpack()->addItem(new Item(60, "60s Token"));
+    this->widget->getToken()->hide();
+}
+
 void TZ50::setupSignalsAndSlots() {
     QObject::connect(this->widget->getJunkFood(), SIGNAL(clicked()), this, SLOT(junkFoodButtonPressed()));
     QObject::connect(this->sliderR, SIGNAL(valueChanged(int)), this, SLOT(sliderRChanged(int)));
@@ -78,4 +76,5 @@ void TZ50::setupSignalsAndSlots() {
     QObject::connect(this->sliderR, SIGNAL(sliderReleased()), this, SLOT(checkSignalStrength()));
     QObject::connect(this->sliderG, SIGNAL(sliderReleased()), this, SLOT(checkSignalStrength()));
     QObject::connect(this->sliderB, SIGNAL(sliderReleased()), this, SLOT(checkSignalStrength()));
+    QObject::connect(this->widget->getToken(), SIGNAL(clicked(bool)), this, SLOT(clickedToken(bool)));
 }

@@ -35,10 +35,11 @@ public:
 
 public slots:
    void junkFoodButtonPressed();
+   void checkSignalStrength();
    void sliderRChanged(int);
    void sliderGChanged(int);
    void sliderBChanged(int);
-   void checkSignalStrength();
+   void clickedToken(bool);
 
 private:
     QSlider *sliderR;

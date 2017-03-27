@@ -8,6 +8,7 @@
 #include <QPoint>
 #include <QDial>
 #include <QLCDNumber>
+#include <QPushButton>
 
 namespace Ui {
 class tz70widget;
@@ -22,6 +23,7 @@ public:
     ~tz70widget();
     QDial *getVolumeDial() const;
     QLCDNumber *getVolumeLCD() const;
+    QPushButton *getToken() const;
 
 private:
     Ui::tz70widget *ui;
