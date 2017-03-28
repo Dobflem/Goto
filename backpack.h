@@ -18,7 +18,7 @@ public:
     QString contentsString;
 
 private:
-    List<Item> *items;
+    List<Item> items;
     InfoMessage* contents;
     void setContentsString();
     // vector<Item> items;
