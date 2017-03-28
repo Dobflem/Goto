@@ -20,6 +20,7 @@ public:
 
     virtual bool canEnterRoom(Backpack *b);
     virtual QWidget* getTimezoneWidget();
+    virtual void enter(Backpack* b);
 
 public slots:
     void changedVolume(int);

@@ -16,7 +16,14 @@
 void TZ30::enter(Backpack *b) {
     Timezone::enter(b);
     if (!b->hasItem(40) && !this->widget->tokenVisible()) {
+      this->getInfoMessage()->setMessage("So you need this token to get to the 40s..? Well the only way you're gonna get it is if you help us catch Al Capone! He keeps getting away from us! Catch him, and you can have your Token!");
       this->startPlaying();
+    } else {
+      if (this->widget->tokenVisible()) {
+        this->getInfoMessage()->setMessage("Just take the damn token before I change my mind!");
+      } else {
+        this->getInfoMessage()->setMessage("Why would you want to come back to the 30s? Go on! get outta here!");
+      }
     }
 }
 
@@ -73,6 +80,7 @@ void TZ30::caughtCapone() {
     this->playing = false;
     this->widget->getCapone()->hide();
     this->widget->showToken();
+    this->getInfoMessage()->setMessage("Good job kid! You took down a mobster! I'd advise you to take your token and leave.. unless you wanna get hit!");
 }
 
 void TZ30::tokenButtonPressed() {

@@ -1,5 +1,12 @@
 #include "tz70.h"
 
+void TZ70::enter(Backpack* b) {
+    this->setBackpack(b);
+    if (!this->getBackpack()->hasItem(80)) {
+        this->getInfoMessage()->setMessage("Hey man! Can you turn up the volume?");
+    }
+}
+
 bool TZ70::canEnterRoom(Backpack *b) {
     return (b->hasItem(70));
 }
@@ -11,6 +18,7 @@ QWidget* TZ70::getTimezoneWidget() {
 void TZ70::changedVolume(int vol) {
     if ((vol == 100) && (!this->getBackpack()->hasItem(80))) {
         this->widget->getToken()->show();
+        this->getInfoMessage()->setMessage("Thanks man!");
     }
 }
 

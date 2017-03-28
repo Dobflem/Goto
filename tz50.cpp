@@ -11,6 +11,7 @@ QWidget* TZ50::getTimezoneWidget() {
 
 void TZ50::enter(Backpack* b) {
     this->setBackpack(b);
+    this->getInfoMessage()->setMessage("I bought this coloured TV yesterday but I can't get the thing to work! Help me find a good signal!");
 }
 
 void TZ50::leave() {
@@ -54,19 +55,22 @@ void TZ50::calculateSignal() {
 }
 
 void TZ50::checkSignalStrength() {
-    if ((this->signal == 100) && (!this->getBackpack()->hasItem(60))) {
+    if ((this->getBackpack()->hasItem(60)) && (this->signal != 100)) {
+        this->getInfoMessage()->setMessage("Why would you change the signal! It was working!");
+    } else if ((this->signal == 100) && (!this->getBackpack()->hasItem(60))) {
         this->widget->getToken()->show();
         this->widget->getColouredOz()->show();
+        this->getInfoMessage()->setMessage("Finally, the TVs fixed! I was thinking you might of had the brain of the scarecrow for a minute! Here, take this token!");
     }
 }
 
 void TZ50::sliderRChanged(int val) {
-    this->r = val;
+    this->r = val; // Coercion
     this->calculateSignal();
 }
 
 void TZ50::sliderGChanged(int val) {
-    this->g = val;
+    this->g = val; // Coercion
     this->calculateSignal();
 }
 
