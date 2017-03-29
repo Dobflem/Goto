@@ -1,6 +1,7 @@
 #ifndef TZ90WIDGET_H
 #define TZ90WIDGET_H
 
+#include "clickablelabel.h"
 #include <QWidget>
 #include <QTime>
 #include <QPainter>
@@ -8,7 +9,7 @@
 #include <QPoint>
 #include <QPushButton>
 #include <QGraphicsView>
-#include "clickablelabel.h"
+#include <QtGui>
 
 namespace Ui {
 class tz90widget;

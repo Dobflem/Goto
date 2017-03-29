@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QToolButton>
-
+#include <QtGui>
 
 namespace Ui {
 class tz60widget;

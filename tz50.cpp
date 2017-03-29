@@ -1,5 +1,4 @@
 #include "tz50.h"
-#include <cmath>
 
 bool TZ50::canEnterRoom(Backpack *b) {
     return (b->hasItem(50));

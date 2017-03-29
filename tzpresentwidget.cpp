@@ -1,7 +1,5 @@
 #include "tzpresentwidget.h"
 #include "ui_tzpresentwidget.h"
-#include <QtGui>
-
 
 tzpresentwidget::tzpresentwidget(QWidget *parent) :
     QWidget(parent),

@@ -1,11 +1,6 @@
 #include "tz70widget.h"
 #include "ui_tz70widget.h"
 
-#include <QtGui>
-#include <QDial>
-#include <QLCDNumber>
-#include <QPushButton>
-
 
 tz70widget::tz70widget(QWidget *parent) :
     QWidget(parent),

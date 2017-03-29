@@ -1,13 +1,24 @@
 #include "Timezone.h"
 #include "tz30widget.h"
+#include "clickablelabel.h"
+
 #include <QWidget>
 #include <QThread>
 #include <QMouseEvent>
+#include <QLabel>
+#include <QLineEdit>
+#include <QDebug>
+#include <QFuture>
+#include <QObject>
+#include <QtConcurrent/QtConcurrent>
+#include <QMouseEvent>
+
+#include <thread>
+#include <chrono>
 
 #ifndef TZ30_H
 #define TZ30_H
 
-#include <QObject>
 
 class TZ30 : public QThread, public Timezone  {
 Q_OBJECT

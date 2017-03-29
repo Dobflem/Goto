@@ -1,13 +1,4 @@
 #include "tz20.h"
-#include "clickablelabel.h"
-
-#include <QLabel>
-#include <QLineEdit>
-#include <QDebug>
-#include <QFuture>
-#include <QtConcurrent/QtConcurrent>
-#include <QMouseEvent>
-#include <QDebug>
 
 bool TZ20::canEnterRoom(Backpack *b) {
     return (b->hasItem(20));
@@ -23,7 +14,6 @@ void TZ20::enter(Backpack *b) {
 }
 
 void TZ20::leave() {
-    qDebug() << "Leaving 20s";
     // Timezone::leave();
 }
 

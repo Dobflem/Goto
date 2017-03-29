@@ -6,6 +6,7 @@
 #include <QComboBox>
 #include <QLabel>
 #include <QFrame>
+#include <QtGui>
 
 namespace Ui {
 class tz80widget;

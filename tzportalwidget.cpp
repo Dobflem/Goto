@@ -1,6 +1,5 @@
 #include "tzportalwidget.h"
 #include "ui_tzportalwidget.h"
-#include <QtGui>
 
 
 tzportalwidget::tzportalwidget(QWidget *parent) :

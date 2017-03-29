@@ -6,8 +6,8 @@
 #include <QLabel>
 #include <QSlider>
 #include <QFrame>
+#include <QtGui>
 #include <vector>
-
 
 namespace Ui {
 class tz40widget;

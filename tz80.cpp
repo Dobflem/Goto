@@ -1,5 +1,4 @@
 #include "tz80.h"
-#include <QTimer>
 
 bool TZ80::canEnterRoom(Backpack *b) {
     return (b->hasItem(80));

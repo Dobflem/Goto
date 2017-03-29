@@ -1,17 +1,22 @@
 #include "Timezone.h"
 #include "tz60widget.h"
+
 #include <QWidget>
 #include <QObject>
 #include <QThread>
+#include <QLabel>
+#include <QLineEdit>
+#include <QDebug>
+#include <QFuture>
+#include <QtConcurrent/QtConcurrent>
+#include <QMouseEvent>
 
 #include <thread>
 #include <chrono>
 #include <vector>
 
-
 #ifndef TZ60_H
 #define TZ60_H
-
 
 class TZ60 : public QThread, public Timezone {
 Q_OBJECT

@@ -2,6 +2,7 @@
 #include "tz40widget.h"
 #include <QWidget>
 #include <QThread>
+#include <QTimer>
 
 #ifndef TZ40_H
 #define TZ40_H

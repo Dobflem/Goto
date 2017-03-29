@@ -9,6 +9,8 @@
 #include <QDial>
 #include <QLCDNumber>
 #include <QPushButton>
+#include <QtGui>
+#include <QDial>
 
 namespace Ui {
 class tz70widget;

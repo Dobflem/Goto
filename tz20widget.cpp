@@ -1,8 +1,5 @@
 #include "tz20widget.h"
 #include "ui_tz20widget.h"
-#include <QtGui>
-#include <QDebug>
-
 
 tz20widget::tz20widget(QWidget *parent) :
     QWidget(parent),

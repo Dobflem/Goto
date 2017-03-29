@@ -1,17 +1,4 @@
 #include "tz30.h"
-#include "tz30widget.h"
-
-#include <thread>
-#include <chrono>
-
-#include "clickablelabel.h"
-
-#include <QLabel>
-#include <QLineEdit>
-#include <QDebug>
-#include <QFuture>
-#include <QtConcurrent/QtConcurrent>
-#include <QMouseEvent>
 
 void TZ30::enter(Backpack *b) {
     Timezone::enter(b);

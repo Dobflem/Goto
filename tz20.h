@@ -1,9 +1,11 @@
 #include "Timezone.h"
 #include "tz20widget.h"
+#include "clickablelabel.h"
 #include <QWidget>
 #include <QObject>
-#include <unistd.h>
 #include <QDebug>
+#include <QLabel>
+#include <QLineEdit>
 
 #ifndef TZ20_H
 #define TZ20_H

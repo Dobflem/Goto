@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
-
+#include <QtGui>
 
 namespace Ui {
 class tzpresentwidget;

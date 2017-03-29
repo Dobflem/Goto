@@ -1,6 +1,4 @@
 #include "Timezone.h"
-#include "Command.h"
-
 
 Timezone::Timezone(QString description, QString path, QString mapPath, QString musicPath) {
 	this->description = description;
@@ -107,8 +105,4 @@ int Timezone::getLocationOfItemInTimezone(int itemId) {
         }
     }
     return false;
-}
-
-void Timezone::removeItemFromTimezone(int location) {
-    // itemsInTimezone.erase(itemsInTimezone.begin() + location);
 }

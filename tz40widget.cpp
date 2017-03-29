@@ -1,8 +1,5 @@
 #include "tz40widget.h"
 #include "ui_tz40widget.h"
-#include <QtGui>
-#include <vector>
-
 
 tz40widget::tz40widget(QWidget *parent) :
     QWidget(parent),

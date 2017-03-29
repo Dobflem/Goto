@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
+#include <QtGui>
+#include <QDebug>
 
 
 namespace Ui {

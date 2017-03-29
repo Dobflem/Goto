@@ -1,7 +1,5 @@
 #include "tz50widget.h"
 #include "ui_tz50widget.h"
-#include <QtGui>
-
 
 tz50widget::tz50widget(QWidget *parent) :
     QWidget(parent),

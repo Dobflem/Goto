@@ -1,12 +1,5 @@
 #include "tz60.h"
 
-#include <QLabel>
-#include <QLineEdit>
-#include <QDebug>
-#include <QFuture>
-#include <QtConcurrent/QtConcurrent>
-#include <QMouseEvent>
-
 bool TZ60::canEnterRoom(Backpack* b) {
     return (b->hasItem(60));
 }

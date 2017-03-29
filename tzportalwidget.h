@@ -2,11 +2,7 @@
 #define TZPORTALWIDGET_H
 
 #include <QWidget>
-#include <QTime>
-#include <QPainter>
-#include <QColor>
-#include <QPoint>
-
+#include <QtGui>
 
 namespace Ui {
 class tzportalwidget;

@@ -39,7 +39,6 @@ public:
     Timezone* getWestTimezone();
 
     void addItem(Item *inItem);
-    void removeItemFromTimezone(int location);
     void setExits(Timezone *north, Timezone *east, Timezone *south, Timezone *west);
     bool isItemInTimezone(int itemId);
     int getLocationOfItemInTimezone(int itemId);
@@ -64,9 +63,11 @@ public:
     virtual void enter(Backpack *b) {
         this->setBackpack(b);
     }
+
     virtual ~Timezone() {
         delete this;
     }
+
     virtual bool canEnterRoom(Backpack *b) {
         if(b != NULL) {
             return true;
@@ -74,6 +75,7 @@ public:
             return false;
         }
     }
+
     virtual QWidget* getTimezoneWidget() {
         cout << "In default get timezone widget" << endl;
         QWidget *def = new QWidget();

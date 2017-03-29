@@ -5,7 +5,7 @@
 #include <QSlider>
 #include <QPushButton>
 #include <QLabel>
-
+#include <QtGui>
 
 namespace Ui {
 class tz50widget;

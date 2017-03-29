@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QSlider>
 #include <QThread>
+#include <cmath>
 
 #ifndef TZ50_H
 #define TZ50_H

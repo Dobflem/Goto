@@ -1,9 +1,11 @@
 #include "Timezone.h"
 #include "tz80widget.h"
+
 #include <QWidget>
 #include <QObject>
-#include <unistd.h>
 #include <QDebug>
+#include <QTimer>
+#include <unistd.h>
 
 #ifndef TZ80_H
 #define TZ80_H

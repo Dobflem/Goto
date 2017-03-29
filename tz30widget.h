@@ -8,10 +8,11 @@
 #include <QPoint>
 #include <QLabel>
 #include <QPushButton>
+#include <QtGui>
+#include <QLabel>
 
 #include "clickablelabel.h"
 #include "backpack.h"
-
 
 namespace Ui {
 class tz30widget;

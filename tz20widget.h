@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include <QtGui>
+#include <QDebug>
 
 namespace Ui {
 class tz20widget;
