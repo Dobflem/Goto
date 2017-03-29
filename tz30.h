@@ -25,7 +25,7 @@ Q_OBJECT
 
 public:
     tz30widget *widget;
-    TZ30():Timezone("Thirties", "thirties.jpg", "map-30s.png", "roaring-30s.mp3"),
+    TZ30():Timezone("Thirties", "thirties.jpg", "map-30s.png", "in-the-mood.mp3"),
        widget(new tz30widget()), playing(false), score(0) {
         this->setup();
     }

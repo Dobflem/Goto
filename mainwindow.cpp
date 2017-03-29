@@ -14,7 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
         this->setBackpackSignalandSlot();
         this->backpack->addItem(new Item(20, "20s Token"));
-        // this->music = new QMediaPlayer();
+
+        #ifdef _WIN32
+            this->music = new QMediaPlayer();
+        #endif
 
         this->createTimezones();
         this->setTimezoneExits();
@@ -35,7 +38,11 @@ MainWindow::~MainWindow() {
     delete this->tz00s;
     delete this->tzPresent;
     delete this->backpack;
-    // delete this->music;
+
+     #ifdef _WIN32
+    delete this->music;
+    #endif
+
     delete ui;
 }
 
@@ -110,18 +117,6 @@ void MainWindow::setBackpackText(const QString& txt) {
 }
 
 void MainWindow::setInfoText(const QString& txt) {
-    /*
-    for (int i = 1; i <= txt.length(); i++) {
-        ui->txtInfo->setText(txt.left(i));
-        // Have to manually call repaint
-        // Qt does a smart refresh to stop flickering
-        // This means if we don't add a repaint
-        // the text box won't update until outside the loop.
-        ui->txtInfo->repaint();
-        // We wait 16ms for that SLICK text effect.
-        QThread::msleep(16);
-    }
-    */
     ui->txtInfo->setText(txt);
     ui->txtInfo->repaint();
 }
@@ -157,8 +152,10 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
             // Make sure we call raise or else it will not be brought to front.
             this->currentTZWidget->raise();
 
+             #ifdef _WIN32
             // Change the music to the current timezone track
-            // this->changeSong();
+            this->changeSong();
+            #endif
 
             this->currentTimezone->enter(this->backpack);
 
@@ -168,14 +165,14 @@ void MainWindow::setCurrentTimezone(Timezone *tz) {
     }
 }
 
-/*
+#ifdef _WIN32
 void MainWindow::changeSong() {
     QString resource = "qrc:Resources/" + this->currentTimezone->getMusicPath();
     music->setMedia(QUrl(resource));
     music->setVolume(7);
     music->play();
 }
-*/
+#endif
 
 void MainWindow::setMapImage(const QString& mapImage) {
     QString resource = ":Resources/" + mapImage;

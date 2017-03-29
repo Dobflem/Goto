@@ -5,7 +5,7 @@
     #-------------------------------------------------
 
     QT       += core gui
-    # QT       += multimedia
+    QT       += multimedia
 
 
     CONFIG += console
@@ -94,7 +94,7 @@
 
     RESOURCES += \
         resources.qrc \
-       # music-media.qrc \
-       # music-media-2.qrc \
-       # music-media-3.qrc
+        music-media.qrc \
+        music-media-2.qrc \
+        music-media-3.qrc
 

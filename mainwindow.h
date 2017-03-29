@@ -6,11 +6,14 @@
 #include <QPixmap>
 #include <QWidget>
 #include <QLayoutItem>
-// #include <QtMultimedia/QMediaPlayer>
 #include <QFileInfo>
 #include <QString>
 #include <QThread>
 #include <QDebug>
+
+#ifdef _WIN32
+#include <QtMultimedia/QMediaPlayer>
+#endif
 
 //StdIncludes
 #include <iostream>
@@ -61,15 +64,20 @@ private:
     Timezone *currentTimezone, *tzPortal, *tz20s, *tz30s, *tz40s, *tz50s, *tz60s, *tz70s, *tz80s, *tz90s, *tz00s, *tzPresent;
     QWidget *currentTZWidget;
     Backpack *backpack;
-    // QMediaPlayer* music;
+
+    #ifdef _WIN32
+    QMediaPlayer* music;
+    #endif
 
     void createTimezones();
     void goTimezone(const QString& direction);
     void setupSignalsAndSlots();
     void setBackpackSignalandSlot();
-    // void changeSong();
     void setTimezoneExits();
     void setupBackpackButtonSettings();
+    #ifdef _WIN32
+    void changeSong();
+    #endif
 
     // GETTERS
     Timezone* getCurrentTimezone();
