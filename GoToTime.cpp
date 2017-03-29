@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+#include <string>
 
 // QIncludes
 #include <QApplication>
@@ -9,9 +10,7 @@
 #include <QCoreApplication>
 #include <QDebug>
 
-#include "GoToTime.h"
 #include "mainwindow.h"
-
 using namespace std;
 
 int main(int argc, char **argv) {

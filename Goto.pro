@@ -50,7 +50,6 @@
     HEADERS  += \
             item.h \
             Timezone.h \
-            GoToTime.h \
             mainwindow.h \
             tzportal.h \
             tz20.h \
@@ -77,7 +76,7 @@
             backpack.h \
             list.h \
             infomessage.h \
-    clickablelabel.h
+            clickablelabel.h
 
     FORMS += \
         mainwindow.ui \
