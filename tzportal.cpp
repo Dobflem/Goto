@@ -7,3 +7,7 @@ bool TZPortal::canEnterRoom() {
 QWidget* TZPortal::getTimezoneWidget() {
     return widget;
 }
+
+void TZPortal::enter(Backpack *b) {
+    this->setBackpack(b);
+}

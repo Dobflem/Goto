@@ -19,7 +19,6 @@ public:
     virtual void enter(Backpack* b);
     virtual bool canEnterRoom(Backpack *b);
     virtual QWidget* getTimezoneWidget();
-    virtual void leave();
 
 private:
     void displayInfo();

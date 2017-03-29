@@ -34,7 +34,6 @@ void tz30widget::caponeGeometoryChanged(int x, int y) {
     int capone_width = getCapone()->width();
     int capone_height = getCapone()->height();
 
-    qDebug() << "Changing capone geometry";
     ui->capone->setGeometry(x , y, capone_width, capone_height);
 }
 

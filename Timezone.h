@@ -43,6 +43,7 @@ public:
     bool isItemInTimezone(int itemId);
     int getLocationOfItemInTimezone(int itemId);
     int numberOfItems();
+    void leaveTimezone();
 
 
     // GETTERS
@@ -59,11 +60,8 @@ public:
     // SETTERS
     void setBackpack(Backpack *b);
 
-    // VIRTUAL METHODS
-    virtual void enter(Backpack *b) {
-        this->setBackpack(b);
-    }
 
+    // VIRTUAL METHODS
     virtual ~Timezone() {
         delete this;
     }
@@ -76,14 +74,13 @@ public:
         }
     }
 
-    virtual QWidget* getTimezoneWidget() {
-        cout << "In default get timezone widget" << endl;
-        QWidget *def = new QWidget();
-        return def;
+    virtual void leave() {
+        this->leaveTimezone();
     }
 
-    virtual void leave() {}
-    //virtual QWidget* getTimezoneWidget() = 0;
+    //PURE VIRTUAL METHODS
+    virtual QWidget* getTimezoneWidget() = 0;
+    virtual void enter(Backpack *b) = 0;
 };
 
 #endif

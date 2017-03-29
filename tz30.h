@@ -32,7 +32,7 @@ public:
 
     virtual bool canEnterRoom(Backpack *b);
     virtual QWidget* getTimezoneWidget();
-    virtual void enter(Backpack *b = NULL);
+    virtual void enter(Backpack *b);
     virtual void leave();
 
 private:

@@ -67,11 +67,9 @@ void Timezone::setBackpack(Backpack *b) {
     this->backpack = b;
 }
 
-/*
-void Timezone::leave() {
-    // this->backpack = NULL;
+void Timezone::leaveTimezone() {
+    this->backpack = NULL;
 }
-*/
 
 void Timezone::addItem(Item *inItem) {
     itemsInTimezone.push_back(*inItem);

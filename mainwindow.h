@@ -72,7 +72,7 @@ private:
     void setupBackpackButtonSettings();
 
     // GETTERS
-    Timezone getCurrentTimezone();
+    Timezone* getCurrentTimezone();
 
     // SETTERS
     void setBackgroundImage(QString fileName);

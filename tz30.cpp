@@ -1,7 +1,8 @@
 #include "tz30.h"
 
 void TZ30::enter(Backpack *b) {
-    Timezone::enter(b);
+    //Timezone::enter(b);
+    this->setBackpack(b);
     if (!b->hasItem(40) && !this->widget->tokenVisible()) {
       this->getInfoMessage()->setMessage("So you need this token to get to the 40s..? Well the only way you're gonna get it is if you help us catch Al Capone! He keeps getting away from us! Catch him, and you can have your Token!");
       this->startPlaying();
@@ -60,6 +61,7 @@ void TZ30::stopPlaying() {
 }
 
 void TZ30::leave() {
+    Timezone::leaveTimezone();
     this->stopPlaying();
 }
 

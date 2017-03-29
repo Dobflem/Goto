@@ -15,10 +15,6 @@ void TZ80::enter(Backpack *b) {
     showHideUnlockQuestionButton();
 }
 
-void TZ80::leave() {
-    // Timezone::leave();
-}
-
 void TZ80::setup() {
     setupHideUIElements();
     setupSignalsAndSlotConnections();

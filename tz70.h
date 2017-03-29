@@ -24,7 +24,7 @@ public:
 
 public slots:
     void changedVolume(int);
-    void clickedToken(bool);
+    void clickedToken();
 
 private:
     QDial *volumeDial;

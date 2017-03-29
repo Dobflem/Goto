@@ -5,7 +5,6 @@ bool TZ60::canEnterRoom(Backpack* b) {
 }
 
 QWidget* TZ60::getTimezoneWidget() {
-    cout << "Getting 60s widget" << endl;
     return widget;
 }
 
@@ -17,7 +16,7 @@ void TZ60::enter(Backpack *b) {
 }
 
 void TZ60::leave() {
-    qDebug() << "leaving";
+    Timezone::leaveTimezone();
     this->stopTalking();
 }
 
@@ -35,27 +34,21 @@ void TZ60::displayAlreadyPassed() {
 
 void TZ60::showHideHaveFoodWarning() {
     if (this->getBackpack()->hasItem(51)) {
-        qDebug() << "hiding no food warning";
         this->widget->hideNoFoodWarning();
     } else {
-        qDebug() << "showing no food warning";
         this->widget->showNoFoodWarning();
     }
 }
 
 void TZ60::showHideHaveJointWarning() {
     if (this->getBackpack()->hasItem(41)) {
-        qDebug() << "hiding no joint warning";
         this->widget->hideNoJointWarning();
     } else {
-        qDebug() << "showing no joint warning";
         this->widget->showNoJointWarning();
     }
 }
 
 void TZ60::run() {
-    qDebug() << "running";
-
     while(this->hippieTalking) {
         emit switchHippies();
         this_thread::sleep_for(chrono::milliseconds(500));

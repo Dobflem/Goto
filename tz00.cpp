@@ -13,10 +13,6 @@ void TZ00::enter(Backpack *b) {
     this->displayInfo();
 }
 
-void TZ00::leave() {
-    // Timezone::leave();
-}
-
 void TZ00::setup() {
     QObject::connect(widget->getSubmitButton(), SIGNAL(clicked()), this, SLOT(submitButtonPressed()));
     QObject::connect(widget->getTokenButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));

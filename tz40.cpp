@@ -5,7 +5,6 @@ bool TZ40::canEnterRoom(Backpack* b) {
 }
 
 QWidget* TZ40::getTimezoneWidget() {
-    cout << "getting 40 widget" << endl;
     return widget;
 }
 
@@ -13,11 +12,6 @@ void TZ40::enter(Backpack* b) {
     this->setBackpack(b);
 
     displayInfo();
-}
-
-void TZ40::leave() {
-    qDebug() << "Leaving";
-    // Timezone::leave();
 }
 
 void TZ40::setup() {

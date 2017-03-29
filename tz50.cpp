@@ -13,11 +13,6 @@ void TZ50::enter(Backpack* b) {
     this->getInfoMessage()->setMessage("I bought this coloured TV yesterday but I can't get the thing to work! Help me find a good signal!");
 }
 
-void TZ50::leave() {
-    qDebug() << "Leaving";
-    // Timezone::leave();
-}
-
 void TZ50::setup() {
     this->widget = new tz50widget();
     this->sliderR = this->widget->getSliderR();

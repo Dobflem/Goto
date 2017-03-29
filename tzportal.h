@@ -15,6 +15,7 @@ public:
 
     virtual bool canEnterRoom();
     virtual QWidget* getTimezoneWidget();
+    virtual void enter(Backpack *b);
 };
 
 #endif // TZPORTAL_H
