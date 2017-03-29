@@ -33,12 +33,7 @@ void TZ50::setup() {
 
 void TZ50::junkFoodButtonPressed() {
     this->widget->getJunkFood()->hide();
-
-    if (isItemInTimezone(51)) {
-        int location = getLocationOfItemInTimezone(51);
-        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
-        removeItemFromTimezone(location);
-    }
+    this->getBackpack()->addItem(new Item(51, "Junk Food"));
 }
 
 void TZ50::calculateSignal() {

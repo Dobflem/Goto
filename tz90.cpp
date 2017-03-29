@@ -18,7 +18,7 @@ QWidget* TZ90::getTimezoneWidget() {
 }
 
 void TZ90::transparentTokenClicked() {
-    this->getBackpack()->addItem(new Item(0, "Noughties Token"));
+    this->getBackpack()->addItem(new Item(00, "Noughties Token"));
     this->widget->getTokenTransparent()->hide();
     this->getInfoMessage()->setMessage("Awh.. you found it.. well my fun's over..");
 }

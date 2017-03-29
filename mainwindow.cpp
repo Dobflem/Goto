@@ -43,8 +43,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
         this->createTimezones();
         this->setTimezoneExits();
-        this->addTokensToRooms();
-        this->addOtherItemsToRooms();
         this->setCurrentTimezone(tzPortal);
         this->setupSignalsAndSlots();
     }
@@ -109,24 +107,6 @@ void MainWindow::setTimezoneExits() {
     this->tz90s->setExits(NULL, tz70s, NULL, NULL);
     this->tz00s->setExits(NULL, tzPortal, tzPresent, NULL);
     this->tzPresent->setExits(tz00s, NULL, NULL, NULL);
-}
-
-void MainWindow::addTokensToRooms() {
-    this->tz20s->addItem(new Item(30, "30s Token"));
-    this->tz30s->addItem(new Item(40, "40s Token"));
-    this->tz40s->addItem(new Item(50, "50s Token"));
-    this->tz50s->addItem(new Item(60, "60s Token"));
-    this->tz60s->addItem(new Item(70, "70s Token"));
-    this->tz70s->addItem(new Item(80, "80s Token"));
-    this->tz80s->addItem(new Item(90, "90s Token"));
-    this->tz90s->addItem(new Item(00, "00s Token"));
-    this->tz00s->addItem(new Item(10, "Present Token"));
-}
-
-void MainWindow::addOtherItemsToRooms() {
-    this->tz20s->addItem(new Item(81, "Unlock 80s Question Key"));
-    this->tz40s->addItem(new Item(41, "Joint"));
-    this->tz50s->addItem(new Item(51, "Junk Food"));
 }
 
 void MainWindow::moveEast() {

@@ -94,12 +94,7 @@ void TZ80::tokenButtonPressed() {
     this->widget->getTokenButton()->hide();
 
     displayAlreadyPassed();
-
-    if (isItemInTimezone(90)) {
-        int location = getLocationOfItemInTimezone(90);
-        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
-        removeItemFromTimezone(location);
-    }
+    this->getBackpack()->addItem(new Item(90, "90s Token"));
 }
 
 void TZ80::startButtonPressed() {

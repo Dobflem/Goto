@@ -49,20 +49,11 @@ void TZ20::tokenButtonPressed() {
     this->widget->getButton()->hide();
 
     displayAlreadyPassed();
-
-    if (isItemInTimezone(30)) {
-        int location = getLocationOfItemInTimezone(30);
-        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
-        removeItemFromTimezone(location);
-    }
+    this->getBackpack()->addItem(new Item(30, "30s Token"));
 }
 
 void TZ20::keyButtonPressed() {
     this->widget->getKeyButton()->hide();
 
-    if (isItemInTimezone(81)) {
-        int location = getLocationOfItemInTimezone(81);
-        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
-        removeItemFromTimezone(location);
-    }
+    this->getBackpack()->addItem(new Item(81, "Unlock 80s question"));
 }

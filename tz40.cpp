@@ -48,12 +48,7 @@ void TZ40::displayAlreadyPassed() {
 
 void TZ40::jointButtonPressed() {
     this->widget->getJoint()->hide();
-
-    if (isItemInTimezone(41)) {
-        int location = getLocationOfItemInTimezone(41);
-        Timezone::getBackpack()->addItem(&itemsInTimezone[location]);
-        //removeItemFromTimezone(location);
-    }
+    this->getBackpack()->addItem(new Item(41, "Joint"));
 }
 
 void TZ40::closeButtonPressed() {
