@@ -5,6 +5,8 @@
 #include "vector"
 #include "list.h"
 #include "infomessage.h"
+#include <QDebug>
+#include <vector>
 
 class Backpack {
 public:

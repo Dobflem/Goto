@@ -1,7 +1,4 @@
 #include "backpack.h"
-#include <QDebug>
-#include <vector>
-#include "item.h"
 
 Backpack::Backpack() {
     this->contents = new InfoMessage();
