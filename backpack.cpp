@@ -37,6 +37,16 @@ Item *Backpack::getItem(int id) {
     } return NULL;
 }
 
+void Backpack::removeItem(int id) {
+    for(items.start(); items.currentItem != NULL; items.next()) {
+        if (items.currentItem->getID() == id) {
+            this->items.remove(items.getCurrentIndex());
+        }
+    }
+    setContentsString();
+    this->contents->setMessage(this->contentsString);
+}
+
 bool Backpack::hasItem(int id) {
     for(items.start(); items.currentItem != NULL; items.next()) {
         if (items.currentItem->getID() == id) {
@@ -45,4 +55,3 @@ bool Backpack::hasItem(int id) {
     } return false;
 }
 
-//TODO: add remove item function

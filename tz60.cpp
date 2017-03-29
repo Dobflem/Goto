@@ -154,8 +154,7 @@ void TZ60::nextButtonPressed() {
 }
 
 void TZ60::giveHippieFoodButtonPressed() {
-    //TODO: remove from backpack
-    //Timezone::getBackpack()->removeItem(51);
+    Timezone::getBackpack()->removeItem(51);
 
     this->widget->hideFoodOptions();
     this->widget->showNextArrow();
@@ -163,8 +162,7 @@ void TZ60::giveHippieFoodButtonPressed() {
 }
 
 void TZ60::giveHippieJointButtonPressed() {
-    //TODO: remove from backpack
-    //Timezone::getBackpack()->removeItem(41);
+    Timezone::getBackpack()->removeItem(41);
 
     this->widget->hideJointOptions();
     nextButtonPressed();

@@ -13,6 +13,7 @@ public:
     void addItem(Item *i);
     Item *getItem(int id);
     bool hasItem(int id);
+    void removeItem(int id);
 
     InfoMessage* getContents();
     QString contentsString;

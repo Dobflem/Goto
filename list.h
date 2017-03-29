@@ -17,10 +17,12 @@ private:
 public:
     T *currentItem;
     T *get(int idx);
+    void remove(int idx);
     void add(T *obj);
     void start();
     bool empty();
     void next();
+    int getCurrentIndex();
     List<T> operator++();
 
     List() {
@@ -45,6 +47,15 @@ T *List<T>::get(int idx) {
       return *it;
     } else {
       return NULL;
+    }
+}
+
+template <class T>
+void List<T>::remove(int idx) {
+    if (idx < this->objects.size()) {
+      typename std::list<T*>::iterator it = this->objects.begin();
+      std::advance(it, idx);
+      this->objects.remove(*it);
     }
 }
 
@@ -75,6 +86,11 @@ void List<T>::next() {
 template <class T>
 bool List<T>::empty() {
     return !this->objects.size();
+}
+
+template <class T>
+int List<T>::getCurrentIndex() {
+    return this->currentIndex;
 }
 
 template <class T>
