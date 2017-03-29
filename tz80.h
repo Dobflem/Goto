@@ -24,7 +24,7 @@ private:
     void setupSignalsAndSlotConnections();
     void displayInfo();
     void displayAlreadyPassed();
-    void showHideLockedQuestion();
+    void showHideUnlockQuestionButton();
     bool allAnswersCorrect(int a1, int a2, int a3, int a4);
 
 public:
@@ -45,6 +45,7 @@ public slots:
    void tokenButtonPressed();
    void startButtonPressed();
    void closeButtonPressed();
+   void unlockQuestionButtonPressed();
 };
 
 #endif // TZ80_H

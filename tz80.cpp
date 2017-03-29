@@ -13,7 +13,7 @@ void TZ80::enter(Backpack *b) {
     this->setBackpack(b);
     this->displayInfo();
 
-    showHideLockedQuestion();
+    showHideUnlockQuestionButton();
 }
 
 void TZ80::leave() {
@@ -29,7 +29,6 @@ void TZ80::setupHideUIElements() {
     this->widget->getWarningLabel()->hide();
     this->widget->getTokenButton()->hide();
     this->widget->getQuizFrame()->hide();
-    this->widget->getLockedQuestionFrame()->hide();
 }
 
 void TZ80::setupSignalsAndSlotConnections() {
@@ -37,13 +36,14 @@ void TZ80::setupSignalsAndSlotConnections() {
     QObject::connect(widget->getTokenButton(), SIGNAL(clicked()), this, SLOT(tokenButtonPressed()));
     QObject::connect(widget->getStartButton(), SIGNAL(clicked()), this, SLOT(startButtonPressed()));
     QObject::connect(widget->getCloseButton(), SIGNAL(clicked()), this, SLOT(closeButtonPressed()));
+    QObject::connect(widget->getUnlockQuestionButton(), SIGNAL(clicked()), this, SLOT(unlockQuestionButtonPressed()));
 }
 
-void TZ80::showHideLockedQuestion() {
+void TZ80::showHideUnlockQuestionButton() {
     if (this->getBackpack()->hasItem(81)) {
-        this->widget->getLockedQuestionFrame()->hide();
+        this->widget->getUnlockQuestionButton()->show();
     } else {
-        this->widget->getLockedQuestionFrame()->show();
+        this->widget->getUnlockQuestionButton()->hide();
     }
 }
 
@@ -57,6 +57,12 @@ void TZ80::displayInfo() {
 
 void TZ80::displayAlreadyPassed() {
     Timezone::getInfoMessage()->setMessage("You have passed this level. Continue your adventure.");
+}
+
+void TZ80::unlockQuestionButtonPressed() {
+    this->widget->getLockedQuestionFrame()->hide();
+    this->widget->getUnlockQuestionButton()->hide();
+    Timezone::getBackpack()->removeItem(81);
 }
 
 

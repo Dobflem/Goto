@@ -14,9 +14,12 @@ tz80widget::~tz80widget() {
     delete ui;
 }
 
-//add getters for ui elements
 QPushButton* tz80widget::getSubmitButton() {
     return ui->submitButton;
+}
+
+QPushButton* tz80widget::getUnlockQuestionButton() {
+    return ui->UnlockQuestionButton;
 }
 
 QComboBox* tz80widget::getQ1ComboBox() {

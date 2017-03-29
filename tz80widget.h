@@ -21,6 +21,7 @@ public:
 
     //Getters for ui elements
     QPushButton* getSubmitButton();
+    QPushButton* getUnlockQuestionButton();
     QComboBox* getQ1ComboBox();
     QComboBox* getQ2ComboBox();
     QComboBox* getQ3ComboBox();

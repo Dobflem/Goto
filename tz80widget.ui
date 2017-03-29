@@ -390,9 +390,9 @@ background-color: rgb(255, 119, 153);</string>
         <widget class="QLabel" name="questionlocked_label">
          <property name="geometry">
           <rect>
-           <x>40</x>
+           <x>60</x>
            <y>10</y>
-           <width>541</width>
+           <width>491</width>
            <height>21</height>
           </rect>
          </property>
@@ -401,6 +401,25 @@ background-color: rgb(255, 119, 153);</string>
          </property>
          <property name="text">
           <string>Question Locked. (You need to have the key in your backpack to unlock this question)</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="UnlockQuestionButton">
+         <property name="geometry">
+          <rect>
+           <x>560</x>
+           <y>10</y>
+           <width>41</width>
+           <height>25</height>
+          </rect>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 103, 131);</string>
+         </property>
+         <property name="text">
+          <string>Unlock</string>
          </property>
         </widget>
        </widget>
