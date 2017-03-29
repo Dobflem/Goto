@@ -35,7 +35,7 @@ void TZ80::setupSignalsAndSlotConnections() {
 }
 
 void TZ80::showHideUnlockQuestionButton() {
-    if (this->getBackpack()->hasItem(81)) {
+    if (this->getBackpack()->hasItem(this->ID_OF_KEY)) {
         this->widget->getUnlockQuestionButton()->show();
     } else {
         this->widget->getUnlockQuestionButton()->hide();
@@ -57,7 +57,7 @@ void TZ80::displayAlreadyPassed() {
 void TZ80::unlockQuestionButtonPressed() {
     this->widget->getLockedQuestionFrame()->hide();
     this->widget->getUnlockQuestionButton()->hide();
-    Timezone::getBackpack()->removeItem(81);
+    Timezone::getBackpack()->removeItem(this->ID_OF_KEY);
 }
 
 
@@ -77,11 +77,11 @@ void TZ80::submitAnswersButtonPressed() {
     }
 }
 
-bool TZ80::allAnswersCorrect(int a1, int a2, int a3, int a4) {
-    return (a1 == this->answer1 &&
-            a2 == this->answer2 &&
-            a3 == this->answer3 &&
-            a4 == this->answer4 );
+bool TZ80::allAnswersCorrect(const int a1, const int a2, const int a3, const int a4) {
+    return ( EQUAL(a1, this->answer1) &&
+           EQUAL(a2, this->answer2) &&
+           EQUAL(a3, this->answer3) &&
+           EQUAL(a4, this->answer4) );
 }
 
 void TZ80::tokenButtonPressed() {

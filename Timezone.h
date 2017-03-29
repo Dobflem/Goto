@@ -31,7 +31,7 @@ private:
     InfoMessage* infoMessage;
 
 public:
-    Timezone(QString description, QString path, QString mapPath, QString musicPath);
+    Timezone(const QString& description, const QString& path, const QString& mapPath, const QString& musicPath);
 
     Timezone* getNorthTimezone();
     Timezone* getSouthTimezone();

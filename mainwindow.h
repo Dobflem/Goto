@@ -46,8 +46,8 @@ public:
     ~MainWindow();
 
 public slots:
-    void setInfoText(QString);
-    void setBackpackText(QString);
+    void setInfoText(const QString&);
+    void setBackpackText(const QString&);
 
 private slots:
     void moveNorth();
@@ -64,7 +64,7 @@ private:
     // QMediaPlayer* music;
 
     void createTimezones();
-    void goTimezone(QString direction);
+    void goTimezone(const QString& direction);
     void setupSignalsAndSlots();
     void setBackpackSignalandSlot();
     // void changeSong();
@@ -75,10 +75,10 @@ private:
     Timezone* getCurrentTimezone();
 
     // SETTERS
-    void setBackgroundImage(QString fileName);
+    void setBackgroundImage(const QString& fileName);
     void setCurrentTimezone(Timezone *tz);
-    void setInformationText(QString txt);
-    void setMapImage(QString mapImage);
+    void setInformationText(const QString& txt);
+    void setMapImage(const QString& mapImage);
     void setArrows();
 
 };

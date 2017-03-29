@@ -25,7 +25,8 @@ public:
     tz60widget *widget;
     TZ60():Timezone("Sixties", "sixties.png", "map-60s.png", "boots.mp3"),
     widget(new tz60widget()), tokenRecieved(false),
-    hippieTalking(true), indexOfCurrentSentence(0){
+    hippieTalking(true), indexOfCurrentSentence(0),
+    ID_OF_JOINT(41), ID_OF_FOOD(51){
         this->setup();
     }
 
@@ -39,6 +40,8 @@ private:
     bool hippieTalking;
     vector<QString> hippieSentences;
     unsigned int indexOfCurrentSentence;
+    const int ID_OF_JOINT;
+    const int ID_OF_FOOD;
 
     void setup();
     void setupSignalsAndSlotsConnections();

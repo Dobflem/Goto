@@ -36,23 +36,25 @@ QPushButton* tz40widget::getTokenButton() {
 }
 
 QSlider* tz40widget::getSlider(int num) {
+    QSlider* slider;
     switch(num) {
     case 1:
-        return ui->slider1;
+        slider = ui->slider1;
         break;
     case 2:
-        return ui->slider2;
+        slider = ui->slider2;
         break;
     case 3:
-        return ui->slider3;
+        slider = ui->slider3;
         break;
     case 4:
-        return ui->slider4;
+        slider = ui->slider4;
         break;
     case 5:
-        return ui->slider5;
+        slider = ui->slider5;
         break;
     }
+    return slider;
 }
 
 QFrame* tz40widget::getGameFrame() {

@@ -7,6 +7,8 @@
 #ifndef TZ40_H
 #define TZ40_H
 
+#define EQUAL(a,b) (((a == b)) ? true : false)
+
 
 class TZ40 : public QThread, public Timezone {
     Q_OBJECT
@@ -14,7 +16,8 @@ class TZ40 : public QThread, public Timezone {
 public:
     tz40widget *widget;
     TZ40():Timezone("Fourties", "fourties.jpg", "map-40s.png", "1940-swing.mp3"),
-      widget(new tz40widget()), tokenRecieved(false) {
+      widget(new tz40widget()), answer1(1), answer2(0), answer3(1),
+      answer4(2), answer5(1), tokenRecieved(false) {
         this->setup();
     }
 
@@ -23,6 +26,12 @@ public:
     virtual QWidget* getTimezoneWidget();
 
 private:
+    const int answer1;
+    const int answer2;
+    const int answer3;
+    const int answer4;
+    const int answer5;
+
     bool tokenRecieved;
     void setup();
     void changeLabelGeometry(QLabel*, int);

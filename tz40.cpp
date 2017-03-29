@@ -10,7 +10,6 @@ QWidget* TZ40::getTimezoneWidget() {
 
 void TZ40::enter(Backpack* b) {
     this->setBackpack(b);
-
     displayInfo();
 }
 
@@ -75,58 +74,56 @@ void TZ40::tokenButtonPressed() {
 }
 
 bool TZ40::sliderAnswersCorrect() {
-    if (widget->getSlider(1)->value() == 1 &&
-        widget->getSlider(2)->value() == 0 &&
-        widget->getSlider(3)->value() == 1 &&
-        widget->getSlider(4)->value() == 2 &&
-        widget->getSlider(5)->value() == 1) {
-        return true;
-    } else {
-        return false;
-    }
+    return (EQUAL(widget->getSlider(1)->value(), this->answer1) &&
+            EQUAL(widget->getSlider(2)->value(), this->answer2) &&
+            EQUAL(widget->getSlider(3)->value(), this->answer3) &&
+            EQUAL(widget->getSlider(4)->value(), this->answer4) &&
+            EQUAL(widget->getSlider(5)->value(), this->answer5));
 }
 
-int TZ40::getImageXValue(int value) {
+int TZ40::getImageXValue(const int value) {
+    int returnVal;
     switch(value) {
         case 0:
-            return 100;
+            returnVal = 100;
             break;
         case 1:
-            return 300;
+            returnVal = 300;
             break;
         case 2:
-            return 500;
+            returnVal = 500;
             break;
     }
+    return returnVal;
 }
 
-void TZ40::changeLabelGeometry(QLabel* label, int value) {
+void TZ40::changeLabelGeometry(QLabel* label, const int value) {
     int x = getImageXValue(value);
     int y = label->geometry().y();
     label->setGeometry(x, y, label->width(), label->height());
 }
 
-void TZ40::slinkySliderValueChanged(int value) {
+void TZ40::slinkySliderValueChanged(const int value) {
     QLabel* slinky = this->widget->getSlinky();
     changeLabelGeometry(slinky, value);
 }
 
-void TZ40::barbieSliderValueChanged(int value) {
+void TZ40::barbieSliderValueChanged(const int value) {
     QLabel* barbie = this->widget->getBarbie();
     changeLabelGeometry(barbie, value);
 }
 
-void TZ40::jeepSliderValueChanged(int value) {
+void TZ40::jeepSliderValueChanged(const int value) {
     QLabel* jeep = this->widget->getJeep();
     changeLabelGeometry(jeep, value);
 }
 
-void TZ40::bandAidSliderValueChanged(int value) {
+void TZ40::bandAidSliderValueChanged(const int value) {
     QLabel* bandAid = this->widget->getBandAid();
     changeLabelGeometry(bandAid, value);
 }
 
-void TZ40::microwaveSliderValueChanged(int value) {
+void TZ40::microwaveSliderValueChanged(const int value) {
     QLabel* microwave = this->widget->getMicrowave();
     changeLabelGeometry(microwave, value);
 }

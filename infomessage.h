@@ -16,10 +16,10 @@ private:
     QString message;
 
 public:
-    explicit InfoMessage(QWidget *parent = 0);
+    explicit InfoMessage();
 
     QString getMessage();
-    void setMessage(QString message);
+    void setMessage(const QString& message);
 
 signals:
     void valueChanged(QString);

@@ -104,12 +104,12 @@ void MainWindow::moveWest() {
     this->setCurrentTimezone(tz);
 }
 
-void MainWindow::setBackpackText(QString txt) {
+void MainWindow::setBackpackText(const QString& txt) {
     ui->backpackContents->setText(txt);
     ui->backpackContents->repaint();
 }
 
-void MainWindow::setInfoText(QString txt) {
+void MainWindow::setInfoText(const QString& txt) {
     /*
     for (int i = 1; i <= txt.length(); i++) {
         ui->txtInfo->setText(txt.left(i));
@@ -177,13 +177,13 @@ void MainWindow::changeSong() {
 }
 */
 
-void MainWindow::setMapImage(QString mapImage) {
+void MainWindow::setMapImage(const QString& mapImage) {
     QString resource = ":Resources/" + mapImage;
     QPixmap image(resource);
     ui->map_label->setPixmap(image);
 }
 
-void MainWindow::setBackgroundImage(QString fileName) {
+void MainWindow::setBackgroundImage(const QString& fileName) {
     QString resource = ":Resources/" + fileName;
     QPixmap image(resource);
     ui->tzImage->setPixmap(image);

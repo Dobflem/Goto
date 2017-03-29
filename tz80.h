@@ -10,6 +10,8 @@
 #ifndef TZ80_H
 #define TZ80_H
 
+#define EQUAL(a,b) (((a == b)) ? true : false)
+
 
 class TZ80 : public QObject, public Timezone {
     Q_OBJECT
@@ -20,6 +22,7 @@ private:
     int const answer2;
     int const answer3;
     int const answer4;
+    int const ID_OF_KEY;
 
     void setup();
     void setupHideUIElements();
@@ -33,7 +36,7 @@ public:
     tz80widget *widget;
 
     TZ80():Timezone("Eighties", "eighties.jpg", "map-80s.png", "take-on-me.mp3"),
-        tokenRecieved(false), answer1(2), answer2(1), answer3(1), answer4(0), widget(new tz80widget()) {
+        tokenRecieved(false), answer1(2), answer2(1), answer3(1), answer4(0),ID_OF_KEY(21), widget(new tz80widget())  {
          setup();
     }
 

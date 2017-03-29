@@ -1,12 +1,12 @@
 #include "infomessage.h"
 
-InfoMessage::InfoMessage(QWidget *parent) {}
+InfoMessage::InfoMessage() {}
 
 QString InfoMessage::getMessage() {
     return this->message;
 }
 
-void InfoMessage::setMessage(QString msg) {
+void InfoMessage::setMessage(const QString& msg) {
     this->message = msg;
     emit valueChanged(this->message);
 }

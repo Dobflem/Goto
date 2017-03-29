@@ -33,7 +33,7 @@ void TZ60::displayAlreadyPassed() {
 }
 
 void TZ60::showHideHaveFoodWarning() {
-    if (this->getBackpack()->hasItem(51)) {
+    if (this->getBackpack()->hasItem(this->ID_OF_FOOD)) {
         this->widget->hideNoFoodWarning();
     } else {
         this->widget->showNoFoodWarning();
@@ -41,7 +41,7 @@ void TZ60::showHideHaveFoodWarning() {
 }
 
 void TZ60::showHideHaveJointWarning() {
-    if (this->getBackpack()->hasItem(41)) {
+    if (this->getBackpack()->hasItem(this->ID_OF_JOINT)) {
         this->widget->hideNoJointWarning();
     } else {
         this->widget->showNoJointWarning();
@@ -140,7 +140,7 @@ void TZ60::nextButtonPressed() {
 }
 
 void TZ60::giveHippieFoodButtonPressed() {
-    Timezone::getBackpack()->removeItem(51);
+    Timezone::getBackpack()->removeItem(this->ID_OF_FOOD);
 
     this->widget->hideFoodOptions();
     this->widget->showNextArrow();
@@ -148,7 +148,7 @@ void TZ60::giveHippieFoodButtonPressed() {
 }
 
 void TZ60::giveHippieJointButtonPressed() {
-    Timezone::getBackpack()->removeItem(41);
+    Timezone::getBackpack()->removeItem(this->ID_OF_JOINT);
 
     this->widget->hideJointOptions();
     nextButtonPressed();

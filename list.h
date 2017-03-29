@@ -17,7 +17,7 @@ private:
 public:
     T *currentItem;
     T *get(int idx);
-    void remove(int idx);
+    void remove(unsigned const int idx);
     void add(T *obj);
     void start();
     bool empty();
@@ -51,7 +51,7 @@ T *List<T>::get(int idx) {
 }
 
 template <class T>
-void List<T>::remove(int idx) {
+void List<T>::remove(unsigned const int idx) {
     if (idx < this->objects.size()) {
       typename std::list<T*>::iterator it = this->objects.begin();
       std::advance(it, idx);

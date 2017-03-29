@@ -41,5 +41,5 @@ void TZ20::tokenButtonPressed() {
 void TZ20::keyButtonPressed() {
     this->widget->getKeyButton()->hide();
 
-    this->getBackpack()->addItem(new Item(81, "Unlock 80s question"));
+    this->getBackpack()->addItem(new Item(21, "Unlock 80s question"));
 }

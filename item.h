@@ -13,7 +13,7 @@ private:
     int ID;
 
 public:
-    Item(int id, QString desc);
+    Item(const int id, const QString& desc);
     int getID();
     QString getDescription();
 };

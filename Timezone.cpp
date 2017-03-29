@@ -1,6 +1,6 @@
 #include "Timezone.h"
 
-Timezone::Timezone(QString description, QString path, QString mapPath, QString musicPath) {
+Timezone::Timezone(const QString& description, const QString& path, const QString& mapPath, const QString& musicPath) {
 	this->description = description;
     this->imagePath = path;
     this->mapPath = mapPath;
